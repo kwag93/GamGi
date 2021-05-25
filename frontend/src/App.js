@@ -1,17 +1,24 @@
 import React from 'react';
-import Responsive from './components/common/Responsive';
-import EditorContainer from './containers/write/EditorContainer';
-import TagBoxContainer from './containers/write/TagBoxContainer';
-import WriteActionButtonsContainer from './containers/write/WriteActionButtonsContainer';
+import { Route } from 'react-router-dom';
+import PostListPage from './pages/PostListPage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import WritePage from './pages/WritePage';
+import PostPage from './pages/PostPage';
+import { Helmet } from 'react-helmet-async';
 
-function App() {
+const App = () => {
   return (
-	  <Responsive>
-		  <EditorContainer />
-		  <TagBoxContainer />
-		  <WriteActionButtonsContainer />
-	  </Responsive>
-  )
-}
-
+    <>
+      <Helmet>
+        <title>Hi SY</title>
+      </Helmet>
+      <Route component={PostListPage} exact path={['/@:username', '/']} />
+      <Route component={LoginPage} path="/login" />
+      <Route component={RegisterPage} path="/register" />
+      <Route component={WritePage} path="/write" />
+      <Route component={PostPage} path="/@:username/:postId" />
+    </>
+  );
+};
 export default App;
