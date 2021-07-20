@@ -39,19 +39,19 @@ const Spacer = styled.div`
 
 const Header = () => {
   return (
-    <>
+    <div>
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo">
             REACTERS
           </Link>
-            <div className="right">
-              <Button to="/login">로그인</Button>
-            </div>
+          <div className="right">
+            <Button to="/login">로그인</Button>
+          </div>
         </Wrapper>
       </HeaderBlock>
       <Spacer />
-    </>
+    </div>
   );
 };
 

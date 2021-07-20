@@ -1,7 +1,12 @@
 import React from 'react';
-import Header from '../components/common/Header'
+import Header from '../components/common/Header';
 const PostListPage = () => {
-	return <><Header /><div> HI</div></>;
+  return (
+    <div>
+      <Header />
+      <div> HI</div>
+    </div>
+  );
 };
 
 export default PostListPage;
