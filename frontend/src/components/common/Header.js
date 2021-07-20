@@ -28,16 +28,6 @@ const Wrapper = styled(Responsive)`
     display: flex;
     align-items: center;
   }
-  .diary{
-    &:hover{
-      color : skyblue;
-    }
-  }
-  .calendar{
-    &:hover{
-      color : skyblue;
-    }
-  }
 `;
 
 /**
@@ -47,33 +37,17 @@ const Spacer = styled.div`
   height: 4rem;
 `;
 
-const UserInfo = styled.div`
-  font-weight: 800;
-  margin-right: 1rem;
-`;
-
-const Header = ({ user, onLogout }) => {
+const Header = () => {
   return (
     <>
       <HeaderBlock>
         <Wrapper>
-          <Link to="/postlist" className="logo">
-            감기 Gamgi
+          <Link to="/" className="logo">
+            REACTERS
           </Link>
-          <Link to="/calendar" className="calendar">CALENDAR</Link>
-          <Link to="/postlist" className="diary">DIARY</Link>
-          <div>SELF CHECK</div>
-          <div>CHALLENGE</div>
-          {user ? (
             <div className="right">
-              <UserInfo>{user.username}</UserInfo>
-              <Button onClick={onLogout}>로그아웃</Button>
+              <Button to="/login">로그인</Button>
             </div>
-          ) : (
-            <div className="right">
-              <Button to="/">로그인</Button>
-            </div>
-          )}
         </Wrapper>
       </HeaderBlock>
       <Spacer />
