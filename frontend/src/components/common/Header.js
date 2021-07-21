@@ -43,8 +43,12 @@ const Header = () => {
       <HeaderBlock>
         <Wrapper>
           <Link to="/" className="logo">
-            REACTERS
+            감기 Gamgi
           </Link>
+          <Link to="/calendar">CALENDAR</Link>
+          <Link to="/">DAIARY</Link>
+          <Link to="/">SELF CHECK</Link>
+          <Link to="/challenge">CHALLENGE</Link>
           <div className="right">
             <Button to="/login">로그인</Button>
           </div>

@@ -5,6 +5,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import WritePage from './pages/WritePage';
 import PostPage from './pages/PostPage';
+import CalendarPage from './pages/CalendarPage';
+import ChallengePage from './pages/ChallengePage';
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
       <Route component={RegisterPage} path="/register" />
       <Route component={WritePage} path="/write" />
       <Route component={PostPage} path="/@:username/:postId" />
+      <Route component={CalendarPage} path="/calendar" />
+      <Route component={ChallengePage} path="/challenge" />
     </div>
   );
 };
