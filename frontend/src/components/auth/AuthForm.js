@@ -21,17 +21,18 @@ const AuthFormBlock = styled.div`
  */
 const StyledInput = styled.input`
   font-size: 1rem;
-  border: none;
-  border-bottom: 1px solid ${palette.gray[5]};
+  width: 100%;
+  height: 50px;
+  border: 1px solid  ${palette.gray[5]};
+  border-radius: 15px;
   padding-bottom: 0.5rem;
   outline: none;
-  width: 100%;
   &:focus {
     color: $oc-teal-7;
     border-bottom: 1px solid ${palette.gray[7]};
   }
   & + & {
-    margin-top: 1rem;
+    margin-top: 1.25rem;
   }
 `;
 
@@ -51,7 +52,9 @@ const Footer = styled.div`
 `;
 
 const ButtonWithMarginTop = styled(Button)`
-  margin-top: 1rem;
+  margin-top: 2rem;
+  width: 50%;
+  height: 50px;
 `;
 
 const AuthForm = () => {
@@ -62,15 +65,16 @@ const AuthForm = () => {
         <StyledInput
           autoComplete="username"
           name="username"
-          placeholder="아이디"
+          placeholder=" 아이디"
         />
         <StyledInput
           autoComplete="new-password"
           name="password"
-          placeholder="비밀번호"
+          placeholder=" 비밀번호"
           type="password"
         />
 		<ButtonWithMarginTop>로그인</ButtonWithMarginTop>
+    <ButtonWithMarginTop>회원가입</ButtonWithMarginTop>
 		</form>
       <Footer>
           <Link to="/register">회원가입</Link>
