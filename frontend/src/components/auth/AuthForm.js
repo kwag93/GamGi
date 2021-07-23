@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 import Button from '../common/Button';
+import PostList from '../posts/PostList';
 
 /**
  * 회원가입 또는 로그인 폼을 보여줍니다.
@@ -27,6 +28,7 @@ const StyledInput = styled.input`
   border-radius: 15px;
   padding-bottom: 0.5rem;
   outline: none;
+  font-size: 15px;
   &:focus {
     color: $oc-teal-7;
     border-bottom: 1px solid ${palette.gray[7]};
@@ -36,49 +38,37 @@ const StyledInput = styled.input`
   }
 `;
 
-/**
- * 폼 하단에 로그인 혹은 회원가입 링크를 보여줌
- */
-const Footer = styled.div`
-  margin-top: 2rem;
-  text-align: right;
-  a {
-    color: ${palette.gray[6]};
-    text-decoration: underline;
-    &:hover {
-      color: ${palette.gray[9]};
-    }
-  }
-`;
 
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 2rem;
   width: 50%;
   height: 50px;
+  border: 2px solid;
+  border-radius: 15px;
+  font-size: 15px;
 `;
 
 const AuthForm = () => {
   return (
     <AuthFormBlock>
-      <h3>로그인</h3>
+
       <form>
         <StyledInput
           autoComplete="username"
           name="username"
-          placeholder=" 아이디"
+          placeholder="  아이디"
         />
         <StyledInput
           autoComplete="new-password"
           name="password"
-          placeholder=" 비밀번호"
+          placeholder="  비밀번호"
           type="password"
         />
 		<ButtonWithMarginTop>로그인</ButtonWithMarginTop>
-    <ButtonWithMarginTop>회원가입</ButtonWithMarginTop>
+    <ButtonWithMarginTop>
+      <Link to="/register">회원가입</Link>
+      </ButtonWithMarginTop>
 		</form>
-      <Footer>
-          <Link to="/register">회원가입</Link>
-      </Footer>
     </AuthFormBlock>
   );
 };
