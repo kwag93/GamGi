@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
 import Button from '../common/Button';
-import PostList from '../posts/PostList';
 
 /**
  * 회원가입 또는 로그인 폼을 보여줍니다.
@@ -24,7 +23,7 @@ const StyledInput = styled.input`
   font-size: 1rem;
   width: 100%;
   height: 50px;
-  border: 1px solid  ${palette.gray[5]};
+  border: 1px solid ${palette.gray[5]};
   border-radius: 15px;
   padding-bottom: 0.5rem;
   outline: none;
@@ -38,7 +37,6 @@ const StyledInput = styled.input`
   }
 `;
 
-
 const ButtonWithMarginTop = styled(Button)`
   margin-top: 2rem;
   width: 50%;
@@ -51,7 +49,6 @@ const ButtonWithMarginTop = styled(Button)`
 const AuthForm = () => {
   return (
     <AuthFormBlock>
-
       <form>
         <StyledInput
           autoComplete="username"
@@ -64,11 +61,11 @@ const AuthForm = () => {
           placeholder="  비밀번호"
           type="password"
         />
-		<ButtonWithMarginTop>로그인</ButtonWithMarginTop>
-    <ButtonWithMarginTop>
-      <Link to="/register">회원가입</Link>
-      </ButtonWithMarginTop>
-		</form>
+        <ButtonWithMarginTop>로그인</ButtonWithMarginTop>
+        <ButtonWithMarginTop>
+          <Link to="/register">회원가입</Link>
+        </ButtonWithMarginTop>
+      </form>
     </AuthFormBlock>
   );
 };

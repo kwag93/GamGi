@@ -8,6 +8,7 @@ import PostPage from './pages/PostPage';
 import CalendarPage from './pages/CalendarPage';
 import ChallengePage from './pages/ChallengePage';
 import MyResponsiveBar from './pages/StatisticPage';
+import Emotion from './pages/Emotion';
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
       <Route component={PostPage} path="/@:username/:postId" />
       <Route component={CalendarPage} path="/calendar" />
       <Route component={ChallengePage} path="/challenge" />
-      <Route component={MyResponsiveBar} path="/statistic"/>
+      <Route component={MyResponsiveBar} path="/statistic" />
+      <Route component={Emotion} path="/emotion" />
     </div>
   );
 };
