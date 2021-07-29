@@ -1,8 +1,9 @@
-import React from "react";
-import Button from "../components/common/Button";
-import Header from "../components/common/Header";
-import styled from "styled-components";
-import { Col, Row } from 'antd';
+import React from 'react';
+import Button from '../components/common/Button';
+import Header from '../components/common/Header';
+import styled from 'styled-components';
+import { Row, Col } from 'antd';
+import love from '../lib/images/lovegamgi.png';
 
 const Block = styled.div`
   position: absolute;
@@ -20,31 +21,40 @@ const Block = styled.div`
   }
 `;
 
+const Img = styled.img`
+  width: 30%;
+  height: 30%;
+`;
+
+const ImgBlock = styled.div`
+  width: 70%;
+  height: 50%;
+`;
 
 const Emotion = () => {
-    return (
-      <div>
-        <Header />
-        <Block>
-          <h2>✿ 오늘의 감기 ✿</h2>
-          <br />
-          <h3>감정을 선택해주세요</h3>
-          <div style={{height: "500px"}}>
+  return (
+    <div>
+      <Header />
+      <Block>
+        <h2>✿ 오늘의 감기 ✿</h2>
+        <br />
+        <h3>감정을 선택해주세요</h3>
+        <ImgBlock>
           <Row gutter={[16, 16]}>
-            <Col span={9} />
-            <Col span={9} />
-            <Col span={9} />
-
-            <Col span={9} />
-            <Col span={9} />
-            <Col span={9} />
+            <Col xs={24} md={8} lg={6}>
+              <Img src={love} />
+              <Img src={love} />
+              <Img src={love} />
+              <Img src={love} />
+              <Img src={love} />
+              <Img src={love} />
+            </Col>
           </Row>
-          </div> 
-          <Button> -> </Button>
-        </Block>
-      </div>
-    );
-  };
-  
+        </ImgBlock>
+        <Button> - </Button>
+      </Block>
+    </div>
+  );
+};
+
 export default Emotion;
-  
