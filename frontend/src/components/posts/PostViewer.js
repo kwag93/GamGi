@@ -2,7 +2,7 @@ import React from "react";
 
 const PostViewer = () =>{
     return(
-        <div></div>
+        <div>123123</div>
     );
 };
 
