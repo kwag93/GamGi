@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import StyledModal from '../components/common/SelectEmotionModal';
 
 const WriteBox = styled.div`
   padding: 20px;
@@ -47,6 +48,19 @@ const SubmitButton = styled.button`
 `;
 
 const WritePage = () => {
+  const data = {
+    title: '오늘의 감기',
+    description: '오늘 선택된 감기는 우울 ',
+  };
+  const [modalState, setModalState] = useState(false);
+  const openModal = () => {
+    setModalState(true);
+  };
+
+  const closeModal = (event) => {
+    event.preventDefault();
+    setModalState(false);
+  };
   return (
     <div>
       <WriteBox>
@@ -54,7 +68,8 @@ const WritePage = () => {
         <Content type="text" placeholder="내용을 입력하세요" />
       </WriteBox>
       <div>
-        <SubmitButton>작성하기</SubmitButton>
+        <SubmitButton onClick={openModal}>작성하기</SubmitButton>
+        <StyledModal data={data} state={modalState} closeModal={closeModal} />
       </div>
     </div>
   );

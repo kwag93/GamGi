@@ -22,12 +22,12 @@ const Block = styled.div`
 `;
 
 const Img = styled.img`
-  width: 30%;
-  height: 30%;
+  width: 25%;
+  height: 20%;
 `;
 
 const ImgBlock = styled.div`
-  width: 70%;
+  width: 50%;
   height: 50%;
 `;
 
