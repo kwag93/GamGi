@@ -3,7 +3,7 @@ import Button from '../components/common/Button';
 import Header from '../components/common/Header';
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
-import love from '../lib/images/lovegamgi.png';
+import love from '../lib/images/loveheart.png';
 
 const Block = styled.div`
   position: absolute;
