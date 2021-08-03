@@ -9,6 +9,7 @@ import CalendarPage from './pages/CalendarPage';
 import ChallengePage from './pages/ChallengePage';
 import MyResponsiveBar from './pages/StatisticPage';
 import Emotion from './pages/Emotion';
+import SelfCheckPage from './pages/SelfCheckPage';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <Route component={ChallengePage} path="/challenge" />
       <Route component={MyResponsiveBar} path="/statistic" />
       <Route component={Emotion} path="/emotion" />
+      <Route component={SelfCheckPage} path="/selfcheck" />
     </div>
   );
 };
