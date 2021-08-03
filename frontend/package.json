@@ -4,25 +4,27 @@
   "homepage": ".",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.6.2",
     "@fullcalendar/core": "^5.8.0",
     "@fullcalendar/daygrid": "^5.8.0",
     "@fullcalendar/react": "^5.8.0",
     "@nivo/core": "^0.73.0",
     "@nivo/pie": "^0.73.0",
-    "antd": "^4.16.9",
+    "antd": "^4.16.10",
+    "customize-cra": "^1.0.0",
     "eslint-config-prettier": "^8.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-modal": "^3.14.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^1.1.5",
+    "react-scripts": "^4.0.3",
     "styled-components": "^5.3.0",
     "styled-react-modal": "^2.1.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src react-scripts build",
+    "start": "cross-env NODE_PATH=src react-app-rewired start",
+    "build": "cross-env NODE_PATH=src react-app-rewired builds",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
@@ -46,7 +48,8 @@
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "cross-env": "^7.0.3"
+    "babel-plugin-import": "^1.13.3",
+    "cross-env": "^7.0.3",
+    "react-app-rewired": "^2.1.8"
   }
 }

@@ -30,6 +30,10 @@ const Wrapper = styled(Responsive)`
   }
 `;
 
+const StyledLink = styled(Link)`
+  color: black;
+`;
+
 /**
  * 헤더가 fixed로 되어 있기 때문에 페이지의 컨텐츠가 4rem 아래 나타나도록 해주는 컴포넌트
  */
@@ -42,13 +46,13 @@ const Header = () => {
     <div>
       <HeaderBlock>
         <Wrapper>
-          <Link to="/" className="logo">
+          <StyledLink to="/" className="logo">
             감기 Gamgi
-          </Link>
-          <Link to="/calendar">CALENDAR</Link>
-          <Link to="/">DAIARY</Link>
-          <Link to="/">SELF CHECK</Link>
-          <Link to="/challenge">CHALLENGE</Link>
+          </StyledLink>
+          <StyledLink to="/calendar">CALENDAR</StyledLink>
+          <StyledLink to="/">DAIARY</StyledLink>
+          <StyledLink to="/">SELF CHECK</StyledLink>
+          <StyledLink to="/challenge">CHALLENGE</StyledLink>
           <div className="right">
             <Button to="/login">로그인</Button>
           </div>
