@@ -27,7 +27,7 @@ const Contents = styled.div`
   padding: 0 auto;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  background-color: #ebeff7;
+  background-color: #F1F1F1;
   text-align: center;
   width: 50%;
   height: 600px;
@@ -38,7 +38,7 @@ const Title = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.5em;
-  background-color: #87ceeb;
+  background-color: #8195BD;
   width: 100%;
   overflow: auto;
   height: 10%;
