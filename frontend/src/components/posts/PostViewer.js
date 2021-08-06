@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
+import Header from '../common/Header';
 import Responsive from '../common/Responsive';
 
 const PostViewerBlock = styled(Responsive)`
@@ -37,20 +38,23 @@ const PostContent = styled.div`
 
 const PostViewer = () => {
   return (
-    <PostViewerBlock>
-      <PostHead>
-        <h1>제목</h1>
-        <SubInfo>
-          <span>
-            <b>tester</b>
-          </span>
-          <span>{new Date().toLocaleDateString()}</span>
-        </SubInfo>
-      </PostHead>
-      <PostContent
-        dangerouslySetInnerHTML={{ __html: '<p>HTML <b>내용</b>입니다.</p>' }}
-      />
-    </PostViewerBlock>
+    <>
+      <Header />
+      <PostViewerBlock>
+        <PostHead>
+          <h1>제목</h1>
+          <SubInfo>
+            <span>
+              <b>tester</b>
+            </span>
+            <span>{new Date().toLocaleDateString()}</span>
+          </SubInfo>
+        </PostHead>
+        <PostContent
+          dangerouslySetInnerHTML={{ __html: '<p>HTML <b>내용</b>입니다.</p>' }}
+        />
+      </PostViewerBlock>
+    </>
   );
 };
 

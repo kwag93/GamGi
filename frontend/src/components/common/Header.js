@@ -5,7 +5,6 @@ import Responsive from './Responsive';
 import Button from './Button';
 
 const HeaderBlock = styled.div`
-  position: fixed;
   width: 100%;
   background: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
@@ -38,7 +37,7 @@ const StyledLink = styled(Link)`
  * 헤더가 fixed로 되어 있기 때문에 페이지의 컨텐츠가 4rem 아래 나타나도록 해주는 컴포넌트
  */
 const Spacer = styled.div`
-  height: 4rem;
+  height: 1rem;
 `;
 
 const Header = () => {
@@ -51,7 +50,7 @@ const Header = () => {
           </StyledLink>
           <StyledLink to="/calendar">CALENDAR</StyledLink>
           <StyledLink to="/">DAIARY</StyledLink>
-          <StyledLink to="/">SELF CHECK</StyledLink>
+          <StyledLink to="/selfcheck">SELF CHECK</StyledLink>
           <StyledLink to="/challenge">CHALLENGE</StyledLink>
           <div className="right">
             <Button to="/login">로그인</Button>
