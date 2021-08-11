@@ -3,7 +3,14 @@ import Button from '../components/common/Button';
 import Header from '../components/common/Header';
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
-import love from '../lib/images/loveheart.png';
+import love from '../lib/images/love.png';
+import happy from '../lib/images/happy.png';
+import depress from '../lib/images/depress.png';
+import joy from '../lib/images/joy.png';
+import angry from '../lib/images/angry.png';
+import nervous from '../lib/images/nervous.png';
+import nothing from '../lib/images/nothinking.png';
+import sad from '../lib/images/sad.png';
 
 const Block = styled.div`
   position: absolute;
@@ -22,8 +29,8 @@ const Block = styled.div`
 `;
 
 const Img = styled.img`
-  width: 25%;
-  height: 20%;
+  width: 18%;
+  height: 18%;
 `;
 
 const ImgBlock = styled.div`
@@ -40,16 +47,30 @@ const Emotion = () => {
         <br />
         <h3>감정을 선택해주세요</h3>
         <ImgBlock>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} md={8} lg={6}>
-              <Img src={love} />
-              <Img src={love} />
-              <Img src={love} />
-              <Img src={love} />
-              <Img src={love} />
-              <Img src={love} />
-            </Col>
-          </Row>
+          <table border-collapse="separate" border-spacing="0 10px">
+            <tbody>
+              <tr>
+                <td>
+                  <Img src={happy} />
+                  <Img src={joy} />
+                  <Img src={love} />
+                  <Img src={angry} />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <Img src={sad} />
+                  <Img src={depress} />
+                  <Img src={nervous} />
+                  <Img src={nothing} />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </ImgBlock>
         <Button> - </Button>
       </Block>

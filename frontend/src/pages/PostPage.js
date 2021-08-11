@@ -3,12 +3,12 @@ import Header from '../components/common/Header';
 import PostViewer from '../components/posts/PostViewer';
 
 const PostPage = () => {
-    return (
+  return (
     <div>
-        <Header />
-        <PostViewer />
+      <Header />
+      <PostViewer />
     </div>
-    );
+  );
 };
 
 export default PostPage;
