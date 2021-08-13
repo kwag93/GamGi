@@ -49,7 +49,7 @@ const Header = () => {
             감기 Gamgi
           </StyledLink>
           <StyledLink to="/calendar">CALENDAR</StyledLink>
-          <StyledLink to="/">DAIARY</StyledLink>
+          <StyledLink to="/">DIARY</StyledLink>
           <StyledLink to="/selfcheck">SELF CHECK</StyledLink>
           <StyledLink to="/challenge">CHALLENGE</StyledLink>
           <div className="right">
