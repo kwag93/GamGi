@@ -28,7 +28,6 @@ const Block = styled.div`
 `;
 
 const Box = styled.div`
-position: absolute;
 left: 0;
 top: 0;
 bottom: 0;
@@ -37,13 +36,12 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-padding: 8rem;
+padding: 4rem;
 `;
 
 
 const Img = styled.img`
   width: 50%;
-  height: 50%;
 `;
 
 const ImgBlock = styled.div`

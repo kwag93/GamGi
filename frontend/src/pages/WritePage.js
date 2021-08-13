@@ -3,19 +3,7 @@ import styled from 'styled-components';
 import Header from '../components/common/Header';
 import StyledModal from '../components/common/SelectEmotionModal';
 
-const WriteBox = styled.div`
-  padding: 30px;
-  .div {
-    display: block;
-    padding-bottom: 2rem;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-`;
-
 const Box = styled.div`
-position: absolute;
 left: 0;
 top: 0;
 bottom: 0;
@@ -24,7 +12,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-padding: 8rem;
+padding: 4rem;
 `;
 
 const Title = styled.input`
