@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/common/Header';
 import FullCalendar from '../../node_modules/@fullcalendar/react/dist/main';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import HeaderContainer from '../containers/HeaderContainer';
 
 const CalendarPage = () => {
   return (
     <div>
-      <Header />
+      <HeaderContainer />
       <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />
     </div>
   );
