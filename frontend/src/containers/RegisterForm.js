@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
-  const { form, auth, authError } = useSelector(({ auth, user }) => ({
+  const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
     form: auth.register,
     auth: auth.auth,
     authError: auth.authError,
@@ -50,6 +50,11 @@ const RegisterForm = () => {
   useEffect(() => {
     if (user) {
       history.push('/');
+      try {
+        localStorage.setItem('user', JSON.stringify(user));
+      } catch (e) {
+        console.log('localStorage is not working');
+      }
     }
   }, [user, history]);
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../components/common/Header';
-import { Steps, Divider } from 'antd';
+import { Steps } from 'antd';
+import HeaderContainer from '../containers/HeaderContainer';
 
 const { Step } = Steps;
 
 const ChallengePage = () => {
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <h3>매일 30분 걷기</h3>
       <Steps direction="vertical" current={0}>
         <Step title="Day1" description="걷기 완료" />

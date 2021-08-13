@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/common/Header';
-import { Menu, Layout, Button } from 'antd';
+import { Menu, Layout } from 'antd';
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
 } from '@ant-design/icons';
 import styled from 'styled-components';
+import HeaderContainer from '../containers/HeaderContainer';
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -35,7 +35,7 @@ const SelfCheckPage = () => {
 
   return (
     <div>
-      <Header />
+      <HeaderContainer />
       <StyledLayout>
         <StyledSider>
           <Menu onClick={handleClick} style={{ width: 256 }} mode="inline">
