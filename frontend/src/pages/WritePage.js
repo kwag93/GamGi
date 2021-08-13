@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Header from '../components/common/Header';
 import StyledModal from '../components/common/SelectEmotionModal';
 
 const WriteBox = styled.div`
-  padding: 20px;
-  padding-left: 30px;
+  padding: 30px;
   .div {
     display: block;
     padding-bottom: 2rem;
@@ -14,9 +14,22 @@ const WriteBox = styled.div`
   }
 `;
 
+const Box = styled.div`
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+right: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8rem;
+`;
+
 const Title = styled.input`
-  width: 91%;
-  padding-bottom: 30px;
+  width: 65%;
+  padding-bottom: 20px;
   border: none;
   font-size: 22px;
   border-bottom: solid 1px #ababab;
@@ -27,7 +40,8 @@ const Title = styled.input`
 `;
 
 const Content = styled.textarea`
-  width: 91%;
+  padding-top: 20px;
+  width: 65%;
   resize: none;
   border: none;
   height: 500px;
@@ -63,14 +77,15 @@ const WritePage = () => {
   };
   return (
     <div>
-      <WriteBox>
+      <Header />
+      <Box>
         <Title type="text" placeholder="제목" />
         <Content type="text" placeholder="내용을 입력하세요" />
-      </WriteBox>
       <div>
         <SubmitButton onClick={openModal}>작성하기</SubmitButton>
         <StyledModal data={data} state={modalState} closeModal={closeModal} />
       </div>
+       </Box>
     </div>
   );
 };
