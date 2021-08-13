@@ -23,7 +23,7 @@ const PostItemBlock = styled.div`
     padding-top: 0;
   }
   & + & {
-    border-top: 1px solid ${palette.gray[2]};
+    border-top: 1px solid ${palette.gray[3]};
   }
   h2 {
     font-size: 2rem;
