@@ -11,7 +11,6 @@ import MyResponsiveBar from './pages/StatisticPage';
 import Emotion from './pages/Emotion';
 import SelfCheckPage from './pages/SelfCheckPage';
 import PostViewer from './components/posts/PostViewer';
-import LoginForm from './containers/LoginForm';
 
 const App = () => {
   return (
@@ -27,7 +26,6 @@ const App = () => {
       <Route component={Emotion} path="/emotion" />
       <Route component={SelfCheckPage} path="/selfcheck" />
       <Route component={PostViewer} path="/viewer" />
-      <Route component={LoginForm} path="/test" />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Header from '../components/common/Header';
 import StyledModal from '../components/common/SelectEmotionModal';
+import HeaderContainer from '../containers/HeaderContainer';
 
 const Box = styled.div`
 left: 0;
@@ -65,15 +65,15 @@ const WritePage = () => {
   };
   return (
     <div>
-      <Header />
+      <HeaderContainer />
       <Box>
         <Title type="text" placeholder="제목" />
         <Content type="text" placeholder="내용을 입력하세요" />
-      <div>
-        <SubmitButton onClick={openModal}>작성하기</SubmitButton>
-        <StyledModal data={data} state={modalState} closeModal={closeModal} />
-      </div>
-       </Box>
+        <div>
+          <SubmitButton onClick={openModal}>작성하기</SubmitButton>
+          <StyledModal data={data} state={modalState} closeModal={closeModal} />
+        </div>
+      </Box>
     </div>
   );
 };

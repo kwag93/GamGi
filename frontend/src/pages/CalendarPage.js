@@ -75,6 +75,7 @@ const monthCellRender = (value) => {
 }
 
 
+
 const CalendarPage = () => {
   return (
     <div>
@@ -82,6 +83,7 @@ const CalendarPage = () => {
       <Box>
         <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
       </Box>
+
     </div>
   );
 };
