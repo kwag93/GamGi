@@ -11,42 +11,21 @@ import nothing from '../lib/images/nothinking.png';
 import sad from '../lib/images/sad.png';
 import HeaderContainer from '../containers/HeaderContainer';
 
-const Block = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  /* flex로 내부 내용 중앙 정렬 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .br {
-    border: 1px;
-  }
-`;
 
 const Box = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 8rem;
+left: 0;
+top: 0;
+bottom: 0;
+right: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 4rem;
 `;
 
 const Img = styled.img`
   width: 50%;
-`;
-
-const ImgBlock = styled.div`
-  width: 50%;
-  height: 50%;
 `;
 
 const Emotion = () => {
