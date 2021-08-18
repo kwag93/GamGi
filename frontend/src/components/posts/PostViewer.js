@@ -39,7 +39,7 @@ const PostContent = styled.div`
 const PostViewer = () => {
   return (
     <>
-      <HeaderContainer />
+      <Header />
       <PostViewerBlock>
         <PostHead>
           <h1>제목</h1>
