@@ -3,28 +3,16 @@ import styled from 'styled-components';
 import StyledModal from '../components/common/SelectEmotionModal';
 import HeaderContainer from '../containers/HeaderContainer';
 
-const WriteBox = styled.div`
-  padding: 30px;
-  .div {
-    display: block;
-    padding-bottom: 2rem;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-`;
-
 const Box = styled.div`
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 8rem;
+left: 0;
+top: 0;
+bottom: 0;
+right: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 4rem;
 `;
 
 const Title = styled.input`
