@@ -1,23 +1,17 @@
 import React from 'react';
-<<<<<<< HEAD
-import FullCalendar from '../../node_modules/@fullcalendar/react/dist/main';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import HeaderContainer from '../containers/HeaderContainer';
-import Header from '../components/common/Header';
-=======
 import Header from '../components/common/Header';
 import { Calendar, Badge } from 'antd';
 import styled from 'styled-components';
 
 const Box = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding-top: 3rem;
-padding-bottom: 5rem;
-padding-right: 15rem;
-padding-left: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+  padding-right: 15rem;
+  padding-left: 15rem;
 `;
 
 const getListData = (value) => {
@@ -49,26 +43,26 @@ const getListData = (value) => {
     default:
   }
   return listData || [];
-}
+};
 
 const dateCellRender = (value) => {
   const listData = getListData(value);
   return (
     <ul className="events">
-      {listData.map(item => (
+      {listData.map((item) => (
         <div key={item.content}>
           <Badge status={item.type} text={item.content} />
         </div>
       ))}
     </ul>
   );
-}
+};
 
 const getMonthData = (value) => {
   if (value.month() === 8) {
     return 1394;
   }
-}
+};
 
 const monthCellRender = (value) => {
   const num = getMonthData(value);
@@ -78,23 +72,18 @@ const monthCellRender = (value) => {
       <span>Backlog number</span>
     </div>
   ) : null;
-}
-
-
->>>>>>> 10097a819266db438895bb9548ff14da0483b568
+};
 
 const CalendarPage = () => {
   return (
     <div>
       <Header />
-<<<<<<< HEAD
-      <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />
-=======
       <Box>
-        <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} />
+        <Calendar
+          dateCellRender={dateCellRender}
+          monthCellRender={monthCellRender}
+        />
       </Box>
-
->>>>>>> 10097a819266db438895bb9548ff14da0483b568
     </div>
   );
 };
