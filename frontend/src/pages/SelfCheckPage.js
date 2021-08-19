@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Layout } from 'antd';
+import { Menu, Layout, Space} from 'antd';
 import {
   AppstoreOutlined,
   MailOutlined,
@@ -7,6 +7,7 @@ import {
 } from '@ant-design/icons';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
+import Button from '../components/common/Button';
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -18,6 +19,10 @@ const StyledSider = styled(Sider)`
 `;
 
 const StyledContent = styled(Content)`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
   background: #fff;
   padding: 100;
   margin: 0;
@@ -25,7 +30,22 @@ const StyledContent = styled(Content)`
 `;
 
 const StyledLayout = styled(Layout)`
-  background: #fff;
+  background: white;
+`;
+
+const TopBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4rem;
+`;
+
+const ButtonWithMarginTop = styled(Button)`
+  margin-top: 2rem;
+  width: 150px;
+  height: 58px;
+  border: 2px solid;
+  border-radius: 15px;
+  font-size: 15px;
 `;
 
 const SelfCheckPage = () => {
@@ -36,6 +56,7 @@ const SelfCheckPage = () => {
   return (
     <div>
       <HeaderContainer />
+      <TopBox />
       <StyledLayout>
         <StyledSider>
           <Menu onClick={handleClick} style={{ width: 256 }} mode="inline">
@@ -91,7 +112,18 @@ const SelfCheckPage = () => {
               상담센터 정보
             </Menu.Item>
           </Menu>
-          <StyledContent className="site-layout-background">test</StyledContent>
+          <StyledContent className="site-layout-background">
+          <Space size="large">
+            <ButtonWithMarginTop cyan fullwidth>우울증</ButtonWithMarginTop>
+            <ButtonWithMarginTop cyan fullwidth>스트레스</ButtonWithMarginTop>
+            <ButtonWithMarginTop cyan fullwidth>공황장애</ButtonWithMarginTop>
+          </Space>
+          <Space size="large">
+            <ButtonWithMarginTop cyan fullwidth>정신장애</ButtonWithMarginTop>
+            <ButtonWithMarginTop cyan fullwidth>자살위험성</ButtonWithMarginTop>
+            <ButtonWithMarginTop cyan fullwidth>불안</ButtonWithMarginTop>
+          </Space>
+          </StyledContent>
         </StyledLayout>
       </StyledLayout>
     </div>
