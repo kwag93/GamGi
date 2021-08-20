@@ -1,52 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import StyledModal from '../components/common/SelectEmotionModal';
+import EditorContainer from '../containers/EditorContainer';
 import HeaderContainer from '../containers/HeaderContainer';
+import WriteButtonsContainer from '../containers/WriteButtonsContainer';
 
 const Box = styled.div`
-left: 0;
-top: 0;
-bottom: 0;
-right: 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 4rem;
-`;
-
-const Title = styled.input`
-  width: 65%;
-  padding-bottom: 20px;
-  border: none;
-  font-size: 22px;
-  border-bottom: solid 1px #ababab;
-  font-weight: bold;
-  &:focus {
-    outline: none;
-  }
-`;
-
-const Content = styled.textarea`
-  padding-top: 20px;
-  width: 65%;
-  resize: none;
-  border: none;
-  height: 500px;
-  &:focus {
-    outline: none;
-  }
-`;
-
-const SubmitButton = styled.button`
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
-  justify-content: space-between;
-  text-align: center;
-  margin-top: 30px;
-  width: 120px;
-  padding: 5px;
-  border: solid 1px #ababab;
-  background-color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
 `;
 
 const WritePage = () => {
@@ -67,10 +35,9 @@ const WritePage = () => {
     <div>
       <HeaderContainer />
       <Box>
-        <Title type="text" placeholder="제목" />
-        <Content type="text" placeholder="내용을 입력하세요" />
+        <EditorContainer />
         <div>
-          <SubmitButton onClick={openModal}>작성하기</SubmitButton>
+          <WriteButtonsContainer openModal={openModal} />
           <StyledModal data={data} state={modalState} closeModal={closeModal} />
         </div>
       </Box>

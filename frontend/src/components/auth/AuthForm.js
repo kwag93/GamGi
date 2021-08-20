@@ -51,6 +51,7 @@ const textMap = {
   register: '회원가입',
 };
 
+// Todo : error 가 들어오면 모달을 통해서 에러 출력해주기 (ex. 비밀번호가 맞지 않습니다 )
 const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
   const text = textMap[type];
   return (

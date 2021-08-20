@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Layout, Space} from 'antd';
+import { Menu, Layout, Space } from 'antd';
 import {
   AppstoreOutlined,
   MailOutlined,
@@ -19,10 +19,10 @@ const StyledSider = styled(Sider)`
 `;
 
 const StyledContent = styled(Content)`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #fff;
   padding: 100;
   margin: 0;
@@ -113,16 +113,28 @@ const SelfCheckPage = () => {
             </Menu.Item>
           </Menu>
           <StyledContent className="site-layout-background">
-          <Space size="large">
-            <ButtonWithMarginTop cyan fullwidth>우울증</ButtonWithMarginTop>
-            <ButtonWithMarginTop cyan fullwidth>스트레스</ButtonWithMarginTop>
-            <ButtonWithMarginTop cyan fullwidth>공황장애</ButtonWithMarginTop>
-          </Space>
-          <Space size="large">
-            <ButtonWithMarginTop cyan fullwidth>정신장애</ButtonWithMarginTop>
-            <ButtonWithMarginTop cyan fullwidth>자살위험성</ButtonWithMarginTop>
-            <ButtonWithMarginTop cyan fullwidth>불안</ButtonWithMarginTop>
-          </Space>
+            <Space size="large">
+              <ButtonWithMarginTop cyan fullwidth>
+                우울증
+              </ButtonWithMarginTop>
+              <ButtonWithMarginTop cyan fullwidth>
+                스트레스
+              </ButtonWithMarginTop>
+              <ButtonWithMarginTop cyan fullwidth>
+                공황장애
+              </ButtonWithMarginTop>
+            </Space>
+            <Space size="large">
+              <ButtonWithMarginTop cyan fullwidth>
+                정신장애
+              </ButtonWithMarginTop>
+              <ButtonWithMarginTop cyan fullwidth>
+                자살위험성
+              </ButtonWithMarginTop>
+              <ButtonWithMarginTop cyan fullwidth>
+                불안
+              </ButtonWithMarginTop>
+            </Space>
           </StyledContent>
         </StyledLayout>
       </StyledLayout>
