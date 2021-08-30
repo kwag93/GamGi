@@ -7,9 +7,9 @@ const ContentList = (props) => {
   );
   return (
     <>
-      {contentList.map((script, index) => {
-        return <Content header={script.header} body={script.body} />;
-      })}
+      {contentList.map((script, index) => (
+        <Content header={script.header} body={script.body} key={index} />
+      ))}
     </>
   );
 };
@@ -18,8 +18,17 @@ const Content = ({ header, body }) => {
   return (
     <div>
       <table>
-        <tr>{header}</tr>
-        <tr>{body}</tr>
+        <thead>
+          <tr>
+            <td>{header}</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>{body}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
