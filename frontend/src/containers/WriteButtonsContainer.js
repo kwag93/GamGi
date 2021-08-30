@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import WriteButtons from '../components/write/WriteButtons';
 import { writePost } from '../modules/write';
 
 const WriteButtonsContainer = ({ openModal, history }) => {

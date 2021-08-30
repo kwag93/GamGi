@@ -31,8 +31,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src react-scripts builds",
+    "start": "cross-env NODE_PATH=src react-app-rewired start",
+    "build": "cross-env NODE_PATH=src react-app-rewired builds",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

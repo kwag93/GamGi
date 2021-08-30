@@ -1,10 +1,12 @@
 import { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { changeField } from '../modules/auth';
-import { initialize } from '../modules/write';
+import { useSelector } from 'react-redux';
+import Editor from '../components/write/Editor';
+import { changeField, initialize } from '../modules/write';
 
 const EditorContainer = () => {
-  const dispatch = useDispatch(({ write }) => ({
+  const dispatch = useDispatch();
+  const { title, body } = useSelector(({ write }) => ({
     title: write.title,
     body: write.body,
   }));
