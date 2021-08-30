@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import PostListPage from './pages/PostListPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -11,6 +11,11 @@ import MyResponsiveBar from './pages/StatisticPage';
 import Emotion from './pages/Emotion';
 import SelfCheckPage from './pages/SelfCheckPage';
 import PostViewer from './components/posts/PostViewer';
+import Depression from './pages/Depression';
+import ContentList from './selfCheck/ContentList';
+import TitleList from './selfCheck/TitleList';
+
+
 
 const App = () => {
   return (
@@ -26,6 +31,12 @@ const App = () => {
       <Route component={Emotion} path="/emotion" />
       <Route component={SelfCheckPage} path="/selfcheck" />
       <Route component={PostViewer} path="/viewer" />
+      <Route component={Depression} path="/depression" />
+      
+      <Switch>
+        <Route component={ContentList} path="/ContentList" />
+        <Route component={TitleList} path="/TitleList" />
+      </Switch>
     </div>
   );
 };

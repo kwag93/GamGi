@@ -1,0 +1,50 @@
+{
+    "depression": [
+        {
+            "id": 1, 
+            "classify": "outline",
+            "title": "개요"
+        },
+        {
+            "id": 2, 
+            "classify": "diagnosis",
+            "title": "진단 및 치료"
+
+        },
+        {
+            "id": 3, 
+            "title": "스스로 돕는 방법"
+        },
+        {
+            "id": 4, 
+            "title": "자가진단"
+        }
+    ],
+
+    "depressContent": [
+      {
+        "id": 5,
+        "classify": "outline",
+        "header": "정의",
+        "body": "우울증은 우울장애 또는 주요우울장애라고도 불립니다."
+      },
+      {
+        "id": 6,
+        "classify": "outline",
+        "header": "원인",
+        "body": "우울증의 원인은 정확히 알 수는 없습니다. 하지만 원인으로 여러 가지가 제시되고 있으며, 생물학적, 심리적, 환경적인 요인들이 다양하게 영향을 미칠 수 있습니다."
+      },
+      {
+        "id": 7,
+        "classify": "diagnoisis",
+        "header": "증상",
+        "body": "우울증은 평생 한 번만 발생하기도 하나, 일반적으로는 여러 번의 에피소드를 겪는 경우가 흔합니다."
+      },
+      {
+        "id": 8,
+        "classify": "diagnoisis",
+        "header": "진단기준",
+        "body": "우울증 진단을 위한 단일 검사는 없고 정신건강의학과 전문의의 종합적인 판단이 중요합니다."
+      }
+    ]
+}
