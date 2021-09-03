@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react';
 
 const CenterInfo = () => {
-    return(
-        <div>
-            test
-        </div>
-    );
-}
+  return <div>center</div>;
+};
 
 export default CenterInfo;

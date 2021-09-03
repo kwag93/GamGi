@@ -1,5 +1,5 @@
 import React from 'react';
-import dummy from '../db/data.json';
+import dummy from '../db/mentalData.json';
 import styled from 'styled-components';
 import palette from '../lib/styles/palette';
 
@@ -17,13 +17,13 @@ const BottomLine = styled.div`
   margin-bottom: 1rem;
 `;
 
-const ContentList = (props) => {
-  const contentList = dummy.depressContent.filter(
+const mentalList = (props) => {
+  const mentalList = dummy.mentalContent.filter(
     (content) => content.id === parseInt(props.keys) + 4,
   );
   return (
     <>
-      {contentList.map((script, index) => (
+      {mentalList.map((script, index) => (
         <Content header={script.header} body={script.body} key={index} />
       ))}
     </>
@@ -52,4 +52,4 @@ const Content = ({ header, body }) => {
   );
 };
 
-export default ContentList;
+export default mentalList;

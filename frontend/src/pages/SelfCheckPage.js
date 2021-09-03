@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, Layout } from 'antd';
-import {MailOutlined} from '@ant-design/icons';
+import { MailOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
@@ -10,10 +10,10 @@ import CenterInfo from '../selfCheck/CenterInfo';
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #fff;
   padding: 100;
   margin: 0;
@@ -31,7 +31,7 @@ const TopBox = styled.div`
 `;
 
 const SelfCheckPage = () => {
-  const handleClick = (e) => {
+  const onClick = (e) => {
     console.log('click', e);
   };
 
@@ -50,14 +50,13 @@ const SelfCheckPage = () => {
   };
 
   useEffect(() => {
-    if(setButtonState === true){
+    if (setButtonState === true) {
       console.log('자가진단 메뉴');
     }
-    if(setCenterState === true){
+    if (setCenterState === true) {
       console.log('센터정보 메뉴');
     }
-  })
-
+  });
 
   return (
     <div>
@@ -66,22 +65,29 @@ const SelfCheckPage = () => {
       <StyledLayout>
         <SubMenuBar />
         <StyledLayout style={{ padding: '0 100px 24px' }}>
-          <Menu  
-            onClick={handleClick} 
+          <Menu
+            onClick={onClick}
             mode="horizontal"
             defaultSelectedKeys={'selfcheck'}
           >
-            <Menu.Item onClick={openButton} key="selfcheck" icon={<MailOutlined />}>
+            <Menu.Item
+              onClick={openButton}
+              key="selfcheck"
+              icon={<MailOutlined />}
+            >
               자가진단
             </Menu.Item>
             <Menu.Item />
-            <Menu.Item onClick={openCenter} key="centerinfo" icon={<MailOutlined />}>
+            <Menu.Item
+              onClick={openCenter}
+              key="centerinfo"
+              icon={<MailOutlined />}
+            >
               상담센터 정보
             </Menu.Item>
           </Menu>
           <StyledContent className="site-layout-background">
             <SelfcheckButton state={buttonState} />
-            <CenterInfo state={centerState} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

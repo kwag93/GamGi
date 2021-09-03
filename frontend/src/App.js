@@ -14,8 +14,12 @@ import PostViewer from './components/posts/PostViewer';
 import Depression from './pages/Depression';
 import ContentList from './selfCheck/ContentList';
 import TitleList from './selfCheck/TitleList';
-
-
+import Anxiety from './pages/Anxiety';
+import MentalDisorder from './pages/MentalDisorder';
+import PanicDisorder from './pages/PanicDisorder';
+import Stress from './pages/Stress';
+import Suicide from './pages/Suicide';
+import Center from './selfCheck/CenterInfo';
 
 const App = () => {
   return (
@@ -32,11 +36,14 @@ const App = () => {
       <Route component={SelfCheckPage} path="/selfcheck" />
       <Route component={PostViewer} path="/viewer" />
       <Route component={Depression} path="/depression" />
-      
-      <Switch>
-        <Route component={ContentList} path="/ContentList" />
-        <Route component={TitleList} path="/TitleList" />
-      </Switch>
+      <Route component={ContentList} path="/ContentList" />
+      <Route component={TitleList} path="/TitleList" />
+      <Route component={Anxiety} path="/Anxiety" />
+      <Route component={MentalDisorder} path="/MentalDisorder" />
+      <Route component={PanicDisorder} path="/PanicDisorder" />
+      <Route component={Stress} path="/Stress" />
+      <Route component={Suicide} path="/suicide" />
+      <Route component={Center} path="/centerInfo" />
     </div>
   );
 };

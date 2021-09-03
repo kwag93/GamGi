@@ -4,8 +4,8 @@ import { MailOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
-import dummy from '../db/data.json';
-import ContentList from '../selfCheck/ContentList';
+import dummy from '../db/stressData.json';
+import StressList from '../selfCheck/StressList';
 
 const { Content } = Layout;
 
@@ -30,7 +30,7 @@ const TopBox = styled.div`
   margin-bottom: 4rem;
 `;
 
-const Depression = () => {
+const Stress = () => {
   const onClick = (e) => {
     setkey(e.key);
   };
@@ -50,7 +50,7 @@ const Depression = () => {
         <SubMenuBar />
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <Menu onClick={onClick} mode="horizontal" defaultSelectedKeys="1">
-            {dummy.depression.map((title) => (
+            {dummy.menu.map((title) => (
               <Menu.Item
                 onClick={addToCanvos}
                 key={title.id}
@@ -62,7 +62,7 @@ const Depression = () => {
           </Menu>
 
           <StyledContent>
-            {showCanvos && <ContentList keys={key} />}
+            {showCanvos && <StressList keys={key} />}
           </StyledContent>
         </StyledLayout>
       </StyledLayout>
@@ -70,4 +70,4 @@ const Depression = () => {
   );
 };
 
-export default Depression;
+export default Stress;

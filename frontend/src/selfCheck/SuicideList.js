@@ -1,5 +1,5 @@
 import React from 'react';
-import dummy from '../db/data.json';
+import dummy from '../db/suicideData.json';
 import styled from 'styled-components';
 import palette from '../lib/styles/palette';
 
@@ -10,20 +10,19 @@ const ListBox = styled.div`
   border-radius: 10px;
   padding: 3rem;
 `;
-
 const BottomLine = styled.div`
   border-bottom: 1px solid ${palette.gray[3]};
   margin-top: 0.5rem;
   margin-bottom: 1rem;
 `;
 
-const ContentList = (props) => {
-  const contentList = dummy.depressContent.filter(
+const SuicideList = (props) => {
+  const suicideList = dummy.suicideContent.filter(
     (content) => content.id === parseInt(props.keys) + 4,
   );
   return (
     <>
-      {contentList.map((script, index) => (
+      {suicideList.map((script, index) => (
         <Content header={script.header} body={script.body} key={index} />
       ))}
     </>
@@ -37,7 +36,9 @@ const Content = ({ header, body }) => {
         <table>
           <thead>
             <tr>
-              <td>{header}</td>
+              <td>
+                <h2>{header}</h2>
+              </td>
             </tr>
           </thead>
           <BottomLine />
@@ -52,4 +53,4 @@ const Content = ({ header, body }) => {
   );
 };
 
-export default ContentList;
+export default SuicideList;
