@@ -3,6 +3,7 @@ import createRequestSaga, {
   createRequestActionTypes,
 } from '../lib/createRequestSaga';
 import * as postsAPI from '../lib/api/posts';
+import { takeLatest } from 'redux-saga/effects';
 
 const [READ_POST, READ_POST_SUCCESS, READ_POST_FAILURE] =
   createRequestActionTypes('post/READ_POST');

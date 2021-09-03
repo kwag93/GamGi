@@ -30,8 +30,8 @@ const WriteButtonsContainer = ({ openModal, history }) => {
 
   useEffect(() => {
     if (post) {
-      const { _id, user } = post;
-      history.push(`/@${user.username}/${_id}`);
+      //   const { _id, user } = post;
+      history.push(`/`);
     }
     if (postError) {
       console.log(postError);
@@ -39,7 +39,7 @@ const WriteButtonsContainer = ({ openModal, history }) => {
   }, [history, post, postError]);
   return (
     <WriteButtons
-      openModal={openModal}
+      //   openModal={openModal}
       onPublish={onPublish}
       onCancel={onCancel}
     />

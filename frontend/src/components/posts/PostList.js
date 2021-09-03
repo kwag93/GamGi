@@ -38,32 +38,44 @@ const PostItemBlock = styled.div`
   }
 `;
 
-const PostItem = () => {
+const PostItem = ({ post }) => {
   return (
     <PostItemBlock>
-      <h2>제목</h2>
-      <SubInfo username="username" publishedDate={new Date()} />
-      <p>포스트 내용의 일부분..</p>
+      <h2>
+        <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+      </h2>
+      <SubInfo
+        username={user.username}
+        publishedDate={new Date(publishedDate)}
+      />
+      <p>{body}</p>
     </PostItemBlock>
   );
 };
 
-const PostList = () => {
+const PostList = ({ posts, loading, error, showWriteButton }) => {
+  if (error) {
+    return <PostListBlock>에러가 발생했습니다.</PostListBlock>;
+  }
+
   return (
-    <div>
-      <PostListBlock>
-        <WritePostButtonWrapper>
+    <PostListBlock>
+      <WritePostButtonWrapper>
+        {showWriteButton && (
           <Button cyan to="/write">
             새 글 작성하기
           </Button>
-        </WritePostButtonWrapper>
+        )}
+      </WritePostButtonWrapper>
+      {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
+      {!loading && posts && (
         <div>
-          <PostItem />
-          <PostItem />
-          <PostItem />
+          {posts.map((post) => (
+            <PostItem post={post} key={post._id} />
+          ))}
         </div>
-      </PostListBlock>
-    </div>
+      )}
+    </PostListBlock>
   );
 };
 

@@ -11,12 +11,10 @@ const StyledButton = styled.button`
   background-color: white;
 `;
 
-const WriteButtons = ({ onCancel, onPublish, openModal }) => {
+const WriteButtons = ({ onCancel, onPublish }) => {
   return (
     <>
-      <StyledButton onClick={onPublish} openModal={openModal}>
-        포스트 등록
-      </StyledButton>
+      <StyledButton onClick={onPublish}>포스트 등록</StyledButton>
       <StyledButton onClick={onCancel}>취소</StyledButton>
     </>
   );

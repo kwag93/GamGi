@@ -36,23 +36,33 @@ const PostContent = styled.div`
   color: ${palette.gray[8]};
 `;
 
-const PostViewer = () => {
+const PostViewer = ({ post, error, loading }) => {
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return <PostViewerBlock>존재하지 않는 포스트입니다.</PostViewerBlock>;
+    }
+    return <PostViewerBlock>오류 발생!</PostViewerBlock>;
+  }
+  // 로딩중이거나, 아직 포스트 데이터가 없을 시
+  if (loading || !post) {
+    return null;
+  }
+
+  const { title, body, user, publishedDate, tags } = post;
+
   return (
     <>
       <Header />
       <PostViewerBlock>
         <PostHead>
-          <h1>제목</h1>
-          <SubInfo>
-            <span>
-              <b>tester</b>
-            </span>
-            <span>{new Date().toLocaleDateString()}</span>
-          </SubInfo>
+          <h1>{title}</h1>
+          <SubInfo
+            username={user.username}
+            publishedDate={publishedDate}
+            hasMarginTop
+          ></SubInfo>
         </PostHead>
-        <PostContent
-          dangerouslySetInnerHTML={{ __html: '<p>HTML <b>내용</b>입니다.</p>' }}
-        />
+        <PostContent dangerouslySetInnerHTML={{ __html: body }} />
       </PostViewerBlock>
     </>
   );
