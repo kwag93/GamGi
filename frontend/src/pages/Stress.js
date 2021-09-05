@@ -16,7 +16,7 @@ const StyledContent = styled(Content)`
   align-items: center;
   background: #fff;
   padding: 100;
-  margin: 0;
+  margin-top: 3rem;
   overflow: 'initial';
 `;
 

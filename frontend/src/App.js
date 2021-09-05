@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import PostListPage from './pages/PostListPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -19,7 +19,7 @@ import MentalDisorder from './pages/MentalDisorder';
 import PanicDisorder from './pages/PanicDisorder';
 import Stress from './pages/Stress';
 import Suicide from './pages/Suicide';
-import Center from './selfCheck/CenterInfo';
+import CenterInfo from './selfCheck/CenterInfo';
 
 const App = () => {
   return (
@@ -43,7 +43,7 @@ const App = () => {
       <Route component={PanicDisorder} path="/PanicDisorder" />
       <Route component={Stress} path="/Stress" />
       <Route component={Suicide} path="/suicide" />
-      <Route component={Center} path="/centerInfo" />
+      <Route component={CenterInfo} path="/centerInfo" />
     </div>
   );
 };

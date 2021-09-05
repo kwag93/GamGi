@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, Layout } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
 import styled from 'styled-components';

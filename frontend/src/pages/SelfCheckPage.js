@@ -75,7 +75,7 @@ const SelfCheckPage = () => {
               key="selfcheck"
               icon={<MailOutlined />}
             >
-              자가진단
+              정신건강 정보
             </Menu.Item>
             <Menu.Item />
             <Menu.Item

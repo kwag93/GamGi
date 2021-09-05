@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import { Menu, Layout } from 'antd';
 import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
+  FileDoneOutlined,
+  BarChartOutlined,
+  TeamOutlined,
 } from '@ant-design/icons';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -17,43 +21,112 @@ const StyledSider = styled(Sider)`
 `;
 
 const SubMenuBar = () => {
-  const onClick = (e) => {
-    console.log('click', e);
-  };
+  const roots = [
+    'depression',
+    'stress',
+    'panicdisorder',
+    'mentaldisorder',
+    'suicide',
+    'anxiety',
+    'centerinfo',
+  ];
+  const userMenus = [
+    {
+      key: 'depression',
+      name: '우울증',
+      icon: <AppstoreOutlined />,
+      root: 'depression',
+    },
+    {
+      key: 'stress',
+      name: '스트레스',
+      icon: <SettingOutlined />,
+      root: 'stress',
+    },
+    {
+      key: 'panicdisorder',
+      name: '공황장애',
+      icon: <AppstoreOutlined />,
+      root: 'panicdisorder',
+    },
+    {
+      key: 'mentaldisorder',
+      name: '정신장애',
+      icon: <SettingOutlined />,
+      root: 'mentaldisorder',
+    },
+    {
+      key: 'suicide',
+      name: '자살위험성',
+      icon: <AppstoreOutlined />,
+      root: 'suicide',
+    },
+    {
+      key: 'anxiety',
+      name: '불안',
+      icon: <SettingOutlined />,
+      root: 'anxiety',
+    },
+    {
+      key: 'centerinfo',
+      name: '상담센터 정보',
+      icon: <MailOutlined />,
+      root: 'centerinfo',
+    },
+  ];
+
+  const [openKeys, setOpenKeys] = useState(); //펼쳐져 있을 메뉴
+  const [selectedKeys, setSelectedKeys] = useState(); //키
+
+  const history = useHistory();
+
+  useEffect(() => {
+    const pathname = history.location.pathname; //현재위치
+    const splitPathName = pathname.split(/(?=\/)/g); //'/'기준으로 위치 나누기
+
+    const openKey =
+      splitPathName.length === 4
+        ? [`${splitPathName[0]}`, `${splitPathName[0]}${splitPathName[1]}`]
+        : //오픈된 메뉴가 2단의 메뉴인 경우
+          [`${splitPathName[0]}`]; // 1단만 열려 있는 경우
+
+    setOpenKeys(openKey);
+    setSelectedKeys([pathname]);
+  }, [history.location.pathname]);
+
+  if (!userMenus || !selectedKeys) {
+    return <div />;
+  }
 
   return (
     <div>
-      <StyledSider>
-        <Menu onClick={onClick} style={{ width: 256 }} mode="inline">
-          <Menu.Item key="sub1" icon={<AppstoreOutlined />}>
-            <Link to="/depression">우울증</Link>
-          </Menu.Item>
+      {roots.map((root) => {
+        return (
+          <StyledSider>
+            <Menu
+              className="main-nav"
+              style={{ width: 256 }}
+              mode="inline"
+              openKeys={openKeys}
+              selectedKeys={selectedKeys}
+              onOpenChange={(openKeys) => setOpenKeys(openKeys)}
+            >
+              {userMenus &&
+                userMenus
+                  .filter((item) => item.root === root)
+                  .map((item, idx) => {
+                    const pathname = `/${item.root}`;
 
-          <Menu.Item key="sub2" icon={<SettingOutlined />}>
-            <Link to="/stress">스트레스</Link>
-          </Menu.Item>
-
-          <Menu.Item key="sub3" icon={<AppstoreOutlined />}>
-            <Link to="/panicDisorder">공황장애</Link>
-          </Menu.Item>
-
-          <Menu.Item key="sub4" icon={<SettingOutlined />}>
-            <Link to="/mentalDisorder">정신장애 </Link>
-          </Menu.Item>
-
-          <Menu.Item key="sub5" icon={<AppstoreOutlined />}>
-            <Link to="/suicide">자살 위험성</Link>
-          </Menu.Item>
-
-          <Menu.Item key="sub6" icon={<SettingOutlined />}>
-            <Link to="/anxiety">불안</Link>
-          </Menu.Item>
-
-          <Menu.Item key="sub7" icon={<MailOutlined />}>
-            <Link to="/centerInfo">상담센터 정보</Link>
-          </Menu.Item>
-        </Menu>
-      </StyledSider>
+                    return (
+                      <Menu.Item icon={item.icon} key={`/${root}`}>
+                        <Link to={pathname}>{item.name}</Link>
+                      </Menu.Item>
+                    );
+                  })}
+            </Menu>
+          </StyledSider>
+        );
+      })}
     </div>
   );
 };
