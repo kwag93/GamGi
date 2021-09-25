@@ -19,7 +19,10 @@ import MentalDisorder from './pages/MentalDisorder';
 import PanicDisorder from './pages/PanicDisorder';
 import Stress from './pages/Stress';
 import Suicide from './pages/Suicide';
-import CenterInfo from './selfCheck/CenterInfo';
+import CenterList from './selfCheck/CenterList';
+import CenterInfo from './pages/CenterInfo';
+import DropMenu from './pages/DropMenu';
+import DropdownBox from './selfCheck/DropdownBox';
 
 const App = () => {
   return (
@@ -43,7 +46,10 @@ const App = () => {
       <Route component={PanicDisorder} path="/PanicDisorder" />
       <Route component={Stress} path="/Stress" />
       <Route component={Suicide} path="/suicide" />
-      <Route component={CenterInfo} path="/centerInfo" />
+      <Route component={CenterList} path="/centerList" />
+      <Route component={CenterInfo} path="/centerinfo" />
+      <Route component={DropMenu} path="/dropdown" />
+      <Route component={DropdownBox} paht="/dropdownbox" />
     </div>
   );
 };

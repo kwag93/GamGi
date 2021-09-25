@@ -4,13 +4,12 @@ import styled from 'styled-components';
 import palette from '../lib/styles/palette';
 
 const ListBox = styled.div`
-  width: 80rem;
+  width: 70rem;
   background: white;
   border: 1px solid ${palette.gray[5]};
   border-radius: 10px;
   padding: 3rem;
 `;
-
 const BottomLine = styled.div`
   border-bottom: 1px solid ${palette.gray[3]};
   margin-top: 0.5rem;

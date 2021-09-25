@@ -10,7 +10,7 @@ import StressList from '../selfCheck/StressList';
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-  display: flex;
+  width: 80rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -62,7 +62,7 @@ const Stress = () => {
           </Menu>
 
           <StyledContent>
-            {showCanvos && <StressList keys={key} />}
+            <StressList keys={key} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

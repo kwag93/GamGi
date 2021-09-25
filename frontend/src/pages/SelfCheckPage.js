@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
 import SelfcheckButton from '../selfCheck/SelfcheckButton';
-import CenterInfo from '../selfCheck/CenterInfo';
 
 const { Content } = Layout;
 
@@ -35,29 +34,6 @@ const SelfCheckPage = () => {
     console.log('click', e);
   };
 
-  const [buttonState, setButtonState] = useState(false);
-  const openButton = () => {
-    console.log(openButton);
-    setButtonState(true);
-    console.log(setButtonState);
-  };
-
-  const [centerState, setCenterState] = useState(false);
-  const openCenter = () => {
-    console.log(openCenter);
-    setCenterState(true);
-    console.log(setCenterState);
-  };
-
-  useEffect(() => {
-    if (setButtonState === true) {
-      console.log('자가진단 메뉴');
-    }
-    if (setCenterState === true) {
-      console.log('센터정보 메뉴');
-    }
-  });
-
   return (
     <div>
       <HeaderContainer />
@@ -71,23 +47,25 @@ const SelfCheckPage = () => {
             defaultSelectedKeys={'selfcheck'}
           >
             <Menu.Item
-              onClick={openButton}
+              onClick={onClick}
               key="selfcheck"
               icon={<MailOutlined />}
             >
               정신건강 정보
             </Menu.Item>
             <Menu.Item />
+
             <Menu.Item
-              onClick={openCenter}
+              onClick={onClick}
               key="centerinfo"
               icon={<MailOutlined />}
+              to="/centerInfo"
             >
               상담센터 정보
             </Menu.Item>
           </Menu>
           <StyledContent className="site-layout-background">
-            <SelfcheckButton state={buttonState} />
+            <SelfcheckButton />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

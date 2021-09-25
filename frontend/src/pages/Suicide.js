@@ -10,7 +10,7 @@ import SuicideList from '../selfCheck/SuicideList';
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-  display: flex;
+  width: 80rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -62,7 +62,7 @@ const Suicide = () => {
           </Menu>
 
           <StyledContent>
-            {showCanvos && <SuicideList keys={key} />}
+            <SuicideList keys={key} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

@@ -10,7 +10,7 @@ import PanicList from '../selfCheck/PanicList';
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-  display: flex;
+  width: 80rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,6 @@ const TopBox = styled.div`
   justify-content: flex-end;
   margin-bottom: 4rem;
 `;
-
 const PanicDisorder = () => {
   const onClick = (e) => {
     setkey(e.key);
@@ -62,7 +61,7 @@ const PanicDisorder = () => {
           </Menu>
 
           <StyledContent>
-            {showCanvos && <PanicList keys={key} />}
+            <PanicList keys={key} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

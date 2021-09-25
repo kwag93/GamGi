@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Menu, Layout } from 'antd';
-import { MailOutlined } from '@ant-design/icons';
+import { Menu, Layout, Dropdown } from 'antd';
+import { MailOutlined, DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
-import dummy from '../db/anxietyData.json';
-import AnxietyList from '../selfCheck/AnxietyList';
+import CenterList from '../selfCheck/CenterList';
+import { Link } from 'react-router-dom';
 
 const { Content } = Layout;
 
@@ -16,7 +16,7 @@ const StyledContent = styled(Content)`
   align-items: center;
   background: #fff;
   padding: 100;
-  margin-top: 3rem;
+  margin-top: 2rem;
   overflow: 'initial';
 `;
 
@@ -29,8 +29,10 @@ const TopBox = styled.div`
   justify-content: flex-end;
   margin-bottom: 4rem;
 `;
-const Anxiety = () => {
+
+const CenterInfo = () => {
   const onClick = (e) => {
+    console.log('click', e);
     setkey(e.key);
   };
 
@@ -39,7 +41,6 @@ const Anxiety = () => {
   const addToCanvos = () => {
     setShowCanvos(true);
   };
-  // console.log(addToCanvos);
 
   return (
     <div>
@@ -48,20 +49,31 @@ const Anxiety = () => {
       <StyledLayout>
         <SubMenuBar />
         <StyledLayout style={{ padding: '0 100px 24px' }}>
-          <Menu onClick={onClick} mode="horizontal" defaultSelectedKeys="1">
-            {dummy.menu.map((title) => (
-              <Menu.Item
-                onClick={addToCanvos}
-                key={title.id}
-                icon={<MailOutlined />}
-              >
-                {title.title}
-              </Menu.Item>
-            ))}
-          </Menu>
+          <Menu
+            onClick={onClick}
+            mode="horizontal"
+            defaultSelectedKeys={'centerinfo'}
+          >
+            <Menu.Item
+              onClick={onClick}
+              key="selfcheck"
+              icon={<MailOutlined />}
+            >
+              <Link to="/selfcheck">정신건강 정보</Link>
+            </Menu.Item>
+            <Menu.Item />
 
+            <Menu.Item
+              onClick={onClick}
+              key="centerinfo"
+              icon={<MailOutlined />}
+              to="/centerInfo"
+            >
+              상담센터 정보
+            </Menu.Item>
+          </Menu>
           <StyledContent>
-            <AnxietyList keys={key} />
+            <CenterList />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>
@@ -69,4 +81,4 @@ const Anxiety = () => {
   );
 };
 
-export default Anxiety;
+export default CenterInfo;

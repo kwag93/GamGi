@@ -10,13 +10,13 @@ import ContentList from '../selfCheck/ContentList';
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-  display: flex;
+  width: 80rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #fff;
   padding: 100;
-  margin: 0;
+  margin-top: 3rem;
   overflow: 'initial';
 `;
 
@@ -62,7 +62,7 @@ const Depression = () => {
           </Menu>
 
           <StyledContent>
-            {showCanvos && <ContentList keys={key} />}
+            <ContentList keys={key} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

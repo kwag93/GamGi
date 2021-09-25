@@ -10,7 +10,7 @@ import MentalList from '../selfCheck/MentalList';
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-  display: flex;
+  width: 80rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -62,7 +62,7 @@ const MentalDisorder = () => {
           </Menu>
 
           <StyledContent>
-            {showCanvos && <MentalList keys={key} />}
+            <MentalList keys={key} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

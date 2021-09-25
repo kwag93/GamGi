@@ -5,9 +5,6 @@ import {
   AppstoreOutlined,
   MailOutlined,
   SettingOutlined,
-  FileDoneOutlined,
-  BarChartOutlined,
-  TeamOutlined,
 } from '@ant-design/icons';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
