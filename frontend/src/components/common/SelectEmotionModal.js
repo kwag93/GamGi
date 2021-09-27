@@ -4,7 +4,7 @@ import love from '../../lib/images/loveheart.png';
 import styled from 'styled-components';
 
 const Img = styled.img`
-  width: 25%;
+  width: 20%;
   height: 20%;
 `;
 

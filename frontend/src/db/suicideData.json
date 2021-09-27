@@ -1,0 +1,49 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "classify": "outline",
+      "title": "개요"
+    },
+    {
+      "id": 2,
+      "classify": "diagnosis",
+      "title": "진단 및 치료"
+    },
+    {
+      "id": 3,
+      "title": "스스로 돕는 방법"
+    },
+    {
+      "id": 4,
+      "title": "자가진단"
+    }
+  ],
+
+  "suicideContent": [
+    {
+      "id": 5,
+      "classify": "outline",
+      "header": "정의",
+      "body": "세계보건기구(World Health Organization, WHO)에 따르면 자살은 자살행위로 인하여 죽음을 초래하는 경우로, 죽음의 의도와 동기를 인식하면서 자신에게 손상을 입히는 행위로 정의되고 있습니다."
+    },
+    {
+      "id": 6,
+      "classify": "diagnosis",
+      "header": "진단 및 치료",
+      "body": "1. 정신질환 2. 사회경제적 요인과 자살과의 관련성 3. 주관적 건강상태와 자살과의 관련성 4. 심리적 요인과 자살과의 관련성 5. 사회문화적 요인과 자살"
+    },
+    {
+      "id": 7,
+      "classify": "help",
+      "header": "스스로 돕는 방법",
+      "body": "검사 - 자살의 평가"
+    },
+    {
+      "id": 8,
+      "classify": "selfcheck",
+      "header": "자가진단",
+      "body": "약물치료, 정신치료"
+    }
+  ]
+}

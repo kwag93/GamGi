@@ -1,0 +1,49 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "classify": "outline",
+      "title": "개요"
+    },
+    {
+      "id": 2,
+      "classify": "diagnosis",
+      "title": "진단 및 치료"
+    },
+    {
+      "id": 3,
+      "title": "스스로 돕는 방법"
+    },
+    {
+      "id": 4,
+      "title": "자가진단"
+    }
+  ],
+
+  "stressContent": [
+    {
+      "id": 5,
+      "classify": "outline",
+      "header": "정의",
+      "body": "살면서 스트레스를 안 받고 살 수는 없습니다. 나쁜 일이나 좋은 일이나 심지어는 지루한 상황까지도 사람에게는 스트레스가 됩니다."
+    },
+    {
+      "id": 6,
+      "classify": "diagnosis",
+      "header": "진단 및 치료",
+      "body": "스트레스로 인한 증상은 다양하게 나타납니다. 불안, 긴장 증상과 무기력 증상이 번갈아 오거나 때로는 동시에 오는 경우도 있습니다. "
+    },
+    {
+      "id": 7,
+      "classify": "help",
+      "header": "스스로 돕는 방법",
+      "body": "약물치료, 정신치료"
+    },
+    {
+      "id": 8,
+      "classify": "selfcheck",
+      "header": "자가진단",
+      "body": "지원체계"
+    }
+  ]
+}

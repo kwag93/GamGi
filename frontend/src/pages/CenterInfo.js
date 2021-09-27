@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Menu, Layout } from 'antd';
-import { MailOutlined } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Menu, Layout, Dropdown } from 'antd';
+import { MailOutlined, DownOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
-import SelfcheckButton from '../selfCheck/SelfcheckButton';
+import CenterList from '../selfCheck/CenterList';
+import { Link } from 'react-router-dom';
 
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-  display: flex;
+  width: 80rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #fff;
   padding: 100;
-  margin: 0;
+  margin-top: 2rem;
   overflow: 'initial';
 `;
 
@@ -29,9 +30,16 @@ const TopBox = styled.div`
   margin-bottom: 4rem;
 `;
 
-const SelfCheckPage = () => {
+const CenterInfo = () => {
   const onClick = (e) => {
     console.log('click', e);
+    setkey(e.key);
+  };
+
+  const [showCanvos, setShowCanvos] = useState(false);
+  const [key, setkey] = useState(1);
+  const addToCanvos = () => {
+    setShowCanvos(true);
   };
 
   return (
@@ -44,14 +52,14 @@ const SelfCheckPage = () => {
           <Menu
             onClick={onClick}
             mode="horizontal"
-            defaultSelectedKeys={'selfcheck'}
+            defaultSelectedKeys={'centerinfo'}
           >
             <Menu.Item
               onClick={onClick}
               key="selfcheck"
               icon={<MailOutlined />}
             >
-              정신건강 정보
+              <Link to="/selfcheck">정신건강 정보</Link>
             </Menu.Item>
             <Menu.Item />
 
@@ -64,8 +72,8 @@ const SelfCheckPage = () => {
               상담센터 정보
             </Menu.Item>
           </Menu>
-          <StyledContent className="site-layout-background">
-            <SelfcheckButton />
+          <StyledContent>
+            <CenterList />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>
@@ -73,4 +81,4 @@ const SelfCheckPage = () => {
   );
 };
 
-export default SelfCheckPage;
+export default CenterInfo;

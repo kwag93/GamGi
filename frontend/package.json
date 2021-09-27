@@ -8,8 +8,11 @@
     "@fullcalendar/core": "^5.8.0",
     "@fullcalendar/daygrid": "^5.8.0",
     "@fullcalendar/react": "^5.8.0",
+    "@grapecity/wijmo.all": "^5.20212.812",
     "@nivo/core": "^0.73.0",
     "@nivo/pie": "^0.73.0",
+    "@progress/kendo-licensing": "^1.2.0",
+    "@progress/kendo-theme-default": "^4.41.2",
     "antd": "^4.16.10",
     "axios": "^0.21.1",
     "customize-cra": "^1.0.0",
@@ -31,10 +34,10 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "cross-env NODE_PATH=src react-scripts start",
-    "build": "cross-env NODE_PATH=src react-scripts builds",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "cross-env NODE_PATH=src react-app-rewired start",
+    "build": "cross-env NODE_PATH=src react-app-rewired builds",
+    "test": "react-app-rewired test --env=jsdom",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [
