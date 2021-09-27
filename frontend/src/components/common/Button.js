@@ -16,7 +16,7 @@ const buttonStyle = css`
   &:hover {
     background: ${palette.gray[6]};
   }
-  ${props =>
+  ${(props) =>
     props.fullWidth &&
     css`
       padding-top: 0.75rem;
@@ -24,7 +24,7 @@ const buttonStyle = css`
       width: 100%;
       font-size: 1.125rem;
     `}
-  ${props =>
+  ${(props) =>
     props.cyan &&
     css`
       background: ${palette.cyan[5]};
@@ -32,6 +32,12 @@ const buttonStyle = css`
         background: ${palette.cyan[4]};
       }
     `}
+
+	&:disabled {
+    background: ${palette.gray[3]};
+    color: ${palette.gray[5]};
+    cursor: not-allowed;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -42,7 +48,7 @@ const StyledLink = styled(Link)`
   ${buttonStyle}
 `;
 
-const Button = props => {
+const Button = (props) => {
   return props.to ? (
     <StyledLink {...props} cyan={props.cyan ? 1 : 0} />
   ) : (

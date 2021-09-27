@@ -10,7 +10,7 @@ import ChallengePage from './pages/ChallengePage';
 import MyResponsiveBar from './pages/StatisticPage';
 import Emotion from './pages/Emotion';
 import SelfCheckPage from './pages/SelfCheckPage';
-import PostViewer from './components/posts/PostViewer';
+import PostViewer from './components/post/PostViewer';
 import Depression from './pages/Depression';
 import ContentList from './selfCheck/ContentList';
 import TitleList from './selfCheck/TitleList';

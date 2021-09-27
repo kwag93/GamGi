@@ -4,6 +4,7 @@ import Responsive from '../common/Responsive';
 import Button from '../common/Button';
 import palette from '../../lib/styles/palette';
 import SubInfo from '../common/SubInfo';
+import { Link } from 'react-router-dom';
 
 const PostListBlock = styled(Responsive)`
   margin-top: 3rem;
@@ -36,34 +37,49 @@ const PostItemBlock = styled.div`
   p {
     margin-top: 2rem;
   }
+  a {
+    color: black;
+  }
 `;
 
-const PostItem = () => {
+const PostItem = ({ post }) => {
+  const { publishedDate, user, tags, title, body, _id } = post;
   return (
     <PostItemBlock>
-      <h2>제목</h2>
-      <SubInfo username="username" publishedDate={new Date()} />
-      <p>포스트 내용의 일부분..</p>
+      <h2>
+        <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+      </h2>
+      <SubInfo
+        username={user.username}
+        publishedDate={new Date(publishedDate)}
+      />
+      <p>{body}</p>
     </PostItemBlock>
   );
 };
 
-const PostList = () => {
+const PostList = ({ posts, loading, error, showWriteButton }) => {
+  if (error) {
+    return <PostListBlock>에러가 발생했습니다.</PostListBlock>;
+  }
   return (
-    <div>
-      <PostListBlock>
-        <WritePostButtonWrapper>
+    <PostListBlock>
+      <WritePostButtonWrapper>
+        {showWriteButton && (
           <Button cyan to="/write">
             새 글 작성하기
           </Button>
-        </WritePostButtonWrapper>
+        )}
+      </WritePostButtonWrapper>
+      {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
+      {!loading && posts && (
         <div>
-          <PostItem />
-          <PostItem />
-          <PostItem />
+          {posts.map((post) => (
+            <PostItem post={post} key={post._id} />
+          ))}
         </div>
-      </PostListBlock>
-    </div>
+      )}
+    </PostListBlock>
   );
 };
 

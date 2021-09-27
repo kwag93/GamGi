@@ -11,17 +11,16 @@ import nothing from '../lib/images/nothinking.png';
 import sad from '../lib/images/sad.png';
 import HeaderContainer from '../containers/HeaderContainer';
 
-
 const Box = styled.div`
-left: 0;
-top: 0;
-bottom: 0;
-right: 0;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 4rem;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
 `;
 
 const Img = styled.img`
