@@ -2,16 +2,27 @@ import React from 'react';
 import Header from '../components/common/Header';
 import { Calendar, Badge } from 'antd';
 import styled from 'styled-components';
+import Button from '../components/common/Button';
+import Responsive from '../components/common/Responsive';
 
 const Box = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 3rem;
   padding-bottom: 5rem;
-  padding-right: 15rem;
-  padding-left: 15rem;
+  padding-right: 22rem;
+  padding-left: 22rem;
+`;
+
+const ButtonBlock = styled(Responsive)`
+  margin-top: 3rem;
+`;
+
+const WritePostButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3rem;
 `;
 
 const getListData = (value) => {
@@ -78,6 +89,13 @@ const CalendarPage = () => {
   return (
     <div>
       <Header />
+      <ButtonBlock>
+        <WritePostButtonWrapper>
+          <Button cyan to="/statistic">
+          한 달 감정통계
+          </Button>
+        </WritePostButtonWrapper>
+      </ButtonBlock>
       <Box>
         <Calendar
           dateCellRender={dateCellRender}

@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Menu, Layout } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
-import SelfcheckButton from '../selfCheck/SelfcheckButton';
+import dummy from '../db/suicideData.json';
+import SuicideList from '../selfCheck/SuicideList';
 
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-  display: flex;
+  width: 80rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #fff;
   padding: 100;
-  margin: 0;
+  margin-top: 3rem;
   overflow: 'initial';
 `;
 
@@ -29,10 +30,17 @@ const TopBox = styled.div`
   margin-bottom: 4rem;
 `;
 
-const SelfCheckPage = () => {
+const Suicide = () => {
   const onClick = (e) => {
-    console.log('click', e);
+    setkey(e.key);
   };
+
+  const [showCanvos, setShowCanvos] = useState(false);
+  const [key, setkey] = useState(1);
+  const addToCanvos = () => {
+    setShowCanvos(true);
+  };
+  // console.log(addToCanvos);
 
   return (
     <div>
@@ -41,31 +49,20 @@ const SelfCheckPage = () => {
       <StyledLayout>
         <SubMenuBar />
         <StyledLayout style={{ padding: '0 100px 24px' }}>
-          <Menu
-            onClick={onClick}
-            mode="horizontal"
-            defaultSelectedKeys={'selfcheck'}
-          >
-            <Menu.Item
-              onClick={onClick}
-              key="selfcheck"
-              icon={<MailOutlined />}
-            >
-              정신건강 정보
-            </Menu.Item>
-            <Menu.Item />
-
-            <Menu.Item
-              onClick={onClick}
-              key="centerinfo"
-              icon={<MailOutlined />}
-              to="/centerInfo"
-            >
-              상담센터 정보
-            </Menu.Item>
+          <Menu onClick={onClick} mode="horizontal" defaultSelectedKeys="1">
+            {dummy.menu.map((title) => (
+              <Menu.Item
+                onClick={addToCanvos}
+                key={title.id}
+                icon={<MailOutlined />}
+              >
+                {title.title}
+              </Menu.Item>
+            ))}
           </Menu>
-          <StyledContent className="site-layout-background">
-            <SelfcheckButton />
+
+          <StyledContent>
+            <SuicideList keys={key} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>
@@ -73,4 +70,4 @@ const SelfCheckPage = () => {
   );
 };
 
-export default SelfCheckPage;
+export default Suicide;

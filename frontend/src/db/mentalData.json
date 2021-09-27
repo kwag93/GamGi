@@ -1,0 +1,49 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "classify": "outline",
+      "title": "개요"
+    },
+    {
+      "id": 2,
+      "classify": "diagnosis",
+      "title": "진단 및 치료"
+    },
+    {
+      "id": 3,
+      "title": "스스로 돕는 방법"
+    },
+    {
+      "id": 4,
+      "title": "자가진단"
+    }
+  ],
+
+  "mentalContent": [
+    {
+      "id": 5,
+      "classify": "outline",
+      "header": "정의",
+      "body": "정신증은 정신병적 증상이 나타나는 다양한 질환군 혹은 병적인 상태를 뜻합니다."
+    },
+    {
+      "id": 6,
+      "classify": "diagnosis",
+      "header": "진단 및 치료",
+      "body": "정신증은 정신병적 증상이 나타나는 여러 질환을 포괄하는 질환군 혹은 정신상태이기 때문에 원인도 질환에 따라 다릅니다."
+    },
+    {
+      "id": 7,
+      "classify": "help",
+      "header": "스스로 돕는 방법",
+      "body": "정신증은 개별 질환에 따른 적절한 치료가 필요하며 일반적인 원칙은 다음과 같습니다."
+    },
+    {
+      "id": 8,
+      "classify": "selfcheck",
+      "header": "자가진단",
+      "body": "약물치료, 정신치료"
+    }
+  ]
+}

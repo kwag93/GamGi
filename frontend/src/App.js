@@ -11,6 +11,18 @@ import MyResponsiveBar from './pages/StatisticPage';
 import Emotion from './pages/Emotion';
 import SelfCheckPage from './pages/SelfCheckPage';
 import PostViewer from './components/post/PostViewer';
+import Depression from './pages/Depression';
+import ContentList from './selfCheck/ContentList';
+import TitleList from './selfCheck/TitleList';
+import Anxiety from './pages/Anxiety';
+import MentalDisorder from './pages/MentalDisorder';
+import PanicDisorder from './pages/PanicDisorder';
+import Stress from './pages/Stress';
+import Suicide from './pages/Suicide';
+import CenterList from './selfCheck/CenterList';
+import CenterInfo from './pages/CenterInfo';
+import DropMenu from './pages/DropMenu';
+import DropdownBox from './selfCheck/DropdownBox';
 
 const App = () => {
   return (
@@ -26,6 +38,18 @@ const App = () => {
       <Route component={Emotion} path="/emotion" />
       <Route component={SelfCheckPage} path="/selfcheck" />
       <Route component={PostViewer} path="/viewer" />
+      <Route component={Depression} path="/depression" />
+      <Route component={ContentList} path="/ContentList" />
+      <Route component={TitleList} path="/TitleList" />
+      <Route component={Anxiety} path="/Anxiety" />
+      <Route component={MentalDisorder} path="/MentalDisorder" />
+      <Route component={PanicDisorder} path="/PanicDisorder" />
+      <Route component={Stress} path="/Stress" />
+      <Route component={Suicide} path="/suicide" />
+      <Route component={CenterList} path="/centerList" />
+      <Route component={CenterInfo} path="/centerinfo" />
+      <Route component={DropMenu} path="/dropdown" />
+      <Route component={DropdownBox} paht="/dropdownbox" />
     </div>
   );
 };
