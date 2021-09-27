@@ -1,20 +1,28 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import WriteButtons from '../components/write/WriteButtons';
-import { writePost } from '../modules/write';
+import WriteActionButtons from '../components/write/WriteButtons';
+import { writePost, updatePost } from '../modules/write';
 
-const WriteButtonsContainer = ({ openModal, history }) => {
+const WriteButtonsContainer = ({ history }) => {
   const dispatch = useDispatch();
-  const { title, body, tags, post, postError } = useSelector(({ write }) => ({
-    title: write.title,
-    body: write.body,
-    tags: write.tags,
-    post: write.post,
-    postErorr: write.postError,
-  }));
+  const { title, body, tags, post, postError, originalPostId } = useSelector(
+    ({ write }) => ({
+      title: write.title,
+      body: write.body,
+      tags: write.tags,
+      post: write.post,
+      postErorr: write.postError,
+      originalPostId: write.originalPostId,
+    }),
+  );
 
+  // 포스트 등록
   const onPublish = () => {
+    if (originalPostId) {
+      dispatch(updatePost({ title, body, tags, id: originalPostId }));
+      return;
+    }
     dispatch(
       writePost({
         title,
@@ -24,13 +32,14 @@ const WriteButtonsContainer = ({ openModal, history }) => {
     );
   };
 
+  // 취소
   const onCancel = () => {
     history.goBack();
   };
 
   useEffect(() => {
     if (post) {
-      //   const { _id, user } = post;
+      const { _id, user } = post;
       history.push(`/`);
     }
     if (postError) {
@@ -38,10 +47,11 @@ const WriteButtonsContainer = ({ openModal, history }) => {
     }
   }, [history, post, postError]);
   return (
-    <WriteButtons
+    <WriteActionButtons
       //   openModal={openModal}
       onPublish={onPublish}
       onCancel={onCancel}
+      isEdit={!!originalPostId}
     />
   );
 };

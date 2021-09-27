@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import qs from 'qs';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import PostList from '../components/posts/PostList';
 import { listPosts } from '../modules/posts';
+import PostList from '../components/posts/PostList';
 
 const PostListContainer = ({ location }) => {
   const dispatch = useDispatch();
@@ -19,6 +19,7 @@ const PostListContainer = ({ location }) => {
     const { tag, username, page } = qs.parse(location.search, {
       ignoreQueryPrefix: true,
     });
+    console.log(tag, username, page);
     dispatch(listPosts({ tag, username, page }));
   }, [dispatch, location.search]);
 

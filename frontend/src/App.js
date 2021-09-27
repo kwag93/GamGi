@@ -10,7 +10,7 @@ import ChallengePage from './pages/ChallengePage';
 import MyResponsiveBar from './pages/StatisticPage';
 import Emotion from './pages/Emotion';
 import SelfCheckPage from './pages/SelfCheckPage';
-import PostViewer from './components/posts/PostViewer';
+import PostViewer from './components/post/PostViewer';
 
 const App = () => {
   return (

@@ -9,7 +9,7 @@ const [READ_POST, READ_POST_SUCCESS, READ_POST_FAILURE] =
   createRequestActionTypes('post/READ_POST');
 const UNLOAD_POST = 'post/UNLOAD_POST';
 
-export const readPost = createAction(RAED_POST, (id) => id);
+export const readPost = createAction(READ_POST, (id) => id);
 export const unloadPost = createAction(UNLOAD_POST);
 
 const readPostSaga = createRequestSaga(READ_POST, postsAPI.readPost);
