@@ -5,6 +5,7 @@ import Button from '../common/Button';
 import palette from '../../lib/styles/palette';
 import SubInfo from '../common/SubInfo';
 import { Link } from 'react-router-dom';
+import LoginModal from '../common/LoginModal';
 
 const PostListBlock = styled(Responsive)`
   margin-top: 3rem;
@@ -43,7 +44,7 @@ const PostItemBlock = styled.div`
 `;
 
 const PostItem = ({ post }) => {
-  const { publishedDate, user, tags, title, body, _id } = post;
+  const { publishedDate, user, title, body, _id } = post;
   return (
     <PostItemBlock>
       <h2>
@@ -62,6 +63,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
   if (error) {
     return <PostListBlock>에러가 발생했습니다.</PostListBlock>;
   }
+  if (!showWriteButton) return <LoginModal />;
   return (
     <PostListBlock>
       <WritePostButtonWrapper>
@@ -74,9 +76,11 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
       {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
       {!loading && posts && (
         <div>
-          {posts.map((post) => (
-            <PostItem post={post} key={post._id} />
-          ))}
+          {posts.map((post) =>
+            post.user.username === showWriteButton.username ? (
+              <PostItem post={post} key={post._id} />
+            ) : null,
+          )}
         </div>
       )}
     </PostListBlock>

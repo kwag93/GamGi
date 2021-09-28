@@ -55,7 +55,7 @@ const Header = ({ user, onLogout }) => {
           </StyledLink>
           <StyledLink to="/calendar">CALENDAR</StyledLink>
           <StyledLink to="/">DIARY</StyledLink>
-          <StyledLink to="/selfcheck">SELF CHECK</StyledLink>
+          <StyledLink to="/depression">SELF CHECK</StyledLink>
           <StyledLink to="/challenge">CHALLENGE</StyledLink>
           {user ? (
             <div className="right">

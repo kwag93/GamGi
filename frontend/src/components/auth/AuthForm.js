@@ -37,13 +37,20 @@ const StyledInput = styled.input`
   }
 `;
 
-const ButtonWithMarginTop = styled(Button)`
+const Footer = styled.div`
   margin-top: 2rem;
-  width: 50%;
-  height: 50px;
-  border: 2px solid;
-  border-radius: 15px;
-  font-size: 15px;
+  text-align: right;
+  a {
+    color: ${palette.gray[6]};
+    text-decoration: underline;
+    &:hover {
+      color: ${palette.gray[9]};
+    }
+  }
+`;
+
+const ButtonWithMarginTop = styled(Button)`
+  margin-top: 1rem;
 `;
 
 const textMap = {
@@ -86,20 +93,14 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
         <ButtonWithMarginTop cyan fullWidth style={{ marginTop: '1rem' }}>
           {text}
         </ButtonWithMarginTop>
-        {type === 'login' ? (
-          <Link to="/register">
-            <ButtonWithMarginTop cyan fullWidth style={{ marginTop: '1rem' }}>
-              회원가입
-            </ButtonWithMarginTop>
-          </Link>
-        ) : (
-          <Link to="/login">
-            <ButtonWithMarginTop cyan fullWidth style={{ marginTop: '1rem' }}>
-              로그인
-            </ButtonWithMarginTop>
-          </Link>
-        )}
       </form>
+      <Footer>
+        {type === 'login' ? (
+          <Link to="/register">회원가입</Link>
+        ) : (
+          <Link to="/">로그인</Link>
+        )}
+      </Footer>
     </AuthFormBlock>
   );
 };
