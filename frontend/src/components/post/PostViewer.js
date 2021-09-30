@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
-import Header from '../common/Header';
 import Responsive from '../common/Responsive';
 
 const PostViewerBlock = styled(Responsive)`
@@ -49,10 +48,11 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
   }
 
   const { title, body, user, publishedDate, tags } = post;
-
+  console.log(body);
   return (
     <>
       <PostViewerBlock>
+        {actionButtons}
         <PostHead>
           <h1>{title}</h1>
           <SubInfo
@@ -61,8 +61,9 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
             hasMarginTop
           ></SubInfo>
         </PostHead>
-        {actionButtons}
-        <PostContent />
+        {body.split('\n').map((line, idx) => (
+          <PostContent key={idx}>{line} </PostContent>
+        ))}
       </PostViewerBlock>
     </>
   );
