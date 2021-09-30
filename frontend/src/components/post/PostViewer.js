@@ -48,18 +48,19 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
   }
 
   const { title, body, user, publishedDate, tags } = post;
-  console.log(body);
+  console.log(user, publishedDate);
   return (
     <>
       <PostViewerBlock>
         {actionButtons}
         <PostHead>
           <h1>{title}</h1>
-          <SubInfo
-            username={user.username}
-            publishedDate={publishedDate}
-            hasMarginTop
-          ></SubInfo>
+          <SubInfo hasMarginTop>
+            <span>
+              <b>{user.username}</b>
+            </span>
+            <span>{new Date(publishedDate).toLocaleDateString()}</span>
+          </SubInfo>
         </PostHead>
         {body.split('\n').map((line, idx) => (
           <PostContent key={idx}>{line} </PostContent>
