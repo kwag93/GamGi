@@ -6,18 +6,21 @@ import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
 import dummy from '../db/mentalData.json';
 import MentalList from '../selfCheck/MentalList';
+import palette from '../lib/styles/palette';
 
 const { Content } = Layout;
 
 const StyledContent = styled(Content)`
-  width: 80rem;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #fff;
-  padding: 100;
   margin-top: 3rem;
   overflow: 'initial';
+  border: 1px solid ${palette.gray[5]};
+  border-radius: 10px;
+  padding: 3rem;
 `;
 
 const StyledLayout = styled(Layout)`

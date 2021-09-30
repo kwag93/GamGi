@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import AuthForm from '../components/auth/AuthForm';
 import { changeField, initializeForm, register } from '../modules/auth';
 import { check } from '../modules/user';
+import { Modal } from 'antd';
 
 const RegisterForm = ({ history }) => {
   const [error, setError] = useState(null);
@@ -14,6 +15,15 @@ const RegisterForm = ({ history }) => {
     authError: auth.authError,
     user: user.user,
   }));
+
+  // entd modal
+  const countDown = (error) => {
+    const modal = Modal.success({
+      title: '회원가입 에러',
+      content: error,
+    });
+  };
+
   // 인풋 변경 이벤트 핸들러
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -33,6 +43,7 @@ const RegisterForm = ({ history }) => {
     // 하나라도 비어있다면
     if ([username, password, passwordConfirm].includes('')) {
       setError('빈 칸을 모두 입력하세요.');
+      countDown(error);
       return;
     }
     // 비밀번호가 일치하지 않는다면
@@ -42,6 +53,7 @@ const RegisterForm = ({ history }) => {
       dispatch(
         changeField({ form: 'register', key: 'passwordConfirm', value: '' }),
       );
+      countDown(error);
       return;
     }
     dispatch(register({ username, password }));
@@ -58,10 +70,13 @@ const RegisterForm = ({ history }) => {
       // 계정명이 이미 존재할 때
       if (authError.response.status === 409) {
         setError('이미 존재하는 계정명입니다.');
+        countDown(error);
         return;
       }
       // 기타 이유
       setError('회원가입 실패');
+      countDown(error);
+
       return;
     }
 

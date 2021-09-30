@@ -4,6 +4,7 @@ import { changeField, initializeForm, login } from '../modules/auth';
 import { withRouter } from 'react-router-dom';
 import { check } from '../modules/user';
 import { useState, useEffect } from 'react';
+import { Modal } from 'antd';
 
 const LoginForm = ({ history }) => {
   const [error, setError] = useState(null);
@@ -14,6 +15,15 @@ const LoginForm = ({ history }) => {
     authError: auth.authError,
     user: user.user,
   }));
+  // Todo : error 내용이 처음에 들어와있지 않음
+  // entd modal
+  const countDown = (error) => {
+    const modal = Modal.success({
+      title: '로그인에러',
+      content: error,
+    });
+  };
+
   // 인풋 변경 이벤트 핸들러
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -40,9 +50,8 @@ const LoginForm = ({ history }) => {
 
   useEffect(() => {
     if (authError) {
-      console.log('오류 발생');
-      console.log(authError);
       setError('로그인 실패');
+      countDown(error);
       return;
     }
     if (auth) {
@@ -53,7 +62,7 @@ const LoginForm = ({ history }) => {
 
   useEffect(() => {
     if (user) {
-      history.push('/');
+      history.push('/postlist');
       try {
         localStorage.setItem('user', JSON.stringify(user));
       } catch (e) {

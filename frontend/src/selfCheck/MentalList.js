@@ -32,23 +32,23 @@ const mentalList = (props) => {
 
 const Content = ({ header, body }) => {
   return (
-    <div>
-      <ListBox>
-        <table>
-          <thead>
-            <tr>
-              <td>{header}</td>
-            </tr>
-          </thead>
-          <BottomLine />
-          <tbody>
-            <tr>
-              <td>{body}</td>
-            </tr>
-          </tbody>
-        </table>
-      </ListBox>
-    </div>
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>{header}</th>
+          </tr>
+        </thead>
+      </table>
+      <BottomLine />
+      <table>
+        <tbody>
+          <tr>
+            <td>{body}</td>
+          </tr>
+        </tbody>
+      </table>
+    </>
   );
 };
 

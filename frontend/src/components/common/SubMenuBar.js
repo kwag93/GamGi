@@ -97,9 +97,9 @@ const SubMenuBar = () => {
 
   return (
     <div>
-      {roots.map((root) => {
+      {roots.map((root, idx) => {
         return (
-          <StyledSider>
+          <StyledSider key={idx}>
             <Menu
               className="main-nav"
               style={{ width: 256 }}
@@ -113,7 +113,6 @@ const SubMenuBar = () => {
                   .filter((item) => item.root === root)
                   .map((item, idx) => {
                     const pathname = `/${item.root}`;
-
                     return (
                       <Menu.Item icon={item.icon} key={`/${root}`}>
                         <Link to={pathname}>{item.name}</Link>
