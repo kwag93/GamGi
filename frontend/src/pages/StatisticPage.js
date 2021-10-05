@@ -2,8 +2,12 @@
 // yarn add @nivo/core @nivo/pie
 import { ResponsivePie } from '@nivo/pie';
 import React from 'react';
+import styled from 'styled-components';
+import { Layout } from 'antd';
 import Button from '../components/common/Button';
 import HeaderContainer from '../containers/HeaderContainer';
+import palette from '../lib/styles/palette';
+import Responsive from '../components/common/Responsive';
 
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
@@ -61,57 +65,90 @@ const data = [
   },
 ];
 
+const { Content } = Layout;
+
+const StyledContent = styled(Content)`
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  padding: 100;
+  margin: 0;
+  overflow: 'initial';
+`;
+
+const TopBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 4rem;
+`;
+
+const ButtonBlock = styled(Responsive)`
+  margin-top: 3rem;
+`;
+
+const WritePostButtonWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 3rem;
+`;
+
 const MyResponsiveBar = () => {
   return (
     <div>
       <HeaderContainer />
-      <h3>2021 JULY</h3>
-      <Button>감기처방</Button>
-      <Button>캘린더</Button>
-      <div style={{ height: '500px' }}>
-        <ResponsivePie
-          data={data}
-          margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-          innerRadius={0.5}
-          padAngle={0.7}
-          cornerRadius={3}
-          activeOuterRadiusOffset={8}
-          colors={data.map((data) => data.color)}
-          borderWidth={1}
-          borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
-          arcLinkLabelsSkipAngle={10}
-          arcLinkLabelsTextColor="#333333"
-          arcLinkLabelsThickness={2}
-          arcLinkLabelsColor={{ from: 'color' }}
-          arcLabelsSkipAngle={10}
-          arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
-          legends={[
-            {
-              anchor: 'bottom',
-              direction: 'row',
-              justify: false,
-              translateX: 0,
-              translateY: 56,
-              itemsSpacing: 0,
-              itemWidth: 100,
-              itemHeight: 18,
-              itemTextColor: '#999',
-              itemDirection: 'left-to-right',
-              itemOpacity: 1,
-              symbolSize: 18,
-              symbolShape: 'circle',
-              effects: [
-                {
-                  on: 'hover',
-                  style: {
-                    itemTextColor: '#000',
+      <TopBox />
+      <ButtonBlock>
+        <WritePostButtonWrapper>
+          <h3>2021 JULY</h3>
+          <Button to="/calendar">캘린더</Button>
+        </WritePostButtonWrapper>
+      </ButtonBlock>
+      <StyledContent>
+        <div style={{ height: '500px' }}>
+          <ResponsivePie
+            data={data}
+            margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+            innerRadius={0.5}
+            padAngle={0.7}
+            cornerRadius={3}
+            activeOuterRadiusOffset={8}
+            colors={data.map((data) => data.color)}
+            borderWidth={1}
+            borderColor={{ from: 'color', modifiers: [['darker', 0.2]] }}
+            arcLinkLabelsSkipAngle={10}
+            arcLinkLabelsTextColor="#333333"
+            arcLinkLabelsThickness={2}
+            arcLinkLabelsColor={{ from: 'color' }}
+            arcLabelsSkipAngle={10}
+            arcLabelsTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
+            legends={[
+              {
+                anchor: 'bottom',
+                direction: 'row',
+                justify: false,
+                translateX: 0,
+                translateY: 56,
+                itemsSpacing: 0,
+                itemWidth: 100,
+                itemHeight: 18,
+                itemTextColor: '#999',
+                itemDirection: 'left-to-right',
+                itemOpacity: 1,
+                symbolSize: 18,
+                symbolShape: 'circle',
+                effects: [
+                  {
+                    on: 'hover',
+                    style: {
+                      itemTextColor: '#000',
+                    },
                   },
-                },
-              ],
-            },
-          ]}
-        />
-      </div>
+                ],
+              },
+            ]}
+          />
+        </div>
+      </StyledContent>
     </div>
   );
 };

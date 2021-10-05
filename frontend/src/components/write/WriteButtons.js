@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const WriteActionButtonsBlock = styled.div`
-  margin-top: 1rem;
-  margin-bottom: 3rem;
+  justify-content: flex-end;
+  display: flex;
   button + button {
     margin-left: 0.5rem;
   }
@@ -10,7 +10,7 @@ const WriteActionButtonsBlock = styled.div`
 
 const StyledButton = styled.button`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   margin-top: 30px;
   width: 120px;

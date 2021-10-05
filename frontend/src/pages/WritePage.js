@@ -16,6 +16,17 @@ const Box = styled.div`
   align-items: center;
   padding: 4rem;
 `;
+const ButtonBox = styled.div`
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 4rem;
+  padding-left: 4rem;
+`;
 
 const WritePage = () => {
   const data = {
@@ -34,12 +45,14 @@ const WritePage = () => {
   return (
     <div>
       <HeaderContainer />
-      <Box>
-        <EditorContainer />
+      <ButtonBox>
         <div>
           <WriteButtonsContainer openModal={openModal} />
           <StyledModal data={data} state={modalState} closeModal={closeModal} />
         </div>
+      </ButtonBox>
+      <Box>
+        <EditorContainer />
       </Box>
     </div>
   );
