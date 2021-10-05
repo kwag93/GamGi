@@ -21,7 +21,7 @@ const SubMenuBar = () => {
   const roots = [
     'depression',
     'stress',
-    'panicdisorder',
+    'alcohol',
     'mentaldisorder',
     'suicide',
     'anxiety',
@@ -41,10 +41,10 @@ const SubMenuBar = () => {
       root: 'stress',
     },
     {
-      key: 'panicdisorder',
-      name: '공황장애',
+      key: 'alcohol',
+      name: '알콜중독',
       icon: <AppstoreOutlined />,
-      root: 'panicdisorder',
+      root: 'alcohol',
     },
     {
       key: 'mentaldisorder',
@@ -60,7 +60,7 @@ const SubMenuBar = () => {
     },
     {
       key: 'anxiety',
-      name: '불안',
+      name: '불안장애',
       icon: <SettingOutlined />,
       root: 'anxiety',
     },

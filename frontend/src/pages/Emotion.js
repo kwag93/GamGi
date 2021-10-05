@@ -12,77 +12,66 @@ import sad from '../lib/images/sad.png';
 import HeaderContainer from '../containers/HeaderContainer';
 
 const Box = styled.div`
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 4rem;
+  padding-bottom: 2rem;
 `;
 
 const Img = styled.img`
-  width: 50%;
+  width: 70%;
 `;
 
 const Emotion = () => {
   return (
     <div>
-      <HeaderContainer />
       <Box>
-        <h2>✿ 오늘의 감기 ✿</h2>
         <br />
-        <h3>감정을 선택해주세요</h3>
+        <h3>✿ 오늘의 감기를 선택해 주세요✿</h3>
         <table border>
           <tbody>
-            <tr height="100" />
+            <tr height="10" />
             <tr align="center">
-              <td width="200">
+              <td width="130">
                 <Img src={happy} />
               </td>
-              <td width="200">
+              <td width="130">
                 <Img src={joy} />
               </td>
-              <td width="200">
+              <td width="130">
                 <Img src={love} />
               </td>
-              <td width="200">
+              <td width="130">
                 <Img src={angry} />
               </td>
-            </tr>
-            <tr align="center">
-              <td width="200">행복</td>
-              <td width="200">기쁨</td>
-              <td width="200">사랑</td>
-              <td width="200">화남</td>
-            </tr>
-            <tr height="30" />
-            <tr align="center">
-              <td width="200">
+              <td width="130">
                 <Img src={sad} />
               </td>
-              <td width="200">
+              <td width="130">
                 <Img src={depress} />
               </td>
-              <td width="200">
+              <td width="130">
                 <Img src={nervous} />
               </td>
-              <td width="200">
+              <td width="130">
                 <Img src={nothing} />
               </td>
             </tr>
             <tr align="center">
-              <td width="200">슬픔</td>
-              <td width="200">우울</td>
-              <td width="200">불안</td>
-              <td width="200">생각없음</td>
+              <td width="130">행복</td>
+              <td width="130">기쁨</td>
+              <td width="130">사랑</td>
+              <td width="130">화남</td>
+              <td width="130">슬픔</td>
+              <td width="130">우울</td>
+              <td width="130">불안</td>
+              <td width="130">생각없음</td>
             </tr>
-            <tr height="100" />
+            <tr height="30" />
+
+            <tr height="30" />
           </tbody>
         </table>
-        <Button> - </Button>
       </Box>
     </div>
   );

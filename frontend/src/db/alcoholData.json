@@ -1,0 +1,49 @@
+{
+  "menu": [
+    {
+      "id": 1,
+      "classify": "outline",
+      "title": "개요"
+    },
+    {
+      "id": 2,
+      "classify": "diagnosis",
+      "title": "진단 및 치료"
+    },
+    {
+      "id": 3,
+      "title": "스스로 돕는 방법"
+    },
+    {
+      "id": 4,
+      "title": "자가진단"
+    }
+  ],
+
+  "alcoholContent": [
+    {
+      "id": 5,
+      "classify": "outline",
+      "header": "정의",
+      "body": "‘공황’이란 갑자기 심한 공포감을 경험하여 합리적 생각이 마비될 정도의 심한 두려운 상태를 말합니다."
+    },
+    {
+      "id": 6,
+      "classify": "diagnosis",
+      "header": "진단 및 치료",
+      "body": "겁이 많고 불안감수성이 높은 사람에서 생기는 경우도 있지만 많지만, 공황장애는 신경생물학적 원인이 분명한 질환입니다. 이외에도 유전적, 심리사회적 요인들이 함께 작용합니다."
+    },
+    {
+      "id": 7,
+      "classify": "help",
+      "header": "스스로 돕는 방법",
+      "body": "복통과 구토, 빠른 맥박과 두근거림, 어지러움 및 쓰러질 것 같은 느낌"
+    },
+    {
+      "id": 8,
+      "classify": "selfcheck",
+      "header": "자가진단",
+      "body": "약물치료, 정신치료"
+    }
+  ]
+}

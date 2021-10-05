@@ -1,13 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
-import Responsive from '../common/Responsive';
 import Button from '../common/Button';
 import palette from '../../lib/styles/palette';
 import SubInfo from '../common/SubInfo';
 import { Link } from 'react-router-dom';
 import LoginModal from '../common/LoginModal';
+import { Layout } from 'antd';
+import Respones from '../common/Respones';
+import Responsive from '../common/Responsive';
 
-const PostListBlock = styled(Responsive)`
+const { Content } = Layout;
+
+const BackgroundBlock = styled.div`
+  background-image: url('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80');
+`;
+
+const PostListBlock = styled(Respones)`
+  margin-top: 3rem;
+`;
+
+const ButtonBlock = styled(Responsive)`
   margin-top: 3rem;
 `;
 
@@ -18,15 +30,14 @@ const WritePostButtonWrapper = styled.div`
 `;
 
 const PostItemBlock = styled.div`
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
   /* 맨 위 포스트는 padding-top 없음 */
   &:first-child {
     padding-top: 0;
   }
-  & + & {
-    border-top: 1px solid ${palette.gray[3]};
-  }
+
   h2 {
     font-size: 2rem;
     margin-bottom: 0;
@@ -43,18 +54,32 @@ const PostItemBlock = styled.div`
   }
 `;
 
+const StyledContent = styled(Content)`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: 'initial';
+  border: 2px solid ${palette.gray[6]};
+  border-radius: 10px;
+  padding: 3rem;
+  background-size: cover;
+  background-repeat: no repeat;
+`;
+
 const PostItem = ({ post }) => {
   const { publishedDate, user, title, body, _id } = post;
   return (
     <PostItemBlock>
-      <h2>
-        <Link to={`/@${user.username}/${_id}`}>{title}</Link>
-      </h2>
-      <SubInfo
-        username={user.username}
-        publishedDate={new Date(publishedDate)}
-      />
-      <p>{body}</p>
+      <StyledContent>
+        <h2>
+          <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+        </h2>
+        <SubInfo
+          username={user.username}
+          publishedDate={new Date(publishedDate)}
+        />
+        <p>{body}</p>
+      </StyledContent>
     </PostItemBlock>
   );
 };
@@ -65,25 +90,29 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
   }
   if (!showWriteButton) return <LoginModal />;
   return (
-    <PostListBlock>
-      <WritePostButtonWrapper>
-        {showWriteButton && (
-          <Button cyan to="/write">
-            새 글 작성하기
-          </Button>
-        )}
-      </WritePostButtonWrapper>
-      {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
-      {!loading && posts && (
-        <div>
-          {posts.map((post) =>
-            post.user.username === showWriteButton.username ? (
-              <PostItem post={post} key={post._id} />
-            ) : null,
+    <BackgroundBlock>
+      <ButtonBlock>
+        <WritePostButtonWrapper>
+          {showWriteButton && (
+            <Button cyan to="/write">
+              새 글 작성하기
+            </Button>
           )}
-        </div>
-      )}
-    </PostListBlock>
+        </WritePostButtonWrapper>
+      </ButtonBlock>
+      <PostListBlock>
+        {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
+        {!loading && posts && (
+          <div>
+            {posts.map((post) =>
+              post.user.username === showWriteButton.username ? (
+                <PostItem post={post} key={post._id} />
+              ) : null,
+            )}
+          </div>
+        )}
+      </PostListBlock>
+    </BackgroundBlock>
   );
 };
 
