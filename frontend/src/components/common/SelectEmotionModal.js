@@ -1,6 +1,6 @@
 import React from 'react';
 import { Body, Close, Container, Contents, Overlay, Title } from './Modal';
-import love from '../../lib/images/loveheart.png';
+import love from '../../lib/images/emotions/love.png';
 import styled from 'styled-components';
 
 const Img = styled.img`
