@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
-import Header from '../common/Header';
 import Responsive from '../common/Responsive';
 
 const PostViewerBlock = styled(Responsive)`
@@ -48,21 +47,23 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
     return null;
   }
 
-  const { title, body, user, publishedDate, tags } = post;
-
+  const { title, body, user, publishedDate, tags } = post;  
   return (
     <>
       <PostViewerBlock>
+        {actionButtons}
         <PostHead>
           <h1>{title}</h1>
-          <SubInfo
-            username={user.username}
-            publishedDate={publishedDate}
-            hasMarginTop
-          ></SubInfo>
+          <SubInfo hasMarginTop>
+            <span>
+              <b>{user.username}</b>
+            </span>
+            <span>{new Date(publishedDate).toLocaleDateString()}</span>
+          </SubInfo>
         </PostHead>
-        {actionButtons}
-        <PostContent />
+        {body.split('\n').map((line, idx) => (
+          <PostContent key={idx}>{line} </PostContent>
+        ))}
       </PostViewerBlock>
     </>
   );

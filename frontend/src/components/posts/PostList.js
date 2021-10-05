@@ -68,6 +68,7 @@ const StyledContent = styled(Content)`
 
 const PostItem = ({ post }) => {
   const { publishedDate, user, title, body, _id } = post;
+  console.log(body);
   return (
     <PostItemBlock>
       <StyledContent>
