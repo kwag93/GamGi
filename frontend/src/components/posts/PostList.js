@@ -45,6 +45,7 @@ const PostItemBlock = styled.div`
 
 const PostItem = ({ post }) => {
   const { publishedDate, user, title, body, _id } = post;
+  console.log(body);
   return (
     <PostItemBlock>
       <h2>
