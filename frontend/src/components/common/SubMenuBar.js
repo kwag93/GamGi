@@ -42,7 +42,7 @@ const SubMenuBar = () => {
     },
     {
       key: 'alcohol',
-      name: '알콜중독',
+      name: '신체증상 장애',
       icon: <AppstoreOutlined />,
       root: 'alcohol',
     },

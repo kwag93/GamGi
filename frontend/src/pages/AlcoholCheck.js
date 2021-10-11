@@ -42,13 +42,16 @@ const BottomLine = styled.div`
 `;
 
 const AlcoholCheck = () => {
-  const [value, setValue] = useState(1);
-
-  const onChange = (e) => {
-    console.log('radio checked', e.target.value);
-    setValue(e.target.value);
+  const itemSum = () => {
+    let sum = 0;
+    const cbox = document.getElementsByName('chkbox');
+    for (let i = 0; i < cbox.length; i++) {
+      if (cbox[i].checked == true) {
+        sum += parseInt(cbox[i].value);
+      }
+    }
+    document.getElementById('total_sum').value = sum;
   };
-
   return (
     <div>
       <HeaderContainer />
@@ -58,26 +61,81 @@ const AlcoholCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h3>알콜중독 자가진단</h3>
+              <h2>신체장애 자가진단</h2>
+              <div>
+                아래에 있는 항목들은 지난 일주일 동안의 당신의 상태에 대한
+                질문입니다. 이와 같은 일들이 지난 일주일 동안 얼마나 자주
+                일어났었는지 답변해 주십시오
+              </div>
               <BottomLine />
             </TitleBox>
             <table border="black">
+              <colgroup>
+                <col width="6%" />
+                <col width="auto" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+              </colgroup>
+              <thead>
+                <tr align="center" bgcolor="#EBEFF7">
+                  <th colSpan="2">
+                    지난 4주 동안, 다음 나열되는 증상들에 얼마나 자주
+                    시달렸습니까?
+                  </th>
+                  <th>전혀 시달리지 않음</th>
+                  <th>약간 시달림</th>
+                  <th>대단히 시달림</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dummy.alcohol.map((content, idx) => (
+                  <tr align="center" key={idx}>
+                    <td>{content.id}</td>
+                    <td>{content.content}</td>
+
+                    {dummy.scores.map((score, idx) => (
+                      <td align="center" key={idx}>
+                        <input
+                          name="chkbox"
+                          type="checkbox"
+                          onClick={itemSum}
+                          value={score.score}
+                          id={idx}
+                        />
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td align="center" colSpan="2">
+                    합계
+                  </td>
+                  <td colSpan="4" align="right">
+                    <input
+                      border-color="white"
+                      id="total_sum"
+                      type="text"
+                      size="5"
+                      value="0"
+                      readOnly
+                    />
+                    점
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            <br />
+            <table border="black">
               <thead></thead>
               <tbody>
-                {dummy.alcohol.map((content, idx, i) => (
-                  <tr align="center" border="black" key={idx}>
-                    <tr>{content.id}</tr>
-                    <tr>{content.content}</tr>
-                    <tr>
-                      <tr>
-                        <Radio.Group onChange={onChange} value={value}>
-                          <Radio></Radio>
-                        </Radio.Group>
-                      </tr>
-                      <tr>2</tr>
-                      <tr>3</tr>
-                      <tr>4</tr>
-                    </tr>
+                {dummy.result.map((content, idx) => (
+                  <tr align="center" key={idx}>
+                    <td>{content.header}</td>
+                    <td>{content.content}</td>
+                    <td>{content.content2}</td>
                   </tr>
                 ))}
               </tbody>
