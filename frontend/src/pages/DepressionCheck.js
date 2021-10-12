@@ -135,18 +135,52 @@ const DepressionCheck = () => {
               </tfoot>
             </table>
             <br />
-            <table border="black">
-              <thead></thead>
-              <tbody>
-                {dummy.result.map((content, idx) => (
-                  <tr align="center" key={idx}>
-                    <td>{content.header}</td>
-                    <td>{content.content}</td>
-                    <td>{content.content2}</td>
+            <br />
+            <h3 align="left">우울증 검사결과</h3>
+            <BottomLine />
+            <div align="right">
+              <table>
+                <tbody>
+                  <tr align="right">
+                    <td align="right">
+                      <h3>합계</h3>
+                    </td>
+                    <td colSpan="4" align="right">
+                      <h3>
+                        <input
+                          border-color="white"
+                          id="total_sum"
+                          type="text"
+                          size="5"
+                          value="0"
+                          readOnly
+                        />
+                        점
+                      </h3>
+                    </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <table border="black">
+                <colgroup>
+                  <col width="4%" />
+                  <col width="10%" />
+                </colgroup>
+                <tbody>
+                  {dummy.result.map((content, idx) => (
+                    <tr align="center" key={idx}>
+                      <td bgcolor="#EBEFF7">{content.header}</td>
+                      <td align="left">
+                        <tr>{content.content}</tr>
+                        <tr>{content.content2}</tr>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

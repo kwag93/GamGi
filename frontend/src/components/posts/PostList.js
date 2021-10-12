@@ -94,11 +94,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
     <BackgroundBlock>
       <ButtonBlock>
         <WritePostButtonWrapper>
-          {showWriteButton && (
-            <Button cyan to="/write">
-              새 글 작성하기
-            </Button>
-          )}
+          {showWriteButton && <Button to="/write">새 글 작성하기</Button>}
         </WritePostButtonWrapper>
       </ButtonBlock>
       <PostListBlock>
