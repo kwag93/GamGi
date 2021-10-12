@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import { Layout } from 'antd';
-import CheckMenuBar from '../components/common/CheckMenuBar';
+import dummy from '../db/depressionCheck';
+import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
-import dummy from '../db/anxietyCheck.json';
+import CheckMenuBar from '../components/common/CheckMenuBar';
 import palette from '../lib/styles/palette';
-import { Radio } from 'antd';
 
 const { Content } = Layout;
 
@@ -41,7 +40,13 @@ const BottomLine = styled.div`
   margin-bottom: 1rem;
 `;
 
-const AnxietyCheck = () => {
+const checkTable = styled.table`
+  border: 2px solid ${palette.gray[3]}
+  padding: 10px
+  border-collapse: collapse;
+`;
+
+const Calculator = () => {
   const itemSum = () => {
     let sum = 0;
     const cbox = document.getElementsByName('chkbox');
@@ -61,12 +66,11 @@ const AnxietyCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h2>불안장애 자가진단</h2>
+              <h2>우울증 자가진단</h2>
               <div>
-                다음 문장들은 사람들이 자신을 표현하는데 사용되는 것들입니다.
-                <br />각 문장을 잘 읽으시고 각 문장의 오른편에 있는 네 개의 항목
-                중에서 당신이 지금 이 순간에 바로 느끼고 있는 상태를 가장 잘
-                나타내주는 문항 하나에 체크 하여 주십시오
+                아래에 있는 항목들은 지난 일주일 동안의 당신의 상태에 대한
+                질문입니다. 이와 같은 일들이 지난 일주일 동안 얼마나 자주
+                일어났었는지 답변해 주십시오
               </div>
               <BottomLine />
             </TitleBox>
@@ -81,19 +85,24 @@ const AnxietyCheck = () => {
               </colgroup>
               <thead>
                 <tr align="center" bgcolor="#EBEFF7">
-                  <th colSpan="2">문항</th>
+                  <th colSpan="2">지난 1주일간 나는</th>
                   <th>
-                    거의 <br /> 그렇지 않다
+                    극히 드물었다 <br />
+                    (1일 미만)
                   </th>
-                  <th>가끔 그렇다</th>
-                  <th>자주 그렇다</th>
                   <th>
-                    거의 <br /> 언제나 그렇다
+                    가끔 있었다 <br /> (1-2일)
+                  </th>
+                  <th>
+                    종종 있었다 <br /> (3-4일)
+                  </th>
+                  <th>
+                    대부분 그랬다 <br /> (5-7일)
                   </th>
                 </tr>
               </thead>
               <tbody>
-                {dummy.anxiety.map((content, idx) => (
+                {dummy.depression.map((content, idx) => (
                   <tr align="center" key={idx}>
                     <td>{content.id}</td>
                     <td>{content.content}</td>
@@ -131,23 +140,10 @@ const AnxietyCheck = () => {
                 </tr>
               </tfoot>
             </table>
-            <br />
-            <table border="black">
-              <thead></thead>
-              <tbody>
-                {dummy.result.map((content, idx) => (
-                  <tr align="center" key={idx}>
-                    <td>{content.header}</td>
-                    <td>{content.content}</td>
-                    <td>{content.content2}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </StyledContent>
         </StyledLayout>
       </StyledLayout>
     </div>
   );
 };
-export default AnxietyCheck;
+export default Calculator;

@@ -41,7 +41,7 @@ const CheckMenuBar = () => {
     },
     {
       key: 'alcoholCheck',
-      name: '알콜중독',
+      name: '신체증상 장애',
       icon: <AppstoreOutlined />,
       root: 'alcoholCheck',
     },

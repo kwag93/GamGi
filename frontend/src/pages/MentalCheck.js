@@ -42,13 +42,16 @@ const BottomLine = styled.div`
 `;
 
 const MentalCheck = () => {
-  const [value, setValue] = useState(1);
-
-  const onChange = (e) => {
-    console.log('radio checked', e.target.value);
-    setValue(e.target.value);
+  const itemSum = () => {
+    let sum = 0;
+    const cbox = document.getElementsByName('chkbox');
+    for (let i = 0; i < cbox.length; i++) {
+      if (cbox[i].checked == true) {
+        sum += parseInt(cbox[i].value);
+      }
+    }
+    document.getElementById('total_sum').value = sum;
   };
-
   return (
     <div>
       <HeaderContainer />
@@ -58,7 +61,7 @@ const MentalCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h3>일반정신건강 자가진단</h3>
+              <h2>일반정신건강 자가진단</h2>
               <div>
                 이 척도는 당신이 정신건강 상의 어려움을 가지고 있는지를 평가하는
                 척도입니다.
@@ -76,45 +79,79 @@ const MentalCheck = () => {
               <BottomLine />
             </TitleBox>
             <table border="black">
+              <colgroup>
+                <col width="6%" />
+                <col width="auto" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+              </colgroup>
               <thead>
                 <tr align="center" bgcolor="#EBEFF7">
-                  <td> </td>
-                  <td>문항</td>
-                  <td>
-                    극히
-                    <br />
-                    드물다
-                  </td>
-                  <td>
-                    가끔
-                    <br />
-                    있었다
-                  </td>
-                  <td>
-                    종종
-                    <br />
-                    있었다
-                  </td>
-                  <td>
-                    매우
-                    <br />
-                    그랬다
-                  </td>
+                  <th colSpan="2">문항</th>
+                  <th>
+                    극히 <br /> 드물다
+                  </th>
+                  <th>
+                    가끔 <br /> 있었다
+                  </th>
+                  <th>
+                    종종 <br /> 있었다
+                  </th>
+                  <th>
+                    대부분 <br /> 그랬다
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                {dummy.mental.map((content, idx, i) => (
+                {dummy.mental.map((content, idx) => (
                   <tr align="center" key={idx}>
                     <td>{content.id}</td>
                     <td>{content.content}</td>
-                    <td>
-                      <Radio.Group onChange={onChange} value={value} id={i}>
-                        <Radio></Radio>
-                      </Radio.Group>
-                    </td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
+
+                    {dummy.scores.map((score, idx) => (
+                      <td align="center" key={idx}>
+                        <input
+                          name="chkbox"
+                          type="checkbox"
+                          onClick={itemSum}
+                          value={score.score}
+                          id={idx}
+                        />
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td align="center" colSpan="2">
+                    합계
+                  </td>
+                  <td colSpan="4" align="right">
+                    <input
+                      border-color="white"
+                      id="total_sum"
+                      type="text"
+                      size="5"
+                      value="0"
+                      readOnly
+                    />
+                    점
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            <br />
+            <table border="black">
+              <thead></thead>
+              <tbody>
+                {dummy.result.map((content, idx) => (
+                  <tr align="center" key={idx}>
+                    <td>{content.header}</td>
+                    <td>{content.content}</td>
+                    <td>{content.content2}</td>
                   </tr>
                 ))}
               </tbody>

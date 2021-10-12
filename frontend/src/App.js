@@ -29,6 +29,7 @@ import StressCheck from './pages/StressCheck';
 import SuicideCheck from './pages/SuicideCheck';
 import AlcoholCheck from './pages/AlcoholCheck';
 import Alcohol from './pages/Alcohol';
+import Calculator from './pages/Calculator';
 
 const App = () => {
   return (
@@ -66,6 +67,7 @@ const App = () => {
       <Route component={AlcoholCheck} path="/alcoholCheck" />
       <Route component={StressCheck} path="/stresscheck" />
       <Route component={SuicideCheck} path="/suicidecheck" />
+      <Route component={Calculator} path="/calculator" />
     </div>
   );
 };

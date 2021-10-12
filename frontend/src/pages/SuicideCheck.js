@@ -42,13 +42,16 @@ const BottomLine = styled.div`
 `;
 
 const SuicideCheck = () => {
-  const [value, setValue] = useState(1);
-
-  const onChange = (e) => {
-    console.log('radio checked', e.target.value);
-    setValue(e.target.value);
+  const itemSum = () => {
+    let sum = 0;
+    const cbox = document.getElementsByName('chkbox');
+    for (let i = 0; i < cbox.length; i++) {
+      if (cbox[i].checked == true) {
+        sum += parseInt(cbox[i].value);
+      }
+    }
+    document.getElementById('total_sum').value = sum;
   };
-
   return (
     <div>
       <HeaderContainer />
@@ -58,39 +61,79 @@ const SuicideCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h3>자살위험성 자가진단</h3>
+              <h2>자살위험성 자가진단</h2>
               <div>
                 다음은 여러분이 일상생활에서 경험할 수 있는 내용들로 구성되어
-                있습니다. <br /> 문항들을 자세히 읽어보시고 당신이 일상생활에서
-                느끼고 있는 바를 가장 잘 나타내 주는 문항의 해당 번호를 기입해
-                주십시오.
+                있습니다. <br />
+                지난 1주일 동안 본인이 느끼시고 행동한 것을 생각하는 칸에
+                체크해주세요.
               </div>
               <BottomLine />
             </TitleBox>
             <table border="black">
+              <colgroup>
+                <col width="6%" />
+                <col width="auto" />
+                <col width="10%" />
+                <col width="10%" />
+                <col width="10%" />
+              </colgroup>
               <thead>
                 <tr align="center" bgcolor="#EBEFF7">
-                  <td> </td>
-                  <td>문항</td>
-                  <td>극히 드물었다</td>
-                  <td>가끔 있었다</td>
-                  <td>종종 있었다</td>
-                  <td>대부분 그랬다</td>
+                  <th colSpan="2">지난 1주일간 나는</th>
+                  <th>극히 드물었다</th>
+                  <th>가끔 있었다</th>
+                  <th>종종 있었다</th>
                 </tr>
               </thead>
               <tbody>
-                {dummy.suicide.map((content, idx, i) => (
+                {dummy.suicide.map((content, idx) => (
                   <tr align="center" key={idx}>
                     <td>{content.id}</td>
                     <td>{content.content}</td>
-                    <td>
-                      <Radio.Group onChange={onChange} value={value} id={i}>
-                        <Radio></Radio>
-                      </Radio.Group>
-                    </td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
+
+                    {dummy.scores.map((score, idx) => (
+                      <td align="center" key={idx}>
+                        <input
+                          name="chkbox"
+                          type="checkbox"
+                          onClick={itemSum}
+                          value={score.score}
+                          id={idx}
+                        />
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td align="center" colSpan="2">
+                    합계
+                  </td>
+                  <td colSpan="4" align="right">
+                    <input
+                      border-color="white"
+                      id="total_sum"
+                      type="text"
+                      size="5"
+                      value="0"
+                      readOnly
+                    />
+                    점
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+            <br />
+            <table border="black">
+              <thead></thead>
+              <tbody>
+                {dummy.result.map((content, idx) => (
+                  <tr align="center" key={idx}>
+                    <td>{content.header}</td>
+                    <td>{content.content}</td>
+                    <td>{content.content2}</td>
                   </tr>
                 ))}
               </tbody>
@@ -101,5 +144,4 @@ const SuicideCheck = () => {
     </div>
   );
 };
-
 export default SuicideCheck;
