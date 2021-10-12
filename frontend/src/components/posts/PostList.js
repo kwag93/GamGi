@@ -67,8 +67,7 @@ const StyledContent = styled(Content)`
 `;
 
 const PostItem = ({ post }) => {
-  const { publishedDate, user, title, body, _id } = post;
-  console.log(body);
+  const { publishedDate, user, title, body, emotion, _id } = post;
   return (
     <PostItemBlock>
       <StyledContent>
@@ -79,6 +78,7 @@ const PostItem = ({ post }) => {
           username={user.username}
           publishedDate={new Date(publishedDate)}
         />
+        <p>{emotion}</p>
         <p>{body}</p>
       </StyledContent>
     </PostItemBlock>

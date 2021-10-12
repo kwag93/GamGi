@@ -42,6 +42,7 @@ const WritePage = () => {
     event.preventDefault();
     setModalState(false);
   };
+
   return (
     <div>
       <HeaderContainer />
