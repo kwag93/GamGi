@@ -6,11 +6,11 @@ import { writePost, updatePost } from '../modules/write';
 
 const WriteButtonsContainer = ({ history }) => {
   const dispatch = useDispatch();
-  const { title, body, tags, post, postError, originalPostId } = useSelector(
+  const { title, body, emotion, post, postError, originalPostId } = useSelector(
     ({ write }) => ({
       title: write.title,
       body: write.body,
-      tags: write.tags,
+      emotion: write.emotion,
       post: write.post,
       postErorr: write.postError,
       originalPostId: write.originalPostId,
@@ -20,14 +20,14 @@ const WriteButtonsContainer = ({ history }) => {
   // 포스트 등록
   const onPublish = () => {
     if (originalPostId) {
-      dispatch(updatePost({ title, body, tags, id: originalPostId }));
+      dispatch(updatePost({ title, body, emotion, id: originalPostId }));
       return;
     }
     dispatch(
       writePost({
         title,
         body,
-        tags,
+        emotion,
       }),
     );
   };

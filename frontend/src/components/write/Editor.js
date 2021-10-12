@@ -31,6 +31,7 @@ const Editor = ({ title, body, onChangeField }) => {
   const onChangeTitle = (e) => {
     onChangeField({ key: 'title', value: e.target.value });
   };
+
   return (
     <div>
       <Emotion />
