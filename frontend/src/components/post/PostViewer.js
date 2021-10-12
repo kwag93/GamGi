@@ -47,13 +47,14 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
     return null;
   }
 
-  const { title, body, user, publishedDate, tags } = post;  
+  const { title, body, user, publishedDate, emotion } = post;
   return (
     <>
       <PostViewerBlock>
         {actionButtons}
         <PostHead>
           <h1>{title}</h1>
+          {emotion}
           <SubInfo hasMarginTop>
             <span>
               <b>{user.username}</b>

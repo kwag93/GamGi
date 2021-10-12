@@ -9,7 +9,6 @@ const PostListPage = () => {
   return (
     <div>
       <HeaderContainer />
-
       <PostListContainer />
       <PaginationContainer />
     </div>
