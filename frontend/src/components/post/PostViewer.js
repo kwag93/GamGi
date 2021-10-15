@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
@@ -16,6 +16,9 @@ const PostHead = styled.div`
     line-height: 1.5;
     margin: 0;
   }
+`;
+const Img = styled.img`
+  width: 10%;
 `;
 
 const SubInfo = styled.div`
@@ -35,6 +38,14 @@ const PostContent = styled.div`
   color: ${palette.gray[8]};
 `;
 
+const importAll = (imgs) => {
+  let images = [];
+  imgs.keys().forEach((item, index) => {
+    images[index] = imgs(item);
+  });
+  return images;
+};
+
 const PostViewer = ({ post, error, loading, actionButtons }) => {
   if (error) {
     if (error.response && error.response.status === 404) {
@@ -46,6 +57,25 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
   if (loading || !post) {
     return null;
   }
+  const [images, setImages] = useState([]);
+  const [idx, setIdx] = useState(-1);
+  const emotion_names = [
+    '행복',
+    '기쁨',
+    '사랑',
+    '화남',
+    '슬픔',
+    '우울',
+    '불안',
+    '생각없음',
+  ];
+
+  useEffect(() => {
+    setImages(
+      importAll(require.context('../../lib/images/emotions', false, /.png/)),
+    );
+    setIdx(emotion_names.indexOf(emotion));
+  }, []);
 
   const { title, body, user, publishedDate, emotion } = post;
   return (
@@ -54,7 +84,7 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
         {actionButtons}
         <PostHead>
           <h1>{title}</h1>
-          {emotion}
+          {idx !== -1 ? <Img src={images[idx].default} /> : ''}
           <SubInfo hasMarginTop>
             <span>
               <b>{user.username}</b>
