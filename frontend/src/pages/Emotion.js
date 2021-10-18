@@ -28,8 +28,7 @@ const importAll = (r) => {
 
 // default 부분이 필요한지에 대한 의문이 조금 있음.
 const Emotion = () => {
-  const [clickImg, setClickImg] = useState(false);
-  const [num, setNum] = useState(0);
+  const [num, setNum] = useState(-1);
   const [images, setImages] = useState([]);
   const dispatch = useDispatch();
   const emotion_names = [
@@ -50,8 +49,7 @@ const Emotion = () => {
 
   //Todo : 다른 부분도 클릭하면 바로 그 아이콘이 커져야하는데 그렇지 못함. 부자연스럽게 커짐
   const onClick = (index) => {
-    setClickImg(!clickImg);
-    setNum(index);
+    num === index ? setNum(-1) : setNum(index);
     dispatch(changeField({ key: 'emotion', value: emotion_names[index] }));
   };
 
@@ -66,7 +64,7 @@ const Emotion = () => {
             <tr align="center">
               {images.map((img, index) => (
                 <td width="130" key={index} onClick={() => onClick(index)}>
-                  {clickImg && index === num ? (
+                  {index === num ? (
                     <ClickImg src={images[index].default} />
                   ) : (
                     <Img src={images[index].default} />

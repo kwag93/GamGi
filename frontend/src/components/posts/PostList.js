@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
 import palette from '../../lib/styles/palette';
@@ -10,6 +10,19 @@ import Respones from '../common/Respones';
 import Responsive from '../common/Responsive';
 
 const { Content } = Layout;
+
+const Img = styled.img`
+  width: 25%;
+`;
+
+const ImgBlock = styled(Content)`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: 'initial';
+  float: 'right';
+  padding: 3rem;
+`;
 
 const PostListBlock = styled(Respones)`
   margin-top: 3rem;
@@ -40,9 +53,6 @@ const PostItemBlock = styled.div`
       color: ${palette.gray[6]};
     }
   }
-  p {
-    margin-top: 2rem;
-  }
   a {
     color: black;
   }
@@ -50,29 +60,77 @@ const PostItemBlock = styled.div`
 
 const StyledContent = styled(Content)`
   background-color: #ffffff;
+  border: 2px solid ${palette.gray[3]};
+  border-radius: 10px;
+`;
+
+const ContentBlock = styled(Content)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: 'initial';
-  border: 2px solid ${palette.gray[3]};
-  border-radius: 10px;
   padding: 3rem;
+  float: left;
 `;
 
+const BodyContent = styled(Content)`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: 'initial';
+  padding: 0rem 3rem 2rem 3rem;
+`;
+
+const importAll = (imgs) => {
+  let images = [];
+  imgs.keys().forEach((item, index) => {
+    images[index] = imgs(item);
+  });
+  return images;
+};
+
 const PostItem = ({ post }) => {
+  const [images, setImages] = useState([]);
+  const [idx, setIdx] = useState(-1);
+
   const { publishedDate, user, title, body, emotion, _id } = post;
+  const emotion_names = [
+    '행복',
+    '기쁨',
+    '사랑',
+    '화남',
+    '슬픔',
+    '우울',
+    '불안',
+    '생각없음',
+  ];
+
+  useEffect(() => {
+    setImages(
+      importAll(require.context('../../lib/images/emotions', false, /.png/)),
+    );
+    setIdx(emotion_names.indexOf(emotion));
+  }, []);
+
   return (
     <PostItemBlock>
       <StyledContent>
-        <h2>
-          <Link to={`/@${user.username}/${_id}`}>{title}</Link>
-        </h2>
-        <SubInfo
-          username={user.username}
-          publishedDate={new Date(publishedDate)}
-        />
-        <p>{emotion}</p>
-        <p>{body}</p>
+        <ContentBlock>
+          <h2>
+            <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+          </h2>
+
+          <SubInfo
+            username={user.username}
+            publishedDate={new Date(publishedDate)}
+          />
+        </ContentBlock>
+        <ImgBlock>
+          {idx !== -1 ? <Img src={images[idx].default} /> : ''}
+        </ImgBlock>
+        <BodyContent>
+          <p>{body}</p>
+        </BodyContent>
       </StyledContent>
     </PostItemBlock>
   );
