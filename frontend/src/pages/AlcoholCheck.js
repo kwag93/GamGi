@@ -96,50 +96,68 @@ const AlcoholCheck = () => {
 
                     {dummy.scores.map((score, idx) => (
                       <td align="center" key={idx}>
-                        <input
-                          name="chkbox"
-                          type="checkbox"
-                          onClick={itemSum}
-                          value={score.score}
-                          id={idx}
-                        />
+                        <div id={score.score}>
+                          <input
+                            name="chkbox"
+                            type="radio"
+                            onClick={itemSum}
+                            value={score.score}
+                            id={idx}
+                          />
+                        </div>
                       </td>
                     ))}
                   </tr>
                 ))}
               </tbody>
-              <tfoot>
-                <tr>
-                  <td align="center" colSpan="2">
-                    합계
-                  </td>
-                  <td colSpan="4" align="right">
-                    <input
-                      border-color="white"
-                      id="total_sum"
-                      type="text"
-                      size="5"
-                      value="0"
-                      readOnly
-                    />
-                    점
-                  </td>
-                </tr>
-              </tfoot>
             </table>
             <br />
-            <table border="black">
-              <thead></thead>
-              <tbody>
-                {dummy.result.map((content, idx) => (
-                  <tr align="center" key={idx}>
-                    <td>{content.header}</td>
-                    <td>{content.content}</td>
-                    <td>{content.content2}</td>
+            <br />
+            <h2 align="left">신체증상장애 검사결과</h2>
+            <BottomLine />
+            <div align="right">
+              <table>
+                <tbody>
+                  <tr align="right">
+                    <td align="right">
+                      <h3>합계</h3>
+                    </td>
+                    <td colSpan="4" align="right">
+                      <h3>
+                        <input
+                          border-color="white"
+                          id="total_sum"
+                          type="text"
+                          size="5"
+                          value="0"
+                          readOnly
+                        />
+                        점
+                      </h3>
+                    </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <table border="black">
+                <colgroup>
+                  <col width="4%" />
+                  <col width="10%" />
+                </colgroup>
+                <tbody>
+                  {dummy.result.map((content, idx) => (
+                    <tr align="center" key={idx}>
+                      <td bgcolor="#EBEFF7">{content.header}</td>
+                      <td align="left">
+                        <tr>{content.content}</tr>
+                        <tr>{content.content2}</tr>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </StyledContent>
         </StyledLayout>
       </StyledLayout>

@@ -47,7 +47,7 @@ const CheckMenuBar = () => {
     },
     {
       key: 'mentalCheck',
-      name: '정신장애',
+      name: '강박장애',
       icon: <SettingOutlined />,
       root: 'mentalCheck',
     },

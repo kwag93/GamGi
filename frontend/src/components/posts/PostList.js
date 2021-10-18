@@ -18,14 +18,11 @@ const Img = styled.img`
 const BackgroundBlock = styled.div`
   background-image: url('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80');
 `;
-
 const PostListBlock = styled(Respones)`
   margin-top: 3rem;
 `;
 
-const ButtonBlock = styled(Responsive)`
-  margin-top: 3rem;
-`;
+const ButtonBlock = styled(Responsive)``;
 
 const WritePostButtonWrapper = styled.div`
   display: flex;
@@ -59,15 +56,14 @@ const PostItemBlock = styled.div`
 `;
 
 const StyledContent = styled(Content)`
+  background-color: #ffffff;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: 'initial';
-  border: 2px solid ${palette.gray[6]};
+  border: 2px solid ${palette.gray[3]};
   border-radius: 10px;
   padding: 3rem;
-  background-size: cover;
-  background-repeat: no repeat;
 `;
 
 const importAll = (imgs) => {
@@ -124,14 +120,12 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
   }
   if (!showWriteButton) return <LoginModal />;
   return (
-    <BackgroundBlock>
+    <div>
       <ButtonBlock>
+        <br />
+        <br />
         <WritePostButtonWrapper>
-          {showWriteButton && (
-            <Button cyan to="/write">
-              새 글 작성하기
-            </Button>
-          )}
+          {showWriteButton && <Button to="/write">새 글 작성하기</Button>}
         </WritePostButtonWrapper>
       </ButtonBlock>
       <PostListBlock>
@@ -146,7 +140,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
           </div>
         )}
       </PostListBlock>
-    </BackgroundBlock>
+    </div>
   );
 };
 

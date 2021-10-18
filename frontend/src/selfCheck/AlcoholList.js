@@ -23,13 +23,20 @@ const AlcoholList = (props) => {
   return (
     <>
       {alcoholList.map((script, index) => (
-        <Content header={script.header} body={script.body} key={index} />
+        <Content
+          header={script.header}
+          body={script.body}
+          body2={script.body2}
+          subheader={script.subheader}
+          subbody={script.subbody}
+          key={index}
+        />
       ))}
     </>
   );
 };
 
-const Content = ({ header, body }) => {
+const Content = ({ header, body, body2, subheader, subbody }) => {
   return (
     <>
       <table>
@@ -44,6 +51,30 @@ const Content = ({ header, body }) => {
         <tbody>
           <tr>
             <td>{body}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table>
+        <tbody>
+          <tr>
+            <td>{body2}</td>
+          </tr>
+        </tbody>
+      </table>
+      <br /> <br />
+      <table>
+        <thead>
+          <tr>
+            <th>{subheader}</th>
+          </tr>
+        </thead>
+      </table>
+      <BottomLine />
+      <table>
+        <tbody>
+          <tr>
+            <td>{subbody}</td>
           </tr>
         </tbody>
       </table>
