@@ -48,7 +48,7 @@ const SubMenuBar = () => {
     },
     {
       key: 'mentaldisorder',
-      name: '정신장애',
+      name: '강박장애',
       icon: <SettingOutlined />,
       root: 'mentaldisorder',
     },

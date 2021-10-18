@@ -115,28 +115,10 @@ const DepressionCheck = () => {
                   </tr>
                 ))}
               </tbody>
-              <tfoot>
-                <tr>
-                  <td align="center" colSpan="2">
-                    합계
-                  </td>
-                  <td colSpan="4" align="right">
-                    <input
-                      border-color="white"
-                      id="total_sum"
-                      type="text"
-                      size="5"
-                      value="0"
-                      readOnly
-                    />
-                    점
-                  </td>
-                </tr>
-              </tfoot>
             </table>
             <br />
             <br />
-            <h3 align="left">우울증 검사결과</h3>
+            <h2 align="left">우울증 검사결과</h2>
             <BottomLine />
             <div align="right">
               <table>
