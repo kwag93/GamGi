@@ -12,12 +12,21 @@ import Responsive from '../common/Responsive';
 const { Content } = Layout;
 
 const Img = styled.img`
-  width: 10%;
+  width: 25%;
 `;
 
-const BackgroundBlock = styled.div`
-  background-image: url('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80');
+const ImgBlock = styled(Content)`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: 'initial';
+  float: 'right';
+  padding: 3rem;
 `;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 1442b0a2ee73d258b4b9d0a57b7734360c35c2e6
 const PostListBlock = styled(Respones)`
   margin-top: 3rem;
 `;
@@ -47,9 +56,6 @@ const PostItemBlock = styled.div`
       color: ${palette.gray[6]};
     }
   }
-  p {
-    margin-top: 2rem;
-  }
   a {
     color: black;
   }
@@ -57,13 +63,25 @@ const PostItemBlock = styled.div`
 
 const StyledContent = styled(Content)`
   background-color: #ffffff;
+  border: 2px solid ${palette.gray[3]};
+  border-radius: 10px;
+`;
+
+const ContentBlock = styled(Content)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: 'initial';
-  border: 2px solid ${palette.gray[3]};
-  border-radius: 10px;
   padding: 3rem;
+  float: left;
+`;
+
+const BodyContent = styled(Content)`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: 'initial';
+  padding: 0rem 3rem 2rem 3rem;
 `;
 
 const importAll = (imgs) => {
@@ -100,15 +118,22 @@ const PostItem = ({ post }) => {
   return (
     <PostItemBlock>
       <StyledContent>
-        <h2>
-          <Link to={`/@${user.username}/${_id}`}>{title}</Link>
-        </h2>
-        {idx !== -1 ? <Img src={images[idx].default} /> : ''}
-        <SubInfo
-          username={user.username}
-          publishedDate={new Date(publishedDate)}
-        />
-        <p>{body}</p>
+        <ContentBlock>
+          <h2>
+            <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+          </h2>
+
+          <SubInfo
+            username={user.username}
+            publishedDate={new Date(publishedDate)}
+          />
+        </ContentBlock>
+        <ImgBlock>
+          {idx !== -1 ? <Img src={images[idx].default} /> : ''}
+        </ImgBlock>
+        <BodyContent>
+          <p>{body}</p>
+        </BodyContent>
       </StyledContent>
     </PostItemBlock>
   );
