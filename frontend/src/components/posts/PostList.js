@@ -23,10 +23,6 @@ const ImgBlock = styled(Content)`
   float: 'right';
   padding: 3rem;
 `;
-<<<<<<< HEAD
-
-=======
->>>>>>> 1442b0a2ee73d258b4b9d0a57b7734360c35c2e6
 const PostListBlock = styled(Respones)`
   margin-top: 3rem;
 `;
