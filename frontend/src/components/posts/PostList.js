@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
 import palette from '../../lib/styles/palette';
@@ -11,6 +11,13 @@ import Responsive from '../common/Responsive';
 
 const { Content } = Layout;
 
+const Img = styled.img`
+  width: 10%;
+`;
+
+const BackgroundBlock = styled.div`
+  background-image: url('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80');
+`;
 const PostListBlock = styled(Respones)`
   margin-top: 3rem;
 `;
@@ -59,19 +66,48 @@ const StyledContent = styled(Content)`
   padding: 3rem;
 `;
 
+const importAll = (imgs) => {
+  let images = [];
+  imgs.keys().forEach((item, index) => {
+    images[index] = imgs(item);
+  });
+  return images;
+};
+
 const PostItem = ({ post }) => {
+  const [images, setImages] = useState([]);
+  const [idx, setIdx] = useState(-1);
+
   const { publishedDate, user, title, body, emotion, _id } = post;
+  const emotion_names = [
+    '행복',
+    '기쁨',
+    '사랑',
+    '화남',
+    '슬픔',
+    '우울',
+    '불안',
+    '생각없음',
+  ];
+
+  useEffect(() => {
+    setImages(
+      importAll(require.context('../../lib/images/emotions', false, /.png/)),
+    );
+    setIdx(emotion_names.indexOf(emotion));
+  }, []);
+
   return (
     <PostItemBlock>
       <StyledContent>
         <h2>
           <Link to={`/@${user.username}/${_id}`}>{title}</Link>
         </h2>
+        {idx !== -1 ? <Img src={images[idx].default} /> : ''}
         <SubInfo
           username={user.username}
           publishedDate={new Date(publishedDate)}
         />
-        <p>{emotion}</p>
         <p>{body}</p>
       </StyledContent>
     </PostItemBlock>
