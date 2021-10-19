@@ -7,11 +7,6 @@ import { Layout } from 'antd';
 const { Content } = Layout;
 
 const BackgroundBlock = styled.div`
-  background-image: url('https://i.pinimg.com/564x/3c/1c/ab/3c1cabb4b75256b7a4ec508e6c02d2d3.jpg');
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   margin: 0 auto; /* 중앙 정렬 */
   /* 브라우저 크기에 따라 세로 사이즈 변경 */
   @media (max-height: 1024px) {
@@ -25,6 +20,7 @@ const BackgroundBlock = styled.div`
 const PostViewerBlock = styled(Responsive)`
   margin: 4rem;
 `;
+
 const BottomLine = styled.div`
   border-bottom: 1px solid ${palette.gray[3]};
   margin: 1rem 2rem 2rem 2rem;
@@ -34,7 +30,7 @@ const PostHead = styled.div`
   padding-bottom: 3rem;
   margin-bottom: 3rem;
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1.5;
     margin: 0;
   }
@@ -55,7 +51,7 @@ const ImgBlock = styled(Content)`
 
 const StyledContent = styled(Content)`
   background-color: #ffffff;
-  border: 2px solid ${palette.gray[3]};
+  border: 2px solid ${palette.gray[4]};
   border-radius: 10px;
 `;
 
@@ -79,15 +75,15 @@ const SubInfo = styled.div`
     content: '\\B7';
   }
 `;
-
+//하위
 const PostContent = styled.div`
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: ${palette.gray[8]};
 `;
-
+//상위
 const PostBlock = styled.div`
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 2rem 2rem 4rem;
+  margin-bottom: 2rem;
 `;
 
 const importAll = (imgs) => {

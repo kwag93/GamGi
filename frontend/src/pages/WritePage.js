@@ -18,10 +18,12 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
+  padding: 2rem;
 `;
 const ButtonBox = styled.div`
-  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rem;
 `;
 
 const BackgroundBlock = styled.div`
@@ -47,8 +49,10 @@ const WritePage = () => {
     <div>
       <HeaderContainer />
       <BackgroundBlock>
-        <Box>
+        <ButtonBox>
           <WriteButtonsContainer openModal={openModal} />
+        </ButtonBox>
+        <Box>
           <StyledModal data={data} state={modalState} closeModal={closeModal} />
           <EditorContainer />
         </Box>

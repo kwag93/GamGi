@@ -30,7 +30,7 @@ const ContentBox = styled.textarea`
 
 const StyledContent = styled(Content)`
   background-color: #ffffff;
-  border: 2px solid ${palette.gray[3]};
+  border: 2px solid ${palette.gray[4]};
   border-radius: 10px;
   padding: 3rem;
 `;

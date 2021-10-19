@@ -99,7 +99,7 @@ const PhysicalCheck = () => {
                         <div id={content.id}>
                           <input
                             name="chkbox"
-                            type="radio"
+                            type="checkbox"
                             onClick={itemSum}
                             value={score.score}
                             id={content.id}

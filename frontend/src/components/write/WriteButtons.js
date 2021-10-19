@@ -1,31 +1,31 @@
 import styled from 'styled-components';
+import Button from '../common/Button';
 
 const WriteActionButtonsBlock = styled.div`
   justify-content: flex-end;
   display: flex;
-  button + button {
+  Button + Button {
     margin-left: 0.5rem;
   }
 `;
 
-const StyledButton = styled.button`
+const StyledButton = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
   margin-top: 30px;
-  width: 120px;
-  padding: 5px;
-  border: solid 1px #ababab;
-  background-color: white;
+  padding-right: 10px;
 `;
 
 const WriteActionButtons = ({ onCancel, onPublish, isEdit }) => {
   return (
     <WriteActionButtonsBlock>
-      <StyledButton cyan onClick={onPublish}>
-        포스트 {isEdit ? '수정' : '등록'}
+      <StyledButton>
+        <Button onClick={onPublish}>포스트 {isEdit ? '수정' : '등록'}</Button>
       </StyledButton>
-      <StyledButton onClick={onCancel}>취소</StyledButton>
+      <StyledButton>
+        <Button onClick={onCancel}>취소</Button>
+      </StyledButton>
     </WriteActionButtonsBlock>
   );
 };
