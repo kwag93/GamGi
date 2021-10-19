@@ -20,7 +20,7 @@
     }
   ],
 
-  "alcoholContent": [
+  "physicalContent": [
     {
       "id": 5,
       "classify": "outline",

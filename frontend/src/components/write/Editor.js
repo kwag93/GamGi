@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 import Emotion from '../../pages/Emotion';
+import { Layout } from 'antd';
+import palette from '../../lib/styles/palette';
+
+const { Content } = Layout;
 
 const TitleInput = styled.input`
-  width: 80%;
+  width: 100%;
   padding-bottom: 20px;
   border: none;
   font-size: 22px;
@@ -13,7 +17,7 @@ const TitleInput = styled.input`
   }
 `;
 
-const Content = styled.textarea`
+const ContentBox = styled.textarea`
   padding-top: 20px;
   width: 80%;
   resize: none;
@@ -22,6 +26,13 @@ const Content = styled.textarea`
   &:focus {
     outline: none;
   }
+`;
+
+const StyledContent = styled(Content)`
+  background-color: #ffffff;
+  border: 2px solid ${palette.gray[3]};
+  border-radius: 10px;
+  padding: 3rem;
 `;
 
 const Editor = ({ title, body, onChangeField }) => {
@@ -37,16 +48,18 @@ const Editor = ({ title, body, onChangeField }) => {
       <Emotion />
       <h3>✿ 오늘의 감정을 기록해 주세요✿</h3>
       <br />
-      <TitleInput
-        placeholder="제목을 입력하세요"
-        onChange={onChangeTitle}
-        value={title}
-      />
-      <Content
-        placeholder="내용을 입력하세요"
-        onChange={onChangeContent}
-        value={body}
-      />
+      <StyledContent>
+        <TitleInput
+          placeholder="제목을 입력하세요"
+          onChange={onChangeTitle}
+          value={title}
+        />
+        <ContentBox
+          placeholder="내용을 입력하세요"
+          onChange={onChangeContent}
+          value={body}
+        />
+      </StyledContent>
     </div>
   );
 };

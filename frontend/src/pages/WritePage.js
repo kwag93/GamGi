@@ -4,6 +4,10 @@ import StyledModal from '../components/common/SelectEmotionModal';
 import EditorContainer from '../containers/EditorContainer';
 import HeaderContainer from '../containers/HeaderContainer';
 import WriteButtonsContainer from '../containers/WriteButtonsContainer';
+import { Layout } from 'antd';
+import palette from '../lib/styles/palette';
+
+const { Content } = Layout;
 
 const Box = styled.div`
   left: 0;
@@ -17,15 +21,11 @@ const Box = styled.div`
   padding: 4rem;
 `;
 const ButtonBox = styled.div`
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
   justify-content: flex-end;
-  align-items: center;
-  padding-right: 4rem;
-  padding-left: 4rem;
+`;
+
+const BackgroundBlock = styled.div`
+  background-image: url('https://i.pinimg.com/564x/3c/1c/ab/3c1cabb4b75256b7a4ec508e6c02d2d3.jpg');
 `;
 
 const WritePage = () => {
@@ -46,15 +46,13 @@ const WritePage = () => {
   return (
     <div>
       <HeaderContainer />
-      <ButtonBox>
-        <div>
+      <BackgroundBlock>
+        <Box>
           <WriteButtonsContainer openModal={openModal} />
           <StyledModal data={data} state={modalState} closeModal={closeModal} />
-        </div>
-      </ButtonBox>
-      <Box>
-        <EditorContainer />
-      </Box>
+          <EditorContainer />
+        </Box>
+      </BackgroundBlock>
     </div>
   );
 };

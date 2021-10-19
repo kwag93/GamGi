@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Layout } from 'antd';
 import HeaderContainer from '../containers/HeaderContainer';
 import CheckMenuBar from '../components/common/CheckMenuBar';
-import dummy from '../db/alcoholCheck';
+import dummy from '../db/obsessionCheck';
 import { Radio } from 'antd';
 import palette from '../lib/styles/palette';
 
@@ -41,7 +41,7 @@ const BottomLine = styled.div`
   margin-bottom: 1rem;
 `;
 
-const AlcoholCheck = () => {
+const ObsessionCheck = () => {
   const itemSum = () => {
     let sum = 0;
     const cbox = document.getElementsByName('chkbox');
@@ -61,12 +61,7 @@ const AlcoholCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h2>신체장애 자가진단</h2>
-              <div>
-                아래에 있는 항목들은 지난 일주일 동안의 당신의 상태에 대한
-                질문입니다. 이와 같은 일들이 지난 일주일 동안 얼마나 자주
-                일어났었는지 답변해 주십시오
-              </div>
+              <h2>강박장애 자가진단</h2>
               <BottomLine />
             </TitleBox>
             <table border="black">
@@ -75,36 +70,29 @@ const AlcoholCheck = () => {
                 <col width="auto" />
                 <col width="10%" />
                 <col width="10%" />
-                <col width="10%" />
               </colgroup>
               <thead>
                 <tr align="center" bgcolor="#EBEFF7">
-                  <th colSpan="2">
-                    지난 4주 동안, 다음 나열되는 증상들에 얼마나 자주
-                    시달렸습니까?
-                  </th>
-                  <th>전혀 시달리지 않음</th>
-                  <th>약간 시달림</th>
-                  <th>대단히 시달림</th>
+                  <th colSpan="2">문항</th>
+                  <th>예</th>
+                  <th>아니오</th>
                 </tr>
               </thead>
               <tbody>
-                {dummy.alcohol.map((content, idx) => (
+                {dummy.obsession.map((content, idx) => (
                   <tr align="center" key={idx}>
                     <td>{content.id}</td>
                     <td>{content.content}</td>
 
                     {dummy.scores.map((score, idx) => (
                       <td align="center" key={idx}>
-                        <div id={score.score}>
-                          <input
-                            name="chkbox"
-                            type="radio"
-                            onClick={itemSum}
-                            value={score.score}
-                            id={idx}
-                          />
-                        </div>
+                        <input
+                          name="chkbox"
+                          type="checkbox"
+                          onClick={itemSum}
+                          value={score.score}
+                          id={idx}
+                        />
                       </td>
                     ))}
                   </tr>
@@ -113,7 +101,7 @@ const AlcoholCheck = () => {
             </table>
             <br />
             <br />
-            <h2 align="left">신체증상장애 검사결과</h2>
+            <h2 align="left">강박장애 검사결과</h2>
             <BottomLine />
             <div align="right">
               <table>
@@ -142,8 +130,8 @@ const AlcoholCheck = () => {
             <div>
               <table border="black">
                 <colgroup>
-                  <col width="4%" />
-                  <col width="10%" />
+                  <col width="2%" />
+                  <col width="8%" />
                 </colgroup>
                 <tbody>
                   {dummy.result.map((content, idx) => (
@@ -165,4 +153,4 @@ const AlcoholCheck = () => {
   );
 };
 
-export default AlcoholCheck;
+export default ObsessionCheck;

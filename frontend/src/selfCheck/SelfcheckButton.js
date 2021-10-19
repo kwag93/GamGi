@@ -48,7 +48,7 @@ const SelfcheckButton = () => {
           </Link>
         </Space>
         <Space size="large">
-          <Link to="/mentaldisorder">
+          <Link to="/obsession">
             <ButtonWithMarginTop cyan fullwidth>
               정신장애
             </ButtonWithMarginTop>

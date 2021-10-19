@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { changeField } from '../modules/write';
+import { Layout } from 'antd';
+import palette from '../lib/styles/palette';
+
+const { Content } = Layout;
 
 const Box = styled.div`
   display: flex;
@@ -16,6 +20,12 @@ const Img = styled.img`
 
 const ClickImg = styled.img`
   width: 100%;
+`;
+
+const StyledContent = styled(Content)`
+  background-color: #ffffff;
+  border: 2px solid ${palette.gray[3]};
+  border-radius: 10px;
 `;
 
 const importAll = (r) => {

@@ -4,8 +4,8 @@ import { MailOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
-import dummy from '../db/mentalData.json';
-import MentalList from '../selfCheck/MentalList';
+import dummy from '../db/obsessionData.json';
+import ObsessionList from '../selfCheck/ObsessionList';
 import palette from '../lib/styles/palette';
 
 const { Content } = Layout;
@@ -33,7 +33,7 @@ const TopBox = styled.div`
   margin-bottom: 4rem;
 `;
 
-const MentalDisorder = () => {
+const Obsession = () => {
   const onClick = (e) => {
     setkey(e.key);
   };
@@ -65,7 +65,7 @@ const MentalDisorder = () => {
           </Menu>
 
           <StyledContent>
-            <MentalList keys={key} />
+            <ObsessionList keys={key} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>
@@ -73,4 +73,4 @@ const MentalDisorder = () => {
   );
 };
 
-export default MentalDisorder;
+export default Obsession;

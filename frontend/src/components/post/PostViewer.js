@@ -3,19 +3,31 @@ import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 import { Layout } from 'antd';
-import Respones from '../common/Respones';
 
 const { Content } = Layout;
 
-const BackgroundBlock = styled.div``;
-
-const PostViewerBlock = styled(Respones)`
-  margin-top: 4rem;
+const BackgroundBlock = styled.div`
   background-image: url('https://i.pinimg.com/564x/3c/1c/ab/3c1cabb4b75256b7a4ec508e6c02d2d3.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto; /* 중앙 정렬 */
+  /* 브라우저 크기에 따라 세로 사이즈 변경 */
+  @media (max-height: 1024px) {
+    height: 768px;
+  }
+  @media (max-height: 768px) {
+    height: 100%;
+  }
+`;
+
+const PostViewerBlock = styled(Responsive)`
+  margin: 4rem;
 `;
 const BottomLine = styled.div`
   border-bottom: 1px solid ${palette.gray[3]};
-  margin-bottom: 2rem;
+  margin: 1rem 2rem 2rem 2rem;
 `;
 
 const PostHead = styled.div`
@@ -27,6 +39,7 @@ const PostHead = styled.div`
     margin: 0;
   }
 `;
+
 const Img = styled.img`
   width: 18%;
 `;
@@ -38,6 +51,12 @@ const ImgBlock = styled(Content)`
   overflow: 'initial';
   float: 'right';
   padding: 3rem;
+`;
+
+const StyledContent = styled(Content)`
+  background-color: #ffffff;
+  border: 2px solid ${palette.gray[3]};
+  border-radius: 10px;
 `;
 
 const ContentBlock = styled(Content)`
@@ -64,8 +83,11 @@ const SubInfo = styled.div`
 const PostContent = styled.div`
   font-size: 1.25rem;
   color: ${palette.gray[8]};
-  float: left;
-  padding: 0rem 3rem 2rem 3rem;
+`;
+
+const PostBlock = styled.div`
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 `;
 
 const importAll = (imgs) => {
@@ -110,27 +132,33 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
   const { title, body, user, publishedDate, emotion } = post;
   return (
     <>
-      <PostViewerBlock>
-        {actionButtons}
-        <ContentBlock>
-          <PostHead>
-            <h1>{title}</h1>
-            <SubInfo hasMarginTop>
-              <span>
-                <b>{user.username}</b>
-              </span>
-              <span>{new Date(publishedDate).toLocaleDateString()}</span>
-            </SubInfo>
-          </PostHead>
-        </ContentBlock>
-        <ImgBlock>
-          {idx !== -1 ? <Img src={images[idx].default} /> : ''}
-        </ImgBlock>
-        <BottomLine />
-        {body.split('\n').map((line, idx) => (
-          <PostContent key={idx}>{line} </PostContent>
-        ))}
-      </PostViewerBlock>
+      <BackgroundBlock>
+        <PostViewerBlock>
+          {actionButtons}
+          <StyledContent>
+            <ContentBlock>
+              <PostHead>
+                <h1>{title}</h1>
+                <SubInfo hasMarginTop>
+                  <span>
+                    <b>{user.username}</b>
+                  </span>
+                  <span>{new Date(publishedDate).toLocaleDateString()}</span>
+                </SubInfo>
+              </PostHead>
+            </ContentBlock>
+            <ImgBlock>
+              {idx !== -1 ? <Img src={images[idx].default} /> : ''}
+            </ImgBlock>
+            <BottomLine />
+            <PostBlock>
+              {body.split('\n').map((line, idx) => (
+                <PostContent key={idx}>{line} </PostContent>
+              ))}
+            </PostBlock>
+          </StyledContent>
+        </PostViewerBlock>
+      </BackgroundBlock>
     </>
   );
 };
