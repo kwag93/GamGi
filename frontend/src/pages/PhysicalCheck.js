@@ -44,7 +44,7 @@ const BottomLine = styled.div`
 const PhysicalCheck = () => {
   const itemSum = () => {
     let sum = 0;
-    const cbox = document.getElementsByName('chkbox');
+    const cbox = document.getElementsByClassName('chkbox');
     for (let i = 0; i < cbox.length; i++) {
       if (cbox[i].checked == true) {
         sum += parseInt(cbox[i].value);
@@ -98,11 +98,12 @@ const PhysicalCheck = () => {
                       <td align="center" key={idx}>
                         <div id={content.id}>
                           <input
-                            name="chkbox"
-                            type="checkbox"
+                            className="chkbox"
+                            name={content.id}
+                            type="radio"
                             onClick={itemSum}
                             value={score.score}
-                            id={content.id}
+                            id={idx}
                           />
                         </div>
                       </td>
