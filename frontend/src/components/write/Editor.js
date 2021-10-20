@@ -19,7 +19,7 @@ const TitleInput = styled.input`
 
 const ContentBox = styled.textarea`
   padding-top: 20px;
-  width: 80%;
+  width: 100%;
   resize: none;
   border: none;
   height: 500px;

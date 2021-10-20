@@ -30,7 +30,7 @@ const PostHead = styled.div`
   padding-bottom: 3rem;
   margin-bottom: 3rem;
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1.5;
     margin: 0;
   }
@@ -77,7 +77,7 @@ const SubInfo = styled.div`
 `;
 //하위
 const PostContent = styled.div`
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: ${palette.gray[8]};
 `;
 //상위
