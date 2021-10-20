@@ -50,7 +50,7 @@ const Editor = ({ title, body, onChangeField }) => {
       <br />
       <StyledContent>
         <TitleInput
-          placeholder="제목을 입력하세요"
+          placeholder="제목을 입력하세요_ 최대 8글자입니다"
           onChange={onChangeTitle}
           value={title}
         />
