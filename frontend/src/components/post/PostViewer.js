@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
-import Responsive from '../common/Responsive';
 import { Layout } from 'antd';
 
 const { Content } = Layout;
@@ -19,6 +18,7 @@ const BackgroundBlock = styled.div`
 
 const PostViewerBlock = styled(Responsive)`
   margin: 4rem;
+
 `;
 
 const BottomLine = styled.div`
