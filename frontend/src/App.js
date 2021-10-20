@@ -15,7 +15,7 @@ import Depression from './pages/Depression';
 import ContentList from './selfCheck/ContentList';
 import TitleList from './selfCheck/TitleList';
 import Anxiety from './pages/Anxiety';
-import MentalDisorder from './pages/MentalDisorder';
+import Obsession from './pages/Obsession';
 import Stress from './pages/Stress';
 import Suicide from './pages/Suicide';
 import CenterList from './selfCheck/CenterList';
@@ -24,11 +24,11 @@ import DropMenu from './pages/DropMenu';
 import DropdownBox from './selfCheck/DropdownBox';
 import AnxietyCheck from './pages/AnxietyCheck';
 import DepressionCheck from './pages/DepressionCheck';
-import MentalCheck from './pages/MentalCheck';
+import ObsessionCheck from './pages/ObsessionCheck';
 import StressCheck from './pages/StressCheck';
 import SuicideCheck from './pages/SuicideCheck';
-import AlcoholCheck from './pages/AlcoholCheck';
-import Alcohol from './pages/Alcohol';
+import PhysicalCheck from './pages/PhysicalCheck';
+import PhysicalDisability from './pages/PhysicalDisability';
 import Calculator from './pages/Calculator';
 
 const App = () => {
@@ -53,8 +53,8 @@ const App = () => {
       <Route component={ContentList} path="/ContentList" />
       <Route component={TitleList} path="/TitleList" />
       <Route component={Anxiety} path="/Anxiety" />
-      <Route component={MentalDisorder} path="/MentalDisorder" />
-      <Route component={Alcohol} path="/Alcohol" />
+      <Route component={Obsession} path="/Obsession" />
+      <Route component={PhysicalDisability} path="/Physicaldisability" />
       <Route component={Stress} path="/Stress" />
       <Route component={Suicide} path="/suicide" />
       <Route component={CenterList} path="/centerList" />
@@ -63,8 +63,8 @@ const App = () => {
       <Route component={DropdownBox} path="/dropdownbox" />
       <Route component={AnxietyCheck} path="/anxietycheck" />
       <Route component={DepressionCheck} path="/depressioncheck" />
-      <Route component={MentalCheck} path="/mentalcheck" />
-      <Route component={AlcoholCheck} path="/alcoholCheck" />
+      <Route component={ObsessionCheck} path="/obsessionCheck" />
+      <Route component={PhysicalCheck} path="/physicalCheck" />
       <Route component={StressCheck} path="/stresscheck" />
       <Route component={SuicideCheck} path="/suicidecheck" />
       <Route component={Calculator} path="/calculator" />

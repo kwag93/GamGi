@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { changeField } from '../modules/write';
+import { Layout } from 'antd';
+import palette from '../lib/styles/palette';
+
+const { Content } = Layout;
 
 const Box = styled.div`
   display: flex;
@@ -16,6 +20,12 @@ const Img = styled.img`
 
 const ClickImg = styled.img`
   width: 100%;
+`;
+
+const StyledContent = styled(Content)`
+  background-color: #ffffff;
+  border: 2px solid ${palette.gray[4]};
+  border-radius: 10px;
 `;
 
 const importAll = (r) => {
@@ -56,33 +66,33 @@ const Emotion = () => {
   return (
     <div>
       <Box>
-        <br />
         <h3>✿ 오늘의 감기를 선택해 주세요✿</h3>
-        <table>
-          <tbody>
-            <tr height="10" />
-            <tr align="center">
-              {images.map((img, index) => (
-                <td width="130" key={index} onClick={() => onClick(index)}>
-                  {index === num ? (
-                    <ClickImg src={images[index].default} />
-                  ) : (
-                    <Img src={images[index].default} />
-                  )}
-                </td>
-              ))}
-            </tr>
-            <tr align="center">
-              {emotion_names.map((emotion_name, idx) => (
-                <td width="130" key={idx}>
-                  {emotion_name}
-                </td>
-              ))}
-            </tr>
-            <tr height="30" />
-            <tr height="30" />
-          </tbody>
-        </table>
+        <StyledContent>
+          <table>
+            <tbody>
+              <tr height="10" />
+              <tr align="center">
+                {images.map((img, index) => (
+                  <td width="130" key={index} onClick={() => onClick(index)}>
+                    {index === num ? (
+                      <ClickImg src={images[index].default} />
+                    ) : (
+                      <Img src={images[index].default} />
+                    )}
+                  </td>
+                ))}
+              </tr>
+              <tr align="center">
+                {emotion_names.map((emotion_name, idx) => (
+                  <td width="130" key={idx}>
+                    {emotion_name}
+                  </td>
+                ))}
+              </tr>
+              <tr height="30" />
+            </tbody>
+          </table>
+        </StyledContent>
       </Box>
     </div>
   );

@@ -45,7 +45,7 @@ const PostItemBlock = styled.div`
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-bottom: 0;
     margin-top: 0;
     &:hover {
@@ -59,7 +59,7 @@ const PostItemBlock = styled.div`
 
 const StyledContent = styled(Content)`
   background-color: #ffffff;
-  border: 2px solid ${palette.gray[3]};
+  border: 2px solid ${palette.gray[4]};
   border-radius: 10px;
 `;
 

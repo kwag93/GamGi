@@ -21,8 +21,8 @@ const CheckMenuBar = () => {
   const roots = [
     'depressionCheck',
     'stressCheck',
-    'alcoholCheck',
-    'mentalCheck',
+    'physicalCheck',
+    'obsessionCheck',
     'suicideCheck',
     'anxietyCheck',
   ];
@@ -40,16 +40,16 @@ const CheckMenuBar = () => {
       root: 'stressCheck',
     },
     {
-      key: 'alcoholCheck',
+      key: 'physicalCheck',
       name: '신체증상 장애',
       icon: <AppstoreOutlined />,
-      root: 'alcoholCheck',
+      root: 'physicalCheck',
     },
     {
-      key: 'mentalCheck',
+      key: 'obsessionCheck',
       name: '강박장애',
       icon: <SettingOutlined />,
-      root: 'mentalCheck',
+      root: 'obsessionCheck',
     },
     {
       key: 'suicideCheck',

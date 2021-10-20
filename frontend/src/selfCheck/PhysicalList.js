@@ -1,5 +1,5 @@
 import React from 'react';
-import dummy from '../db/mentalData.json';
+import dummy from '../db/physicalData.json';
 import styled from 'styled-components';
 import palette from '../lib/styles/palette';
 
@@ -10,20 +10,19 @@ const ListBox = styled.div`
   border-radius: 10px;
   padding: 3rem;
 `;
-
 const BottomLine = styled.div`
   border-bottom: 1px solid ${palette.gray[3]};
   margin-top: 0.5rem;
   margin-bottom: 1rem;
 `;
 
-const mentalList = (props) => {
-  const mentalList = dummy.mentalContent.filter(
+const PhysicalList = (props) => {
+  const physicalList = dummy.physicalContent.filter(
     (content) => content.id === parseInt(props.keys) + 4,
   );
   return (
     <>
-      {mentalList.map((script, index) => (
+      {physicalList.map((script, index) => (
         <Content
           header={script.header}
           body={script.body}
@@ -83,4 +82,4 @@ const Content = ({ header, body, body2, subheader, subbody }) => {
   );
 };
 
-export default mentalList;
+export default PhysicalList;

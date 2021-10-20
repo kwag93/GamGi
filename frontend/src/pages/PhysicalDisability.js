@@ -4,8 +4,8 @@ import { MailOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
-import dummy from '../db/alcoholData.json';
-import AlcoholList from '../selfCheck/AlcoholList';
+import dummy from '../db/physicalData.json';
+import PhysicalList from '../selfCheck/PhysicalList';
 import palette from '../lib/styles/palette';
 
 const { Content } = Layout;
@@ -32,7 +32,7 @@ const TopBox = styled.div`
   justify-content: flex-end;
   margin-bottom: 4rem;
 `;
-const Alcohol = () => {
+const physicalDisability = () => {
   const onClick = (e) => {
     setkey(e.key);
   };
@@ -64,7 +64,7 @@ const Alcohol = () => {
           </Menu>
 
           <StyledContent>
-            <AlcoholList keys={key} />
+            <PhysicalList keys={key} />
           </StyledContent>
         </StyledLayout>
       </StyledLayout>
@@ -72,4 +72,4 @@ const Alcohol = () => {
   );
 };
 
-export default Alcohol;
+export default physicalDisability;

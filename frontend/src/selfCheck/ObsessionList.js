@@ -1,5 +1,5 @@
 import React from 'react';
-import dummy from '../db/alcoholData.json';
+import dummy from '../db/obsessionData.json';
 import styled from 'styled-components';
 import palette from '../lib/styles/palette';
 
@@ -10,19 +10,20 @@ const ListBox = styled.div`
   border-radius: 10px;
   padding: 3rem;
 `;
+
 const BottomLine = styled.div`
   border-bottom: 1px solid ${palette.gray[3]};
   margin-top: 0.5rem;
   margin-bottom: 1rem;
 `;
 
-const AlcoholList = (props) => {
-  const alcoholList = dummy.alcoholContent.filter(
+const ObsessionList = (props) => {
+  const obsessionList = dummy.obsessionContent.filter(
     (content) => content.id === parseInt(props.keys) + 4,
   );
   return (
     <>
-      {alcoholList.map((script, index) => (
+      {obsessionList.map((script, index) => (
         <Content
           header={script.header}
           body={script.body}
@@ -82,4 +83,4 @@ const Content = ({ header, body, body2, subheader, subbody }) => {
   );
 };
 
-export default AlcoholList;
+export default ObsessionList;
