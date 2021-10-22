@@ -73,7 +73,12 @@ const Emotion = () => {
               <tr height="10" />
               <tr align="center">
                 {images.map((img, index) => (
-                  <td width="130" key={index} onClick={() => onClick(index)}>
+                  <td
+                    width="130"
+                    height="130"
+                    key={index}
+                    onClick={() => onClick(index)}
+                  >
                     {index === num ? (
                       <ClickImg src={images[index].default} />
                     ) : (
