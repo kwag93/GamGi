@@ -41,8 +41,8 @@ const BottomLine = styled.div`
 `;
 
 const checkTable = styled.table`
-  border: 2px solid ${palette.gray[3]}
-  padding: 10px
+  border: 2px solid ${palette.gray[3]};
+  padding: 10px;
   border-collapse: collapse;
 `;
 

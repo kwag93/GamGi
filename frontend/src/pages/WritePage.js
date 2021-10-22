@@ -4,10 +4,6 @@ import StyledModal from '../components/common/SelectEmotionModal';
 import EditorContainer from '../containers/EditorContainer';
 import HeaderContainer from '../containers/HeaderContainer';
 import WriteButtonsContainer from '../containers/WriteButtonsContainer';
-import { Layout } from 'antd';
-import palette from '../lib/styles/palette';
-
-const { Content } = Layout;
 
 const Box = styled.div`
   left: 0;
