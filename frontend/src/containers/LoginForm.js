@@ -4,7 +4,7 @@ import { changeField, initializeForm, login } from '../modules/auth';
 import { withRouter } from 'react-router-dom';
 import { check } from '../modules/user';
 import { useState, useEffect } from 'react';
-import { Modal } from 'antd';
+import ErrorModal from '../components/common/ErrorModal';
 
 const LoginForm = ({ history }) => {
   const [error, setError] = useState(null);
@@ -15,15 +15,6 @@ const LoginForm = ({ history }) => {
     authError: auth.authError,
     user: user.user,
   }));
-  // Todo : error 내용이 처음에 들어와있지 않음
-  // entd modal
-  const countDown = (error) => {
-    const modal = Modal.success({
-      title: '로그인에러',
-      content: error,
-    });
-  };
-
   // 인풋 변경 이벤트 핸들러
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -51,7 +42,7 @@ const LoginForm = ({ history }) => {
   useEffect(() => {
     if (authError) {
       setError('로그인 실패');
-      countDown(error);
+      ErrorModal('로그인 실패 아이디와 비밀번호를 다시 확인해보세요');
       return;
     }
     if (auth) {
