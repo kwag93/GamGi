@@ -44,7 +44,7 @@ const BottomLine = styled.div`
 const SuicideCheck = () => {
   const itemSum = () => {
     let sum = 0;
-    const cbox = document.getElementsByName('chkbox');
+    const cbox = document.getElementsByClassName('chkbox');
     for (let i = 0; i < cbox.length; i++) {
       if (cbox[i].checked == true) {
         sum += parseInt(cbox[i].value);
@@ -95,8 +95,9 @@ const SuicideCheck = () => {
                     {dummy.scores.map((score, idx) => (
                       <td align="center" key={idx}>
                         <input
-                          name="chkbox"
-                          type="checkbox"
+                          className="chkbox"
+                          name={content.id}
+                          type="radio"
                           onClick={itemSum}
                           value={score.score}
                           id={idx}

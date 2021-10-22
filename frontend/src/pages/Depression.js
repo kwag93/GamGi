@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Menu, Layout } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
-import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
 import dummy from '../db/data.json';
 import ContentList from '../selfCheck/ContentList';
 import palette from '../lib/styles/palette';
+import HeaderContainer from '../containers/HeaderContainer';
 
 const { Content } = Layout;
 

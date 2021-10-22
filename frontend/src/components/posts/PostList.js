@@ -25,6 +25,9 @@ const ImgBlock = styled(Content)`
 `;
 const PostListBlock = styled(Respones)`
   margin-top: 3rem;
+  word-wrap: break-word; /* IE 5.5-7 */
+  white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+  white-space: pre-wrap; /* current browsers */
 `;
 
 const ButtonBlock = styled(Responsive)``;
@@ -145,7 +148,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
         <br />
         <br />
         <WritePostButtonWrapper>
-          {showWriteButton && <Button to="/write">새 글 작성하기</Button>}
+          {showWriteButton && <Button to="/write">다이어리 작성하기</Button>}
         </WritePostButtonWrapper>
       </ButtonBlock>
       <PostListBlock>
