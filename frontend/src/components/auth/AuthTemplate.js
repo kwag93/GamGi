@@ -13,7 +13,6 @@ const AuthTemplateBlock = styled.div`
   top: 0;
   bottom: 0;
   right: 0;
-  background: ${palette.gray[2]};
   /* flex로 내부 내용 중앙 정렬 */
   display: flex;
   flex-direction: column;
@@ -31,10 +30,10 @@ const WhiteBox = styled.div`
     letter-spacing: 2px;
   }
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
+  background-color: white;
   padding: 2rem;
   width: 360px;
-  background: white;
-  border-radius: 2px;
+  border-radius: 5px;
 `;
 
 const AuthTemplate = ({ children }) => {
@@ -42,7 +41,7 @@ const AuthTemplate = ({ children }) => {
     <AuthTemplateBlock>
       <WhiteBox>
         <div className="logo-area">
-          <h3>✿ 감기에 온 걸 환영해 ✿</h3>
+          <h3>✿ 감기에 오신 것을 환영합니다 ✿</h3>
         </div>
         {children}
       </WhiteBox>

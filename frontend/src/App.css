@@ -46,3 +46,18 @@
   font-family: 'gmarketLight';
   src: url(./lib/fonts/GmarketSansTTFLight.ttf);
 }
+
+@font-face {
+  font-family: 'yanoljaBold';
+  src: url(./lib/fonts/Yanolja\ Bold.ttf);
+}
+
+@font-face {
+  font-family: 'yanoljaRegular';
+  src: url(./lib/fonts/Yanolja\ Regular.ttf);
+}
+
+@font-face {
+  font-family: 'jalnan';
+  src: url(./lib/fonts/Jalnan.ttf);
+}
