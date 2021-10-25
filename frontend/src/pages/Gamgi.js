@@ -10,7 +10,8 @@ const Box = styled.div`
 const ImgBox = styled.img`
   width: 100%;
   height: 100%;
-  padding: 4rem;
+  padding-right: 8rem;
+  padding-left: 8rem;
 `;
 
 const Gamgi = () => {

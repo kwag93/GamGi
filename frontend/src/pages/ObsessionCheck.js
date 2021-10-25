@@ -61,7 +61,7 @@ const ObsessionCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h2>강박장애 자가진단</h2>
+              <h2>강박장애 자가진단 (MOCI)</h2>
               <BottomLine />
             </TitleBox>
             <table border="black">

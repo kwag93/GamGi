@@ -61,7 +61,7 @@ const AnxietyCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h2>불안장애 자가진단</h2>
+              <h2>불안장애 자가진단 (STAI-X-1)</h2>
               <div>
                 다음 문장들은 사람들이 자신을 표현하는데 사용되는 것들입니다.
                 <br />각 문장을 잘 읽으시고 각 문장의 오른편에 있는 네 개의 항목

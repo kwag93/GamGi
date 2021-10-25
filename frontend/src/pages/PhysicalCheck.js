@@ -61,7 +61,7 @@ const PhysicalCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h2>신체장애 자가진단</h2>
+              <h2>신체장애 자가진단 (DSM-V)</h2>
               <div>
                 아래에 있는 항목들은 지난 일주일 동안의 당신의 상태에 대한
                 질문입니다. 이와 같은 일들이 지난 일주일 동안 얼마나 자주

@@ -61,7 +61,7 @@ const SuicideCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h2>자살위험성 자가진단</h2>
+              <h2>자살위험성 자가진단 (SSI)</h2>
               <div>
                 다음은 여러분이 일상생활에서 경험할 수 있는 내용들로 구성되어
                 있습니다. <br />
