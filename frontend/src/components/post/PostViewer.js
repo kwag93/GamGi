@@ -27,6 +27,9 @@ const BottomLine = styled.div`
 `;
 
 const PostHead = styled.div`
+  width: 450px;
+  height: 100px;
+  padding-top: 2rem;
   padding-bottom: 3rem;
   margin-bottom: 3rem;
   h1 {
@@ -36,32 +39,33 @@ const PostHead = styled.div`
   }
 `;
 
+const ContentBlock = styled.div`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: 'initial';
+  padding: 1rem 3rem 0rem 3rem;
+  float: left;
+`;
 const Img = styled.img`
-  width: 18%;
+  width: 30%;
 `;
 
 const ImgBlock = styled(Content)`
+  width: 400px;
+  height: 150px;
   display: flex;
+  margin: 2rem 2rem 0rem 2rem;
   justify-content: flex-end;
   align-items: center;
   overflow: 'initial';
   float: 'right';
-  padding: 3rem;
 `;
 
 const StyledContent = styled(Content)`
   background-color: #ffffff;
   border: 2px solid ${palette.gray[4]};
   border-radius: 10px;
-`;
-
-const ContentBlock = styled(Content)`
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: 'initial';
-  padding: 3rem;
-  float: left;
 `;
 
 const SubInfo = styled.div`
@@ -80,8 +84,6 @@ const PostContent = styled.div`
   font-size: 1rem;
   color: ${palette.gray[8]};
   word-wrap: break-word; /* IE 5.5-7 */
-  white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
-  white-space: pre-wrap; /* current browsers */
 `;
 //상위
 const PostBlock = styled.div`

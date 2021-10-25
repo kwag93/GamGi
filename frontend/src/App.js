@@ -41,7 +41,7 @@ const App = () => {
         path={['/postlist/@:username', '/postlist']}
         exact
       />
-      <Route component={Auth(RegisterPage, true)} path="/register" />
+      <Route component={RegisterPage} path="/register" />
       <Route component={Auth(WritePage, true)} path="/write" />
       <Route component={Auth(PostPage, true)} path="/@:username/:postId" />
       <Route component={Auth(CalendarPage, true)} path="/calendar" />
