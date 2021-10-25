@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
-import GamgiPage from '../lib/images/WelcomeToTheGamgi1@2x.png';
+import GamgiPage from '../lib/images/gamgiFinal.png';
 
 const Box = styled.div`
   background-color: #030020;

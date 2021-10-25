@@ -100,6 +100,7 @@ const ObsessionCheck = () => {
                 ))}
               </tbody>
             </table>
+
             <br />
             <br />
             <h2 align="left">강박장애 검사결과</h2>
@@ -146,6 +147,10 @@ const ObsessionCheck = () => {
                   ))}
                 </tbody>
               </table>
+              <div>
+                <br />
+                <p>출처: Maudsley Obsessional-Compulsive Inventory(MOCI)</p>
+              </div>
             </div>
           </StyledContent>
         </StyledLayout>

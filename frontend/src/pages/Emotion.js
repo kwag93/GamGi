@@ -20,7 +20,6 @@ const Img = styled.img`
 
 const ClickImg = styled.img`
   width: 100%;
-  transition: 0.5s;
 `;
 
 const StyledContent = styled(Content)`

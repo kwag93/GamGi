@@ -111,6 +111,7 @@ const StressCheck = () => {
                 ))}
               </tbody>
             </table>
+
             <br />
             <br />
             <h2 align="left">스트레스 검사결과</h2>
@@ -157,6 +158,14 @@ const StressCheck = () => {
                   ))}
                 </tbody>
               </table>
+              <div>
+                <br />
+                <p>
+                  출처: 이종하, 신철민, 고영훈, 임재형, 조숙행, 김승현, 정인과,
+                  한창수 (2012), 한글판 스트레스 자각척도의 신뢰도와 타당도
+                  연구, 정신신체의학, 20(2), 127-134
+                </p>
+              </div>
             </div>
           </StyledContent>
         </StyledLayout>

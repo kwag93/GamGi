@@ -112,6 +112,7 @@ const PhysicalCheck = () => {
                 ))}
               </tbody>
             </table>
+
             <br />
             <br />
             <h2 align="left">신체증상장애 검사결과</h2>
@@ -158,6 +159,20 @@ const PhysicalCheck = () => {
                   ))}
                 </tbody>
               </table>
+              <div>
+                <br />
+                <p>
+                  출처
+                  <br />
+                  1. Kroenke K., Spitzer RL., Williams JB. The PHQ–15: validity
+                  of a new measure for evaluating the severity of somatic
+                  symptoms. Psychosomatic Medicine. 2002;64:258–266.
+                  <br /> 2. Han C, Pae CU, Patkar AA, Masand PS, Kim KW, Joe SH,
+                  Jung IK. Psychometric properties of the Patient Health
+                  Questionnaire-15(PHQ-15) for measuring the somatic symptoms of
+                  psychiatric outpatients. Psychosomatics. 2009; 50(6):580-585.
+                </p>
+              </div>
             </div>
           </StyledContent>
         </StyledLayout>

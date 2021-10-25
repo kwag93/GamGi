@@ -117,6 +117,7 @@ const DepressionCheck = () => {
                 ))}
               </tbody>
             </table>
+
             <br />
             <br />
             <h2 align="left">우울증 검사결과</h2>
@@ -163,6 +164,15 @@ const DepressionCheck = () => {
                   ))}
                 </tbody>
               </table>
+              <div>
+                <br />
+                <p>
+                  출처: Spitzer RL., Kroenke K., Williams JBW. Validation and
+                  utility of a self-report version of PRIME-MD: the PHQ primary
+                  care study. The Journal of the American Medical Association.
+                  1999:282(18);1737-1744.
+                </p>
+              </div>
             </div>
           </StyledContent>
         </StyledLayout>

@@ -114,6 +114,7 @@ const AnxietyCheck = () => {
                 ))}
               </tbody>
             </table>
+
             <br />
             <br />
             <h2 align="left">불안장애 검사결과</h2>
@@ -160,6 +161,14 @@ const AnxietyCheck = () => {
                   ))}
                 </tbody>
               </table>
+              <div>
+                <br />
+                <p>
+                  출처: Spielberger, C. D.(1970). Manual for the State-Trait
+                  Anxiety Inventory. Palo alto, CA, Consulting Psychologist
+                  Press
+                </p>
+              </div>
             </div>
           </StyledContent>
         </StyledLayout>
