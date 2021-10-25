@@ -8,6 +8,20 @@ import palette from '../lib/styles/palette';
 
 const { Content } = Layout;
 
+const DivBox = styled.div`
+  background-color: #030020;
+  height: 100%;
+  padding: 3rem;
+`;
+
+const ContentLayout = styled(Layout)`
+  background: white;
+  border: 1px solid ${palette.gray[5]};
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 3rem;
+`;
+
 const StyledContent = styled(Content)`
   width: 80%;
   flex-direction: column;
@@ -30,7 +44,7 @@ const TopBox = styled.div`
 `;
 
 const TitleBox = styled.div`
-  width: 100%;
+  width: 120%;
   background: white;
 `;
 
@@ -54,119 +68,132 @@ const DepressionCheck = () => {
   return (
     <div>
       <HeaderContainer />
-      <TopBox />
-      <StyledLayout>
-        <CheckMenuBar />
-        <StyledLayout style={{ padding: '0 100px 24px' }}>
-          <StyledContent>
-            <TitleBox>
-              <h2>우울증 자가진단</h2>
-              <div>
-                아래에 있는 항목들은 지난 일주일 동안의 당신의 상태에 대한
-                질문입니다. 이와 같은 일들이 지난 일주일 동안 얼마나 자주
-                일어났었는지 답변해 주십시오
-              </div>
-              <BottomLine />
-            </TitleBox>
-            <table border="black">
-              <colgroup>
-                <col width="6%" />
-                <col width="auto" />
-                <col width="10%" />
-                <col width="10%" />
-                <col width="10%" />
-                <col width="10%" />
-              </colgroup>
-              <thead>
-                <tr align="center" bgcolor="#EBEFF7">
-                  <th colSpan="2">지난 1주일간 나는</th>
-                  <th>
-                    극히 드물었다 <br />
-                    (1일 미만)
-                  </th>
-                  <th>
-                    가끔 있었다 <br /> (1-2일)
-                  </th>
-                  <th>
-                    종종 있었다 <br /> (3-4일)
-                  </th>
-                  <th>
-                    대부분 그랬다 <br /> (5-7일)
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {dummy.depression.map((content, idx) => (
-                  <tr align="center" key={idx}>
-                    <td>{content.id}</td>
-                    <td>{content.content}</td>
-
-                    {dummy.scores.map((score, idx) => (
-                      <td align="center" key={idx}>
-                        <input
-                          className="chkbox"
-                          name={content.id}
-                          type="radio"
-                          onClick={itemSum}
-                          value={score.score}
-                          id={idx}
-                        />
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <br />
-            <br />
-            <h2 align="left">우울증 검사결과</h2>
-            <BottomLine />
-            <div align="right">
-              <table>
-                <tbody>
-                  <tr align="right">
-                    <td align="right">
-                      <h3>합계</h3>
-                    </td>
-                    <td colSpan="4" align="right">
-                      <h3>
-                        <input
-                          border-color="white"
-                          id="total_sum"
-                          type="text"
-                          size="5"
-                          value="0"
-                          readOnly
-                        />
-                        점
-                      </h3>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div>
-              <table border="black">
-                <colgroup>
-                  <col width="4%" />
-                  <col width="10%" />
-                </colgroup>
-                <tbody>
-                  {dummy.result.map((content, idx) => (
-                    <tr align="center" key={idx}>
-                      <td bgcolor="#EBEFF7">{content.header}</td>
-                      <td align="left">
-                        <tr>{content.content}</tr>
-                        <tr>{content.content2}</tr>
-                      </td>
+      <DivBox>
+        <ContentLayout>
+          <StyledLayout>
+            <CheckMenuBar />
+            <StyledLayout style={{ padding: '0 100px 24px' }}>
+              <StyledContent>
+                <TitleBox>
+                  <h2>우울증 자가진단 (CES-D)</h2>
+                  <div>
+                    아래에 있는 항목들은 지난 일주일 동안의 당신의 상태에 대한
+                    질문입니다. 이와 같은 일들이 지난 일주일 동안 얼마나 자주
+                    일어났었는지 답변해 주십시오
+                  </div>
+                  <BottomLine />
+                </TitleBox>
+                <table border="black" width="120%">
+                  <colgroup>
+                    <col width="6%" />
+                    <col width="auto" />
+                    <col width="10%" />
+                    <col width="10%" />
+                    <col width="10%" />
+                    <col width="10%" />
+                  </colgroup>
+                  <thead>
+                    <tr align="center" bgcolor="#EBEFF7">
+                      <th colSpan="2">지난 1주일간 나는</th>
+                      <th>
+                        극히 드물었다 <br />
+                        (1일 미만)
+                      </th>
+                      <th>
+                        가끔 있었다 <br /> (1-2일)
+                      </th>
+                      <th>
+                        종종 있었다 <br /> (3-4일)
+                      </th>
+                      <th>
+                        대부분 그랬다 <br /> (5-7일)
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </StyledContent>
-        </StyledLayout>
-      </StyledLayout>
+                  </thead>
+                  <tbody>
+                    {dummy.depression.map((content, idx) => (
+                      <tr align="center" key={idx}>
+                        <td>{content.id}</td>
+                        <td>{content.content}</td>
+
+                        {dummy.scores.map((score, idx) => (
+                          <td align="center" key={idx}>
+                            <input
+                              className="chkbox"
+                              name={content.id}
+                              type="radio"
+                              onClick={itemSum}
+                              value={score.score}
+                              id={idx}
+                            />
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+
+                <br />
+                <br />
+                <h2 align="left">우울증 검사결과</h2>
+                <BottomLine />
+                <div align="right">
+                  <table width="120%">
+                    <tbody>
+                      <tr align="right">
+                        <td align="right">
+                          <h3>합계</h3>
+                        </td>
+                        <td colSpan="4" align="right">
+                          <h3>
+                            <input
+                              border-color="white"
+                              id="total_sum"
+                              type="text"
+                              size="5"
+                              value="0"
+                              readOnly
+                            />
+                            점
+                          </h3>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div>
+                  <table border="black" width="120%">
+                    <colgroup>
+                      <col width="4%" />
+                      <col width="10%" />
+                    </colgroup>
+                    <tbody>
+                      {dummy.result.map((content, idx) => (
+                        <tr align="center" key={idx}>
+                          <td bgcolor="#EBEFF7">{content.header}</td>
+                          <td align="left">
+                            <tr>{content.content}</tr>
+                            <tr>{content.content2}</tr>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div>
+                    <br />
+                    <p>
+                      출처: Spitzer RL., Kroenke K., Williams JBW. Validation
+                      and utility of a self-report version of PRIME-MD: the PHQ
+                      primary care study. The Journal of the American Medical
+                      Association. 1999:282(18);1737-1744.
+                    </p>
+                  </div>
+                </div>
+              </StyledContent>
+            </StyledLayout>
+          </StyledLayout>
+        </ContentLayout>
+      </DivBox>
     </div>
   );
 };

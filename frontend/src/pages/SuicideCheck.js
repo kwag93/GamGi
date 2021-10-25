@@ -61,7 +61,7 @@ const SuicideCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h2>자살위험성 자가진단</h2>
+              <h2>자살위험성 자가진단 (SSI)</h2>
               <div>
                 다음은 여러분이 일상생활에서 경험할 수 있는 내용들로 구성되어
                 있습니다. <br />
@@ -108,6 +108,7 @@ const SuicideCheck = () => {
                 ))}
               </tbody>
             </table>
+
             <br />
             <br />
             <h2 align="left">자살위험성 검사결과</h2>
@@ -153,6 +154,22 @@ const SuicideCheck = () => {
                   ))}
                 </tbody>
               </table>
+              <div>
+                <br />
+                <p>
+                  출처
+                  <br />
+                  1. Dube P., Kurt K., Bair MJ., Theobald D., Williams LS. The
+                  p4 screener: evaluation of a brief measure for assessing
+                  potential suicide risk in 2 randomized effectiveness trials of
+                  primary care and oncology patients. Primary care companion to
+                  the Journal of clinical psychiatry. 2010;12(6).
+                  <br />
+                  2. 박주언, 김원형, 노대영, 원성두, 김하경, 강석훈, 홍나래,
+                  박성용, 김대호, 채정호. 재난정신건강평가 워크북.
+                  대한불안의학회, 정신건강기술개발사업단. 2016.
+                </p>
+              </div>
             </div>
           </StyledContent>
         </StyledLayout>

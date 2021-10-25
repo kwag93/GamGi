@@ -12,6 +12,20 @@ import LoginModal from '../components/common/LoginModal';
 
 const { Content } = Layout;
 
+const DivBox = styled.div`
+  background-color: #030020;
+  height: 100%;
+  padding: 3rem;
+`;
+
+const ContentLayout = styled(Layout)`
+  background: white;
+  border: 1px solid ${palette.gray[5]};
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 3rem;
+`;
+
 const StyledContent = styled(Content)`
   width: 100%;
   flex-direction: column;
@@ -50,26 +64,29 @@ const Depression = () => {
   return (
     <div>
       <HeaderContainer />
-      <TopBox />
-      <StyledLayout>
-        <SubMenuBar />
-        <StyledLayout style={{ padding: '0 100px 24px' }}>
-          <Menu onClick={onClick} mode="horizontal" defaultSelectedKeys="1">
-            {dummy.depression.map((title) => (
-              <Menu.Item
-                onClick={addToCanvos}
-                key={title.id}
-                icon={<MailOutlined />}
-              >
-                {title.title}
-              </Menu.Item>
-            ))}
-          </Menu>
-          <StyledContent>
-            <ContentList keys={key} />
-          </StyledContent>
-        </StyledLayout>
-      </StyledLayout>
+      <DivBox>
+        <ContentLayout>
+          <StyledLayout>
+            <SubMenuBar />
+            <StyledLayout style={{ padding: '0 100px 24px' }}>
+              <Menu onClick={onClick} mode="horizontal" defaultSelectedKeys="1">
+                {dummy.depression.map((title) => (
+                  <Menu.Item
+                    onClick={addToCanvos}
+                    key={title.id}
+                    icon={<MailOutlined />}
+                  >
+                    {title.title}
+                  </Menu.Item>
+                ))}
+              </Menu>
+              <StyledContent>
+                <ContentList keys={key} />
+              </StyledContent>
+            </StyledLayout>
+          </StyledLayout>
+        </ContentLayout>
+      </DivBox>
     </div>
   );
 };

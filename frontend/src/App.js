@@ -6,7 +6,7 @@ import RegisterPage from './pages/RegisterPage';
 import WritePage from './pages/WritePage';
 import PostPage from './pages/PostPage';
 import CalendarPage from './pages/CalendarPage';
-import ChallengePage from './pages/ChallengePage';
+import Gamgi from './pages/Gamgi';
 import MyResponsiveBar from './pages/StatisticPage';
 import Emotion from './pages/Emotion';
 import SelfCheckPage from './pages/SelfCheckPage';
@@ -46,6 +46,7 @@ const App = () => {
       <Route component={Auth(PostPage, true)} path="/@:username/:postId" />
       <Route component={Auth(CalendarPage, true)} path="/calendar" />
       <Route component={Auth(ChallengePage, true)} path="/challenge" />
+      <Route component={Gamgi} path="/gamgi" />
       <Route component={Auth(MyResponsiveBar, true)} path="/statistic" />
       <Route component={Auth(Emotion, true)} path="/emotion" />
       <Route component={Auth(SelfCheckPage, true)} path="/selfcheck" />
@@ -72,6 +73,7 @@ const App = () => {
       <Route component={Auth(StressCheck, true)} path="/stresscheck" />
       <Route component={Auth(SuicideCheck, true)} path="/suicidecheck" />
       <Route component={Auth(Calculator, true)} path="/calculator" />
+
     </div>
   );
 };
