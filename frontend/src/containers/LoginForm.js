@@ -9,10 +9,10 @@ import ErrorModal from '../components/common/ErrorModal';
 const LoginForm = ({ history }) => {
   const [error, setError] = useState(null);
   const dispatch = useDispatch();
-  const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
+  const { form, auth, loginError, user } = useSelector(({ auth, user }) => ({
     form: auth.login,
     auth: auth.auth,
-    authError: auth.authError,
+    loginError: auth.loginError,
     user: user.user,
   }));
   // 인풋 변경 이벤트 핸들러
@@ -40,7 +40,7 @@ const LoginForm = ({ history }) => {
   }, [dispatch]);
 
   useEffect(() => {
-    if (authError) {
+    if (loginError) {
       setError('로그인 실패');
       ErrorModal('로그인 실패 아이디와 비밀번호를 다시 확인해보세요');
       return;
@@ -49,7 +49,7 @@ const LoginForm = ({ history }) => {
       console.log('로그인 성공');
       dispatch(check());
     }
-  }, [auth, authError, dispatch]);
+  }, [auth, loginError, dispatch]);
 
   useEffect(() => {
     if (user) {

@@ -94,9 +94,9 @@ const AnxietyCheck = () => {
               </thead>
               <tbody>
                 {dummy.anxiety.map((content, idx) => (
-                  <tr align="center" key={idx}>
-                    <td>{content.id}</td>
-                    <td>{content.content}</td>
+                  <tr key={idx}>
+                    <td align="center">{content.id}</td>
+                    <td align="left">{content.content}</td>
 
                     {dummy.scores.map((score, idx) => (
                       <td align="center" key={idx}>

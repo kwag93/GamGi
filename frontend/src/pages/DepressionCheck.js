@@ -9,7 +9,7 @@ import palette from '../lib/styles/palette';
 const { Content } = Layout;
 
 const DivBox = styled.div`
-  background-color: #030020;
+  background-image: url('https://i.pinimg.com/564x/82/9c/70/829c70a532b1398c6d130fd50c4a786e.jpg');
   height: 100%;
   padding: 3rem;
 `;
@@ -112,9 +112,9 @@ const DepressionCheck = () => {
                   </thead>
                   <tbody>
                     {dummy.depression.map((content, idx) => (
-                      <tr align="center" key={idx}>
-                        <td>{content.id}</td>
-                        <td>{content.content}</td>
+                      <tr key={idx}>
+                        <td align="center">{content.id}</td>
+                        <td align="left">{content.content}</td>
 
                         {dummy.scores.map((score, idx) => (
                           <td align="center" key={idx}>
@@ -141,11 +141,9 @@ const DepressionCheck = () => {
                   <table width="120%">
                     <tbody>
                       <tr align="right">
-                        <td align="right">
-                          <h3>합계</h3>
-                        </td>
                         <td colSpan="4" align="right">
                           <h3>
+                            <b>합계 : </b>
                             <input
                               border-color="white"
                               id="total_sum"
@@ -154,7 +152,7 @@ const DepressionCheck = () => {
                               value="0"
                               readOnly
                             />
-                            점
+                            <b> 점</b>
                           </h3>
                         </td>
                       </tr>
