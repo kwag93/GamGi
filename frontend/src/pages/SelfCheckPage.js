@@ -33,7 +33,7 @@ const SelfCheckPage = () => {
   const onClick = (e) => {
     console.log('click', e);
   };
-
+  // if (!) return <LoginModal />;
   return (
     <div>
       <HeaderContainer />

@@ -7,6 +7,8 @@ import dummy from '../db/data.json';
 import ContentList from '../selfCheck/ContentList';
 import palette from '../lib/styles/palette';
 import HeaderContainer from '../containers/HeaderContainer';
+import { useSelector } from 'react-redux';
+import LoginModal from '../components/common/LoginModal';
 
 const { Content } = Layout;
 
