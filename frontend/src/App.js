@@ -30,6 +30,7 @@ import SuicideCheck from './pages/SuicideCheck';
 import PhysicalCheck from './pages/PhysicalCheck';
 import PhysicalDisability from './pages/PhysicalDisability';
 import Calculator from './pages/Calculator';
+import Auth from './hoc/auth';
 
 const App = () => {
   return (
@@ -40,34 +41,37 @@ const App = () => {
         path={['/postlist/@:username', '/postlist']}
         exact
       />
-      <Route component={RegisterPage} path="/register" />
-      <Route component={WritePage} path="/write" />
-      <Route component={PostPage} path="/@:username/:postId" />
-      <Route component={CalendarPage} path="/calendar" />
-      <Route component={ChallengePage} path="/challenge" />
-      <Route component={MyResponsiveBar} path="/statistic" />
-      <Route component={Emotion} path="/emotion" />
-      <Route component={SelfCheckPage} path="/selfcheck" />
-      <Route component={PostViewer} path="/viewer" />
-      <Route component={Depression} path="/depression" />
-      <Route component={ContentList} path="/ContentList" />
-      <Route component={TitleList} path="/TitleList" />
-      <Route component={Anxiety} path="/Anxiety" />
-      <Route component={Obsession} path="/Obsession" />
-      <Route component={PhysicalDisability} path="/Physicaldisability" />
-      <Route component={Stress} path="/Stress" />
-      <Route component={Suicide} path="/suicide" />
-      <Route component={CenterList} path="/centerList" />
-      <Route component={CenterInfo} path="/centerinfo" />
-      <Route component={DropMenu} path="/dropdown" />
-      <Route component={DropdownBox} path="/dropdownbox" />
-      <Route component={AnxietyCheck} path="/anxietycheck" />
-      <Route component={DepressionCheck} path="/depressioncheck" />
-      <Route component={ObsessionCheck} path="/obsessionCheck" />
-      <Route component={PhysicalCheck} path="/physicalCheck" />
-      <Route component={StressCheck} path="/stresscheck" />
-      <Route component={SuicideCheck} path="/suicidecheck" />
-      <Route component={Calculator} path="/calculator" />
+      <Route component={Auth(RegisterPage, true)} path="/register" />
+      <Route component={Auth(WritePage, true)} path="/write" />
+      <Route component={Auth(PostPage, true)} path="/@:username/:postId" />
+      <Route component={Auth(CalendarPage, true)} path="/calendar" />
+      <Route component={Auth(ChallengePage, true)} path="/challenge" />
+      <Route component={Auth(MyResponsiveBar, true)} path="/statistic" />
+      <Route component={Auth(Emotion, true)} path="/emotion" />
+      <Route component={Auth(SelfCheckPage, true)} path="/selfcheck" />
+      <Route component={Auth(PostViewer, true)} path="/viewer" />
+      <Route component={Auth(Depression, true)} path="/depression" />
+      <Route component={Auth(ContentList, true)} path="/ContentList" />
+      <Route component={Auth(TitleList, true)} path="/TitleList" />
+      <Route component={Auth(Anxiety, true)} path="/Anxiety" />
+      <Route component={Auth(Obsession, true)} path="/Obsession" />
+      <Route
+        component={Auth(PhysicalDisability, true)}
+        path="/Physicaldisability"
+      />
+      <Route component={Auth(Stress, true)} path="/Stress" />
+      <Route component={Auth(Suicide, true)} path="/suicide" />
+      <Route component={Auth(CenterList, true)} path="/centerList" />
+      <Route component={Auth(CenterInfo, true)} path="/centerinfo" />
+      <Route component={Auth(DropMenu, true)} path="/dropdown" />
+      <Route component={Auth(DropdownBox, true)} path="/dropdownbox" />
+      <Route component={Auth(AnxietyCheck, true)} path="/anxietycheck" />
+      <Route component={Auth(DepressionCheck, true)} path="/depressioncheck" />
+      <Route component={Auth(ObsessionCheck, true)} path="/obsessionCheck" />
+      <Route component={Auth(PhysicalCheck, true)} path="/physicalCheck" />
+      <Route component={Auth(StressCheck, true)} path="/stresscheck" />
+      <Route component={Auth(SuicideCheck, true)} path="/suicidecheck" />
+      <Route component={Auth(Calculator, true)} path="/calculator" />
     </div>
   );
 };
