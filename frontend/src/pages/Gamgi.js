@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
-import GamgiPage from '../lib/images/WelcomeToTheGamgi1@2x.png';
+import GamgiPage from '../lib/images/gamgiFinal.png';
 
 const Box = styled.div`
   background-color: #030020;
@@ -10,7 +10,8 @@ const Box = styled.div`
 const ImgBox = styled.img`
   width: 100%;
   height: 100%;
-  padding: 4rem;
+  padding-right: 8rem;
+  padding-left: 8rem;
 `;
 
 const Gamgi = () => {

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Responsive from './Responsive';
 import Button from './Button';
+import palette from '../../lib/styles/palette';
 
 const HeaderBlock = styled.div`
   width: 100%;
@@ -50,13 +51,13 @@ const Header = ({ user, onLogout }) => {
     <div>
       <HeaderBlock>
         <Wrapper>
-          <StyledLink to="/" className="logo">
+          <StyledLink to="/gamgi" className="logo">
             감기 Gamgi
           </StyledLink>
-          <StyledLink to="/calendar">CALENDAR</StyledLink>
-          <StyledLink to="/">DIARY</StyledLink>
-          <StyledLink to="/depression">HEALTH INFO</StyledLink>
-          <StyledLink to="/depressionCheck">SELFCHECK</StyledLink>
+          <StyledLink to="/gamgi">About Gamgi</StyledLink>
+          <StyledLink to="/">Diary</StyledLink>
+          <StyledLink to="/depression">Health Info</StyledLink>
+          <StyledLink to="/depressionCheck">Selfcheck</StyledLink>
           {user ? (
             <div className="right">
               <UserInfo>{user.username}</UserInfo>

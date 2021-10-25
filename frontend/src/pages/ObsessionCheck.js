@@ -61,7 +61,7 @@ const ObsessionCheck = () => {
         <StyledLayout style={{ padding: '0 100px 24px' }}>
           <StyledContent>
             <TitleBox>
-              <h2>강박장애 자가진단</h2>
+              <h2>강박장애 자가진단 (MOCI)</h2>
               <BottomLine />
             </TitleBox>
             <table border="black">
@@ -100,6 +100,7 @@ const ObsessionCheck = () => {
                 ))}
               </tbody>
             </table>
+
             <br />
             <br />
             <h2 align="left">강박장애 검사결과</h2>
@@ -146,6 +147,10 @@ const ObsessionCheck = () => {
                   ))}
                 </tbody>
               </table>
+              <div>
+                <br />
+                <p>출처: Maudsley Obsessional-Compulsive Inventory(MOCI)</p>
+              </div>
             </div>
           </StyledContent>
         </StyledLayout>
