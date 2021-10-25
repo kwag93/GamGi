@@ -41,11 +41,10 @@ const App = () => {
         path={['/postlist/@:username', '/postlist']}
         exact
       />
-      <Route component={Auth(RegisterPage, true)} path="/register" />
+      <Route component={RegisterPage} path="/register" />
       <Route component={Auth(WritePage, true)} path="/write" />
       <Route component={Auth(PostPage, true)} path="/@:username/:postId" />
       <Route component={Auth(CalendarPage, true)} path="/calendar" />
-      <Route component={Auth(ChallengePage, true)} path="/challenge" />
       <Route component={Gamgi} path="/gamgi" />
       <Route component={Auth(MyResponsiveBar, true)} path="/statistic" />
       <Route component={Auth(Emotion, true)} path="/emotion" />
@@ -73,7 +72,6 @@ const App = () => {
       <Route component={Auth(StressCheck, true)} path="/stresscheck" />
       <Route component={Auth(SuicideCheck, true)} path="/suicidecheck" />
       <Route component={Auth(Calculator, true)} path="/calculator" />
-
     </div>
   );
 };
