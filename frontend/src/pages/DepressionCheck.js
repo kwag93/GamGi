@@ -8,8 +8,13 @@ import palette from '../lib/styles/palette';
 
 const { Content } = Layout;
 
+const TextBox = styled.div`
+  width: 120%;
+  margin-top: 1rem;
+`;
+
 const DivBox = styled.div`
-  background-image: url('https://i.pinimg.com/564x/82/9c/70/829c70a532b1398c6d130fd50c4a786e.jpg');
+  background-color: #daeee0;
   height: 100%;
   padding: 3rem;
 `;
@@ -177,15 +182,14 @@ const DepressionCheck = () => {
                       ))}
                     </tbody>
                   </table>
-                  <div>
-                    <br />
+                  <TextBox>
                     <p>
                       출처: Spitzer RL., Kroenke K., Williams JBW. Validation
                       and utility of a self-report version of PRIME-MD: the PHQ
                       primary care study. The Journal of the American Medical
                       Association. 1999:282(18);1737-1744.
                     </p>
-                  </div>
+                  </TextBox>
                 </div>
               </StyledContent>
             </StyledLayout>

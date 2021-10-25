@@ -13,7 +13,7 @@ import LoginModal from '../components/common/LoginModal';
 const { Content } = Layout;
 
 const DivBox = styled.div`
-  background-color: #030020;
+  background-color: #daeee0;
   height: 100%;
   padding: 3rem;
 `;
