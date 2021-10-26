@@ -5,8 +5,23 @@ import styled from 'styled-components';
 import HeaderContainer from '../containers/HeaderContainer';
 import SubMenuBar from '../components/common/SubMenuBar';
 import CenterList from '../selfCheck/CenterList';
+import palette from '../lib/styles/palette';
 
 const { Content } = Layout;
+
+const DivBox = styled.div`
+  background-color: #daeee0;
+  height: 100%;
+  padding: 3rem;
+`;
+
+const ContentLayout = styled(Layout)`
+  background: white;
+  border: 1px solid ${palette.gray[5]};
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 3rem;
+`;
 
 const StyledContent = styled(Content)`
   width: 80%;
@@ -37,16 +52,20 @@ const CenterInfo = (type) => {
   return (
     <div>
       <HeaderContainer />
-      <TopBox />
-      <StyledLayout>
-        <SubMenuBar />
-        <StyledLayout style={{ padding: '0 100px 24px' }}>
-          <h2>상담센터 정보</h2>
-          <StyledContent>
-            <CenterList />
-          </StyledContent>
-        </StyledLayout>
-      </StyledLayout>
+      <DivBox>
+        <ContentLayout>
+          <StyledLayout>
+            <SubMenuBar />
+            <StyledLayout style={{ padding: '0 100px 24px' }}>
+              <br />
+              <h2>상담센터 정보</h2>
+              <StyledContent>
+                <CenterList />
+              </StyledContent>
+            </StyledLayout>
+          </StyledLayout>
+        </ContentLayout>
+      </DivBox>
     </div>
   );
 };

@@ -10,17 +10,31 @@ import palette from '../lib/styles/palette';
 
 const { Content } = Layout;
 
+const DivBox = styled.div`
+  background-color: #daeee0;
+  height: 100%;
+  padding: 3rem;
+`;
+
+const ContentLayout = styled(Layout)`
+  background: white;
+  border: 1px solid ${palette.gray[5]};
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 3rem;
+`;
+
 const StyledContent = styled(Content)`
-width: 100%;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-background: #fff;
-margin-top: 3rem;
-overflow: 'initial';
-border: 1px solid ${palette.gray[5]};
-border-radius: 10px;
-padding: 3rem;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  margin-top: 3rem;
+  overflow: 'initial';
+  border: 1px solid ${palette.gray[5]};
+  border-radius: 10px;
+  padding: 3rem;
 `;
 
 const StyledLayout = styled(Layout)`
@@ -48,27 +62,30 @@ const Stress = () => {
   return (
     <div>
       <HeaderContainer />
-      <TopBox />
-      <StyledLayout>
-        <SubMenuBar />
-        <StyledLayout style={{ padding: '0 100px 24px' }}>
-          <Menu onClick={onClick} mode="horizontal" defaultSelectedKeys="1">
-            {dummy.menu.map((title) => (
-              <Menu.Item
-                onClick={addToCanvos}
-                key={title.id}
-                icon={<MailOutlined />}
-              >
-                {title.title}
-              </Menu.Item>
-            ))}
-          </Menu>
+      <DivBox>
+        <ContentLayout>
+          <StyledLayout>
+            <SubMenuBar />
+            <StyledLayout style={{ padding: '0 100px 24px' }}>
+              <Menu onClick={onClick} mode="horizontal" defaultSelectedKeys="1">
+                {dummy.menu.map((title) => (
+                  <Menu.Item
+                    onClick={addToCanvos}
+                    key={title.id}
+                    icon={<MailOutlined />}
+                  >
+                    {title.title}
+                  </Menu.Item>
+                ))}
+              </Menu>
 
-          <StyledContent>
-            <StressList keys={key} />
-          </StyledContent>
-        </StyledLayout>
-      </StyledLayout>
+              <StyledContent>
+                <StressList keys={key} />
+              </StyledContent>
+            </StyledLayout>
+          </StyledLayout>
+        </ContentLayout>
+      </DivBox>
     </div>
   );
 };

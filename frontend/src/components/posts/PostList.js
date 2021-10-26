@@ -153,7 +153,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
       </ButtonBlock>
       <PostListBlock>
         {/*  로딩 중 아니고, 포스트 배열이 존재할 때만 보여줌 */}
-        {!loading && posts && (
+        {posts && (
           <div>
             {posts.map((post) =>
               post.user.username === showWriteButton.username ? (

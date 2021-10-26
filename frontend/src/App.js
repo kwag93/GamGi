@@ -36,6 +36,7 @@ const App = () => {
   return (
     <div>
       <Route component={LoginPage} path="/" exact />
+      <Route component={Gamgi} path="/gamgi" />
       <Route
         component={PostListPage}
         path={['/postlist/@:username', '/postlist']}
@@ -45,7 +46,7 @@ const App = () => {
       <Route component={Auth(WritePage, true)} path="/write" />
       <Route component={Auth(PostPage, true)} path="/@:username/:postId" />
       <Route component={Auth(CalendarPage, true)} path="/calendar" />
-      <Route component={Gamgi} path="/gamgi" />
+
       <Route component={Auth(MyResponsiveBar, true)} path="/statistic" />
       <Route component={Auth(Emotion, true)} path="/emotion" />
       <Route component={Auth(SelfCheckPage, true)} path="/selfcheck" />

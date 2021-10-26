@@ -55,7 +55,7 @@ const Header = ({ user, onLogout }) => {
             감기 Gamgi
           </StyledLink>
           <StyledLink to="/gamgi">About Gamgi</StyledLink>
-          <StyledLink to="/">Diary</StyledLink>
+          <StyledLink to="/postlist">Diary</StyledLink>
           <StyledLink to="/depression">Health Info</StyledLink>
           <StyledLink to="/depressionCheck">Selfcheck</StyledLink>
           {user ? (

@@ -8,8 +8,13 @@ import palette from '../lib/styles/palette';
 
 const { Content } = Layout;
 
+const TextBox = styled.div`
+  width: 120%;
+  margin-top: 1rem;
+`;
+
 const DivBox = styled.div`
-  background-color: #030020;
+  background-color: #daeee0;
   height: 100%;
   padding: 3rem;
 `;
@@ -112,9 +117,9 @@ const DepressionCheck = () => {
                   </thead>
                   <tbody>
                     {dummy.depression.map((content, idx) => (
-                      <tr align="center" key={idx}>
-                        <td>{content.id}</td>
-                        <td>{content.content}</td>
+                      <tr key={idx}>
+                        <td align="center">{content.id}</td>
+                        <td align="left">{content.content}</td>
 
                         {dummy.scores.map((score, idx) => (
                           <td align="center" key={idx}>
@@ -141,11 +146,9 @@ const DepressionCheck = () => {
                   <table width="120%">
                     <tbody>
                       <tr align="right">
-                        <td align="right">
-                          <h3>합계</h3>
-                        </td>
                         <td colSpan="4" align="right">
                           <h3>
+                            <b>합계 : </b>
                             <input
                               border-color="white"
                               id="total_sum"
@@ -154,7 +157,7 @@ const DepressionCheck = () => {
                               value="0"
                               readOnly
                             />
-                            점
+                            <b> 점</b>
                           </h3>
                         </td>
                       </tr>
@@ -179,15 +182,14 @@ const DepressionCheck = () => {
                       ))}
                     </tbody>
                   </table>
-                  <div>
-                    <br />
+                  <TextBox>
                     <p>
                       출처: Spitzer RL., Kroenke K., Williams JBW. Validation
                       and utility of a self-report version of PRIME-MD: the PHQ
                       primary care study. The Journal of the American Medical
                       Association. 1999:282(18);1737-1744.
                     </p>
-                  </div>
+                  </TextBox>
                 </div>
               </StyledContent>
             </StyledLayout>
