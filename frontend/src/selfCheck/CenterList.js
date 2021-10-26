@@ -10,7 +10,7 @@ const ListBox = styled.div`
 `;
 
 const TitleBox = styled.div`
-  width: 100%;
+  width: 120%;
   background: white;
 `;
 
@@ -28,7 +28,7 @@ const CenterList = () => {
         <BottomLine />
       </TitleBox>
 
-      <table border="black">
+      <table border="black" width="120%">
         <thead>
           <tr align="center" bgcolor="#EBEFF7">
             <td>시,도 명</td>

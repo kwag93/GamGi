@@ -53,7 +53,7 @@ const WriteButtonsContainer = ({ history }) => {
 
   useEffect(() => {
     if (post) {
-      history.push(`/`);
+      history.push(`/postlist`);
     }
     if (postError) {
       console.log(postError);
