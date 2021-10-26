@@ -127,7 +127,11 @@ const PostItem = ({ post }) => {
           />
         </ContentBlock>
         <ImgBlock>
-          {idx !== -1 ? <Img src={images[idx].default} /> : ''}
+          {idx !== -1 ? (
+            <Img src={images[emotion_names.indexOf(emotion)].default} />
+          ) : (
+            ''
+          )}
         </ImgBlock>
         <BodyContent>
           <p>{body}</p>
