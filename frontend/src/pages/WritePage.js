@@ -19,7 +19,7 @@ const Box = styled.div`
 const ButtonBox = styled.div`
   display: flex;
   flex-direction: column;
-  margin-right: 20rem;
+  margin-right: 19rem;
 `;
 
 const BackgroundBlock = styled.div`

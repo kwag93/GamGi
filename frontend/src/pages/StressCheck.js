@@ -92,19 +92,22 @@ const StressCheck = () => {
                 <table border="black" width="120%" height="40%">
                   <colgroup>
                     <col width="6%" />
-                    <col width="55%" />
-                    <col width="7%" />
-                    <col width="7%" />
-                    <col width="7%" />
-                    <col width="7%" />
-                    <col width="7%" />
+                    <col width="50%" />
+                    <col width="8%" />
+                    <col width="8%" />
+                    <col width="8%" />
+                    <col width="8%" />
+                    <col width="8%" />
                   </colgroup>
                   <thead>
                     <tr align="center" bgcolor="#EBEFF7">
                       <th colSpan="2">지난 1개월간 나는</th>
                       <th>전혀없음</th>
                       <th>거의없음</th>
-                      <th>때때로 있음</th>
+                      <th>
+                        때때로
+                        <br /> 있음
+                      </th>
                       <th>자주 있음</th>
                       <th>
                         매우

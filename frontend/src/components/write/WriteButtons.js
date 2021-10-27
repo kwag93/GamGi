@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from '../common/Button';
+import DiaryButton from '../common/DiaryButton';
 
 const WriteActionButtonsBlock = styled.div`
   justify-content: flex-end;
@@ -21,10 +22,12 @@ const WriteActionButtons = ({ onCancel, onPublish, isEdit }) => {
   return (
     <WriteActionButtonsBlock>
       <StyledButton>
-        <Button onClick={onPublish}>다이어리 {isEdit ? '수정' : '등록'}</Button>
+        <DiaryButton onClick={onPublish}>
+          다이어리 {isEdit ? '수정' : '등록'}
+        </DiaryButton>
       </StyledButton>
       <StyledButton>
-        <Button onClick={onCancel}>취소</Button>
+        <DiaryButton onClick={onCancel}>취소</DiaryButton>
       </StyledButton>
     </WriteActionButtonsBlock>
   );
