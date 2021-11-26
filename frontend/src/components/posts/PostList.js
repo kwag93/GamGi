@@ -8,6 +8,7 @@ import LoginModal from '../common/LoginModal';
 import { Layout } from 'antd';
 import Respones from '../common/Respones';
 import Responsive from '../common/Responsive';
+import DiaryButton from '../common/DiaryButton';
 
 const { Content } = Layout;
 
@@ -152,7 +153,9 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
         <br />
         <br />
         <WritePostButtonWrapper>
-          {showWriteButton && <Button to="/write">다이어리 작성하기</Button>}
+          {showWriteButton && (
+            <DiaryButton to="/write">다이어리 작성하기</DiaryButton>
+          )}
         </WritePostButtonWrapper>
       </ButtonBlock>
       <PostListBlock>

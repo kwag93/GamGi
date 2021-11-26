@@ -101,7 +101,8 @@ const DepressionCheck = () => {
                     <tr align="center" bgcolor="#EBEFF7">
                       <th colSpan="2">지난 1주일간 나는</th>
                       <th>
-                        극히 드물었다 <br />
+                        극히 <br />
+                        드물었다 <br />
                         (1일 미만)
                       </th>
                       <th>
@@ -111,7 +112,8 @@ const DepressionCheck = () => {
                         종종 있었다 <br /> (3-4일)
                       </th>
                       <th>
-                        대부분 그랬다 <br /> (5-7일)
+                        대부분
+                        <br /> 그랬다 <br /> (5-7일)
                       </th>
                     </tr>
                   </thead>
